@@ -61,7 +61,7 @@ steps:
               - columnReferences:
                   - columnCounter: 3eccee87-67b2-4fa7-af34-55ffdf961827
                     stepCounter: da40d2a5-928d-4367-b55f-ec459d5c0bb5
-                transform: ""
+                transform: UPPER("STG_CUSTOMER"."C_NAME")
           - columnReference:
               columnCounter: b5c06cc2-8b31-44d3-9def-58cbb9d49d81
               stepCounter: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
@@ -76,7 +76,7 @@ steps:
               - columnReferences:
                   - columnCounter: 54ebcef2-56d3-404f-ac16-44fca968d4f2
                     stepCounter: da40d2a5-928d-4367-b55f-ec459d5c0bb5
-                transform: ""
+                transform: UPPER("STG_CUSTOMER"."C_ADDRESS")
           - columnReference:
               columnCounter: 2e4874fb-f908-40db-8f16-f9c67a3aad60
               stepCounter: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
@@ -104,7 +104,7 @@ steps:
               - columnReferences:
                   - columnCounter: 6ad9a62f-b967-4df4-bbab-1172ff1b4aa2
                     stepCounter: da40d2a5-928d-4367-b55f-ec459d5c0bb5
-                transform: ""
+                transform: UPPER("STG_CUSTOMER"."C_PHONE")
           - columnReference:
               columnCounter: 475ee989-bd5e-4aa3-8fa8-fa32a909b046
               stepCounter: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
@@ -132,7 +132,7 @@ steps:
               - columnReferences:
                   - columnCounter: 0dfdd2e7-35a2-4f96-ad57-44ff48912a41
                     stepCounter: da40d2a5-928d-4367-b55f-ec459d5c0bb5
-                transform: ""
+                transform: UPPER("STG_CUSTOMER"."C_MKTSEGMENT")
           - columnReference:
               columnCounter: 71bd3e11-c97e-436b-9f01-4369e429a67a
               stepCounter: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
@@ -146,7 +146,7 @@ steps:
               - columnReferences:
                   - columnCounter: 04d8a49c-d24a-4fe5-b600-f0d1193066f4
                     stepCounter: da40d2a5-928d-4367-b55f-ec459d5c0bb5
-                transform: ""
+                transform: UPPER("STG_CUSTOMER"."C_COMMENT")
           - acceptedValues:
               strictMatch: true
               values: []
@@ -173,7 +173,7 @@ steps:
               columnCounter: 8b48c657-08db-499d-8257-5f7bd90e30db
               stepCounter: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
             config: {}
-            dataType: VARCHAR
+            dataType: STRING
             defaultValue: ""
             description: ""
             hashColumns: []
@@ -182,7 +182,7 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences: []
-                transform: ""
+                transform: UPPER({{SRC}})
           - acceptedValues:
               strictMatch: true
               values: []
