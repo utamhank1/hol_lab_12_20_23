@@ -23,7 +23,7 @@ steps:
             description: ""
             hashColumns: []
             hashDetails: null
-            name: O_CUSTKEY
+            name: ORDER_CUSTKEY
             nullable: true
             sourceColumnReferences:
               - columnReferences:
