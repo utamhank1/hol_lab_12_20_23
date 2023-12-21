@@ -240,17 +240,48 @@ steps:
                   - columnCounter: d348f20a-dcb1-4293-ade3-f499b7d3b469
                     stepCounter: c86de952-c323-4886-9a48-6da8fcd7652b
                 transform: ""
+          - columnReference:
+              columnCounter: 9f6e86ca-2061-4cc8-8be6-b5640abf43c7
+              stepCounter: a0f1da98-d38a-4d6b-9fff-2dfe5b5e6c21
+            dataType: NUMBER(38,0)
+            description: ""
+            name: PS_AVAILQTY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: e5457338-6a1c-41be-a9cc-fbb374da0240
+                    stepCounter: 2075ce9d-a64a-4909-855c-97ee0f39b6d6
+                transform: ""
+          - columnReference:
+              columnCounter: bbf0384d-3140-4217-93f9-8d310bed9dfe
+              stepCounter: a0f1da98-d38a-4d6b-9fff-2dfe5b5e6c21
+            dataType: NUMBER(12,2)
+            description: ""
+            name: PS_SUPPLYCOST
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: def1928e-34e1-400a-a685-d43326c1c6bc
+                    stepCounter: 2075ce9d-a64a-4909-855c-97ee0f39b6d6
+                transform: ""
         cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
-          - aliases: {}
+          - aliases:
+              LINEITEM: c86de952-c323-4886-9a48-6da8fcd7652b
+              PARTSUPP: 2075ce9d-a64a-4909-855c-97ee0f39b6d6
             customSQL:
               customSQL: ""
             dependencies:
               - locationName: SRC
                 nodeName: LINEITEM
+              - locationName: SRC
+                nodeName: PARTSUPP
             join:
-              joinCondition: FROM {{ ref('SRC', 'LINEITEM') }} "LINEITEM"
+              joinCondition: |-
+                FROM {{ ref('SRC', 'LINEITEM') }} "LINEITEM"
+                INNER JOIN {{ ref('SRC', 'PARTSUPP') }} "PARTSUPP"
+                ON "LINEITEM"."L_PARTKEY" = "PARTSUPP"."PS_PARTKEY"
             name: STG_LINEITEM
             noLinkRefs: []
       name: STG_LINEITEM
