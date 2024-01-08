@@ -159,7 +159,7 @@ stepTypes:
                 CREATE OR REPLACE PROCEDURE {{ config.sp_def }};
             END;
             {% else %}
-                1=0
+            SELECT False;
             {% endif %}
         run:
           templateString: |-
