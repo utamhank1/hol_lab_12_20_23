@@ -1,11 +1,176 @@
 defaultStorageMapping: WORK
 installedPackages: {}
 jobs: {}
-locations: {}
+locations:
+  SRC:
+    mappingDefinitions:
+      "23":
+        database: ""
+        schema: ""
+      "24":
+        database: ""
+        schema: ""
+      "25":
+        database: ""
+        schema: ""
+  WORK:
+    mappingDefinitions:
+      "23":
+        database: ""
+        schema: ""
+      "24":
+        database: ""
+        schema: ""
+      "25":
+        database: ""
+        schema: ""
 macros: {}
 packages: {}
 projects: {}
 stepTypes:
+  StepType-22:
+    id: "22"
+    isDisabled: false
+    metadata:
+      defaultStorageLocation: null
+      error: null
+      nodeMetadataSpec: |-
+        capitalized: EXCEL FILE
+        short: XLSX
+        plural: Excel Files
+        tagColor: 'green'
+        config:
+        - groupName: Options
+          items:
+
+          - displayName: Stage
+            attributeName: stage
+            type: dropdownSelector
+            default: RefData
+            options:
+            - "TPCH"
+            - "RefData"
+            - "Logs"
+            isRequired: true
+
+          - displayName: Filename
+            attributeName: filename
+            type: textBox
+            default: myfile.xlsx
+            isRequired: true
+
+          - displayName: Worksheet (empty will take the first sheet)
+            attributeName: worksheet
+            type: textBox
+            isRequired: false
+
+          - displayName: Number of rows to skip
+            attributeName: skipRows
+            type: textBox
+            isRequired: false
+          
+          - displayName: Columns to be used (eg. C:D)
+            attributeName: useCols
+            type: textBox
+            isRequired: false  
+
+        systemColumns:
+        - displayName: 'VALUE'
+          attributeName: 'VALUE'
+          transform: ''
+          dataType: VARIANT
+          placement: beginning
+      templates:
+        create:
+          templateString: |-
+            {{ stage('Create Python Procedure ') }}
+            CREATE OR REPLACE PROCEDURE {{ ref_no_link(node.location.name, 'PROC_' + node.name | upper) | trim }}(INPUT_DESTINATION_TABLE STRING, SKIP_ROWS INT, USE_COLS STRING)
+              returns string not null
+              language python
+              runtime_version = '3.8'
+              packages = ('snowflake-snowpark-python', 'pandas', 'openpyxl') -- openpyxl required for pandas to read xlsx
+              imports = ('@{{ ref_no_link(node.location.name, config.stage | upper) | trim }}/{{ config.filename | trim }}')
+              handler = 'leverage_external_mapping_file_py'
+            as
+            $$
+            import pandas
+            import sys
+            from snowflake.snowpark.functions import sql_expr
+            IMPORT_DIRECTORY_NAME = "snowflake_import_directory"
+            import_dir = sys._xoptions[IMPORT_DIRECTORY_NAME]
+            def leverage_external_mapping_file_py(snowpark_session, destination_table: str, skip_rows: int, use_cols: str):
+              mapping_df_pd = pandas.read_excel(import_dir + '{{ config.filename }}'{% if config.worksheet %},sheet_name="{{ config.worksheet }}"{% endif %}{% if config.skipRows %}, skiprows=skip_rows{% endif %}{%if config.useCols %}, usecols=use_cols{% endif %})
+              json = mapping_df_pd.to_json(orient="records")
+              df = snowpark_session.create_dataframe([json]).to_df("value")
+              df = df.withColumn("value",sql_expr("parse_json(value)"))
+              df.write.mode("overwrite").save_as_table(destination_table)
+              return json
+            $$
+        run:
+          templateString: |-
+            {{ stage('Run Stored Procedure') }}
+            CALL {{ ref_no_link(node.location.name, 'PROC_' + node.name | upper) | trim }}(
+                '{{ this }}'
+                ,{% if config.skipRows %}{{ config.skipRows }}{% else %}NULL{% endif %}
+                ,{% if config.useCols %}'{{ config.useCols }}'{% else %}NULL{% endif %}
+            )
+    name: Excel File
+    version: 1
+  StepType-23:
+    id: "23"
+    isDisabled: false
+    metadata:
+      defaultStorageLocation: null
+      error: null
+      nodeMetadataSpec: |-
+        capitalized: Snowflake Stored Proc
+        short: SFSP
+        plural: Snowflake Stored Procedures
+        tagColor: 'yellow'
+        config:
+        - groupName: Options
+          items:
+
+          - displayName: Stored Procedure Definition (Required if not already defined in your Snowflake instance)
+            attributeName: sp_def
+            type: textBox
+            isRequired: false
+
+          - displayName: Stored Procedure Name with parameters (ex. my_sp('param_one', 'param_two', 'param_three'...))
+            attributeName: sp_name
+            type: textBox
+            isRequired: true
+
+
+        systemColumns:
+        - displayName: 'VALUE'
+          attributeName: 'VALUE'
+          transform: ''
+          dataType: VARIANT
+          placement: beginning
+      templates:
+        create:
+          templateString: |
+            {{ stage('Create Stored Procedure if given') }}
+            {% if config.sp_def %}
+            BEGIN
+                USE DATABASE {{ storageLocations | selectattr('name', 'equalto', 'WORK') | map(attribute='database') | first
+             }};
+                CREATE OR REPLACE PROCEDURE {{ config.sp_def }};
+            END;
+            {% else %}
+                1=0
+            {% endif %}
+        run:
+          templateString: |-
+            {{ stage('Run Stored Procedure') }}
+            BEGIN
+                USE DATABASE {{ storageLocations | selectattr('name', 'equalto', 'WORK') | map(attribute='database') | first
+             }};
+                CALL {{ config.sp_name }};
+            END;
+    name: Snowflake Stored Proc
+    version: 1
   StepType-Dimension:
     id: Dimension
     isDisabled: false
