@@ -41,7 +41,7 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences: []
-                transform: ""
+                transform: "'NULL'"
           - columnReference:
               columnCounter: 94ac2b23-c619-4161-92e8-ef02bcf5755f
               stepCounter: 8b6245cb-9806-4b94-a50b-a51b9024b8cd

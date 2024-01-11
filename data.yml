@@ -185,7 +185,7 @@ stepTypes:
       error: null
       nodeMetadataSpec: |
         capitalized: Copy of Stage
-        short: STG
+        short: TEST
         plural: Stages
         tagColor: '#2EB67D'
 
@@ -379,11 +379,17 @@ stepTypes:
             		{% endfor %}
             	{% endfor %}
             	
-            	{{ test_stage('My Custom Test', false) }} 
+            	{{ test_stage('My Custom Test', true) }} 
 
             	SELECT 1
             	FROM {{ this }}
             	WHERE N_COMMENT IS NULL
+
+            	{{ test_stage('My Custom Test 2', true) }} 
+
+            	SELECT 1
+            	FROM {{ this }}
+            	WHERE N_REGIONKEY IS NULL
 
             {% endif %}
     name: Stage_w_Custom_Test
