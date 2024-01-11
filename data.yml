@@ -141,6 +141,12 @@ stepTypes:
             type: textBox
             isRequired: true
 
+          - displayName: Storage Location Name
+            attributeName: storageLoc
+            type: textBox
+            isRequired: true
+
+
 
         systemColumns:
         - displayName: 'VALUE'
@@ -288,7 +294,7 @@ stepTypes:
 
             {% endif %}
         run:
-          templateString: |-
+          templateString: |
             {% for test in node.tests if config.testsEnabled %}
                     {% if test.runOrder == 'Before' %}
                         {{ test_stage(test.name, test.continueOnFailure) }}
@@ -372,15 +378,14 @@ stepTypes:
             			{{ test.templateString }}
             		{% endfor %}
             	{% endfor %}
+            	
+            	{{ test_stage('My Custom Test', false) }} 
+
+            	SELECT 1
+            	FROM {{ this }}
+            	WHERE N_COMMENT IS NULL
+
             {% endif %}
-
-            {{ test_stage('My Custom Test', 0) }} 
-
-            SELECT *
-            FROM {{ this }}
-            WHERE {{ this }}.N_COMMENT IS NULL
-
-            {{ test_stage('') }}
     name: Stage_w_Custom_Test
     version: 1
   StepType-Dimension:

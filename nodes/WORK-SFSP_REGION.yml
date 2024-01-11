@@ -14,6 +14,7 @@ steps:
           $$
           ;
         sp_name: output_message('Hello, world')
+        storageLoc: WORK
       database: ""
       deployEnabled: true
       description: Region data as defined by TPC-H
