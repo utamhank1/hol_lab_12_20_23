@@ -1,7 +1,29 @@
 defaultStorageMapping: WORK
 installedPackages: {}
 jobs: {}
-locations: {}
+locations:
+  SRC:
+    mappingDefinitions:
+      "23":
+        database: ""
+        schema: ""
+      "24":
+        database: ""
+        schema: ""
+      "25":
+        database: ""
+        schema: ""
+  WORK:
+    mappingDefinitions:
+      "23":
+        database: ""
+        schema: ""
+      "24":
+        database: ""
+        schema: ""
+      "25":
+        database: ""
+        schema: ""
 macros: {}
 packages: {}
 projects: {}
