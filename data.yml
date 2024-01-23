@@ -1,7 +1,29 @@
 defaultStorageMapping: WORK
 installedPackages: {}
 jobs: {}
-locations: {}
+locations:
+  SRC:
+    mappingDefinitions:
+      "23":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
+      "24":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
+      "25":
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
+  WORK:
+    mappingDefinitions:
+      "23":
+        database: JJ_TEST
+        schema: JJ_TEST_SCHEMA
+      "24":
+        database: JJ_QA
+        schema: JJ_QA_SCHEMA
+      "25":
+        database: JJ_PROD
+        schema: JJ_PROD_SCHEMA
 macros: {}
 packages: {}
 projects: {}
