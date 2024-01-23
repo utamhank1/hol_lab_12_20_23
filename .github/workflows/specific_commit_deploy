@@ -1,0 +1,37 @@
+name: Deploy Specific Commit hash to Environment
+
+on:
+  push:
+    branches:
+      - main
+      
+  # Allows you to run this workflow manually from the Actions tab if needed.
+  workflow_dispatch:
+env:
+  COA_VERSION: 6.2.9
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: 'b90d21a5'
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    
+    # Fetch config secret from GitHub Actions secret repository, then write coa config to a temporary file
+    - run: echo '${{ secrets.COA_CONFIG }}' >> COA_CONFIG
+    
+    # Install Coalesce CLI tool, if not installed already
+    - run: npm list | grep "@coalescesoftware/coa@${{ env.COA_VERSION }}" || npm install @coalescesoftware/coa@${{ env.COA_VERSION }}
+
+    # Print version number
+    - run: npx coa --version
+
+    # Create Deployment Plan
+    - run: npx coa plan --config COA_CONFIG --out ./coa-plan --debug
+
+    # Deploy Plan
+    - run: npx coa deploy --config COA_CONFIG --plan ./coa-plan --debug
