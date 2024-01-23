@@ -3,7 +3,7 @@ steps:
     operation:
       config:
         postSQL: ""
-        preSQL: ""
+        preSQL: ALTER SESSION SET QUOTED_IDENTIFIERS_IGNORE_CASE = {{ parameters.Quoted_identifier_ignore_case }};
         testsEnabled: true
       database: ""
       deployEnabled: true
