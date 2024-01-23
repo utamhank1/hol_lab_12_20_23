@@ -4,7 +4,7 @@ steps:
       config:
         insertStrategy: INSERT
         postSQL: ""
-        preSQL: ""
+        preSQL: ALTER SESSION SET QUOTED_IDENTIFIERS_IGNORE_CASE = TRUE;
         testsEnabled: true
         truncateBefore: true
       database: ""
