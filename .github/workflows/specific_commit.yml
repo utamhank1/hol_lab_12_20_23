@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
       with:
         ref: '444cb759bcf602dd84228848f0e4c6febf10ff25'
     - uses: actions/setup-node@v3
