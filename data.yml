@@ -26,11 +26,11 @@ locations:
         database: JJ_TEST
         schema: JJ_TEST_SCHEMA
       "24":
-        database: JJ_QA
-        schema: JJ_QA_SCHEMA
+        database: TXM_DEMO_DW_DB_PROD_UAT
+        schema: TXM_DEMO_DW_SCHEMA_PROD_UAT
       "25":
-        database: JJ_PROD
-        schema: JJ_PROD_SCHEMA
+        database: TXM_DEMO_DW_DB_PROD
+        schema: TXM_DEMO_DW_SCHEMA_PROD
 macros: {}
 packages: {}
 projects: {}
