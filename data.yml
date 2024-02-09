@@ -1,6 +1,13 @@
 defaultStorageMapping: WORK
 installedPackages: {}
-jobs: {}
+jobs:
+  Job-8:
+    excludeSelector: ""
+    id: 8
+    includeSelector: "{ location: WORK name: DIM_CUSTOMER } OR { location: WORK name: STG_CUSTOMER } OR { location: SRC name: CUSTOMER }"
+    name: DimCustomer Job
+    steps: []
+    subgraphs: []
 locations:
   SRC:
     mappingDefinitions:
