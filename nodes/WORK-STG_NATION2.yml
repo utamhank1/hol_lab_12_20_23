@@ -2,7 +2,7 @@ steps:
   STG_NATION2-21b78791-4952-458c-ab30-6a576d525e33:
     operation:
       config:
-        insertStrategy: INTERSECT
+        insertStrategy: EXCEPT
         postSQL: ""
         preSQL: ""
         testsEnabled: true

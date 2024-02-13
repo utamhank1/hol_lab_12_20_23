@@ -180,7 +180,7 @@ stepTypes:
             		{% endif %}
             	
             	
-            		{% if config.insertStrategy in ['UNION', 'UNION ALL', 'EXCEPT', 'INTERSECT', 'MINUS'] %}
+            		{% if config.insertStrategy != 'INSERT' %}
             			{{ stage( config.insertStrategy + ' Sources' | string ) }}
             			INSERT INTO {{ ref_no_link(node.location.name, node.name) }}
             				(
@@ -214,7 +214,7 @@ stepTypes:
             	
             			{{ source.join }}
             	
-            			{% if config.insertStrategy in ['UNION', 'UNION ALL', 'EXCEPT', 'INTERSECT', 'MINUS', 'INTERSECT'] and not loop.last %}
+            			{% if config.insertStrategy != 'INSERT' and not loop.last %}
             				{{config.insertStrategy}}
             			{% endif %}
             	
