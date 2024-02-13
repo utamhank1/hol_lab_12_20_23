@@ -72,6 +72,9 @@ stepTypes:
             - "UNION"
             - "UNION ALL"
             - "MINUS"
+            - "EXCEPT" 
+            - "INTERSECT"
+            
             isRequired: true
             enableIf: "{% if node.isMultisource %} true {% else %} false {% endif %}"
 
@@ -239,7 +242,7 @@ stepTypes:
             		{% endfor %}
             	{% endfor %}
             {% endif %}
-    name: Stage_w_minus
+    name: Stage_multi-source_extended
     version: 1
   StepType-Dimension:
     id: Dimension
