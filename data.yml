@@ -156,9 +156,8 @@ stepTypes:
 
             {% endif %}
         run:
-          templateString: |2
-
-                {% for test in node.tests if config.testsEnabled %}
+          templateString: |
+            {% for test in node.tests if config.testsEnabled %}
                     {% if test.runOrder == 'Before' %}
                         {{ test_stage(test.name, test.continueOnFailure) }}
                         {{ test.templateString }}
@@ -181,7 +180,7 @@ stepTypes:
             		{% endif %}
             	
             	
-            		{% if config.insertStrategy in ['UNION', 'UNION ALL'] %}
+            		{% if config.insertStrategy in ['UNION', 'UNION ALL', 'EXCEPT', 'INTERSECT', 'MINUS'] %}
             			{{ stage( config.insertStrategy + ' Sources' | string ) }}
             			INSERT INTO {{ ref_no_link(node.location.name, node.name) }}
             				(
@@ -215,7 +214,7 @@ stepTypes:
             	
             			{{ source.join }}
             	
-            			{% if config.insertStrategy in ['UNION', 'UNION ALL'] and not loop.last %}
+            			{% if config.insertStrategy in ['UNION', 'UNION ALL', 'EXCEPT', 'INTERSECT', 'MINUS', 'INTERSECT'] and not loop.last %}
             				{{config.insertStrategy}}
             			{% endif %}
             	
