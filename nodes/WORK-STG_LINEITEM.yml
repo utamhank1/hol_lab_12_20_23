@@ -258,7 +258,7 @@ steps:
             dataType: NUMBER(12,2)
             description: ""
             name: PS_SUPPLYCOST
-            nullable: false
+            nullable: true
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: def1928e-34e1-400a-a685-d43326c1c6bc
