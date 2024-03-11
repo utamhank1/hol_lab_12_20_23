@@ -246,7 +246,7 @@ steps:
             dataType: NUMBER(38,0)
             description: ""
             name: PS_AVAILQTY
-            nullable: false
+            nullable: true
             sourceColumnReferences:
               - columnReferences:
                   - columnCounter: e5457338-6a1c-41be-a9cc-fbb374da0240
