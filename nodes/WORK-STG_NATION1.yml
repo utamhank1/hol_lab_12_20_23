@@ -3,7 +3,7 @@ steps:
     operation:
       config:
         insertStrategy: INSERT
-        postSQL: ""
+        postSQL: CALL COA_UTIL_JJ.COA_UTIL_JJ_SCHEMA.COALESCE_API_RUN_JOB(8, 23)
         preSQL: ""
         testsEnabled: true
         truncateBefore: true

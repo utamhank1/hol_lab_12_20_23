@@ -2,7 +2,7 @@ steps:
   SQL_NATION1-d4480e4b-4865-4b76-958d-5c74d527ff9f:
     operation:
       config:
-        SQL1: CALL COA_UTIL_JJ.COA_UTIL_JJ_SCHEMA.COALESCE_API_RUN_JOB(8, 23)
+        SQL1: CALL COA_UTIL_JJ.COA_UTIL_JJ_SCHEMA.COALESCE_API_RUN_JOB({{parameters.job_id}}, {{parameters.environment_id}})
       database: ""
       deployEnabled: true
       description: Nation data as defined by TPC-H
