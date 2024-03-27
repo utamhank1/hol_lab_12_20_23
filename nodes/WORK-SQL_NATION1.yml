@@ -1,79 +1,81 @@
 steps:
-  STG_NATION2-21b78791-4952-458c-ab30-6a576d525e33:
+  SQL_NATION1-d4480e4b-4865-4b76-958d-5c74d527ff9f:
     operation:
       config:
-        insertStrategy: EXCEPT
-        postSQL: ""
-        preSQL: ""
-        testsEnabled: true
-        truncateBefore: true
+        SQL1: CALL COA_UTIL_JJ.COA_UTIL_JJ_SCHEMA.COALESCE_API_RUN_JOB(8, 23)
       database: ""
       deployEnabled: true
       description: Nation data as defined by TPC-H
-      isMultisource: true
+      isMultisource: false
       locationName: WORK
       materializationType: table
       metadata:
         appliedNodeTests: []
         columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 60ee611e-17df-4593-942f-aa32dfc6f5d9
+              stepCounter: d4480e4b-4865-4b76-958d-5c74d527ff9f
+            config: {}
+            dataType: NUMBER IDENTITY
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSurrogateKey: true
+            name: SQL_SEQ
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
           - columnReference:
-              columnCounter: fd901fce-dbc3-4402-90d1-7b9e8353aa51
-              stepCounter: 21b78791-4952-458c-ab30-6a576d525e33
+              columnCounter: 8e45217a-2191-4ef2-987e-dc60c27642ba
+              stepCounter: d4480e4b-4865-4b76-958d-5c74d527ff9f
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
             hashDetails: null
             name: N_NATIONKEY
-            nullable: true
+            nullable: false
             sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: 715e1a55-8c5b-4ed9-a281-b69a743f16e6
-                    stepCounter: b65186e2-7b61-4231-895f-560fd63e4d6a
-                transform: ""
               - columnReferences:
                   - columnCounter: bb12a003-2bfc-4cfe-8ca0-44b190fd7b55
                     stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
                 transform: ""
           - columnReference:
-              columnCounter: 0a9f9663-9154-468c-9b72-603bb8edcc05
-              stepCounter: 21b78791-4952-458c-ab30-6a576d525e33
-            dataType: STRING
+              columnCounter: 1c17f78c-d843-450d-a7f2-717798c123dd
+              stepCounter: d4480e4b-4865-4b76-958d-5c74d527ff9f
+            dataType: VARCHAR(25)
             description: ""
             hashColumns: []
             hashDetails: null
             name: N_NAME
-            nullable: true
+            nullable: false
             sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: ea08bfca-efa7-40b9-8a2a-05999e2907de
-                    stepCounter: b65186e2-7b61-4231-895f-560fd63e4d6a
-                transform: ""
               - columnReferences:
                   - columnCounter: 00bf7118-6248-4254-8b46-c9ca39f7a33b
                     stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
                 transform: ""
           - columnReference:
-              columnCounter: e2dbc265-8c25-48d1-bee5-0809ab41f063
-              stepCounter: 21b78791-4952-458c-ab30-6a576d525e33
+              columnCounter: 4a495b85-2e51-44e3-b148-4d72e4ed6694
+              stepCounter: d4480e4b-4865-4b76-958d-5c74d527ff9f
             dataType: NUMBER(38,0)
             description: ""
             hashColumns: []
             hashDetails: null
             name: N_REGIONKEY
-            nullable: true
+            nullable: false
             sourceColumnReferences:
-              - columnReferences:
-                  - columnCounter: d8012f80-2abc-45bf-828c-fe1f4dc99bb4
-                    stepCounter: b65186e2-7b61-4231-895f-560fd63e4d6a
-                transform: ""
               - columnReferences:
                   - columnCounter: 99562559-59c1-4253-8e8d-0be1454768d7
                     stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
                 transform: ""
           - columnReference:
-              columnCounter: d9cbcec3-a688-4dc1-b23e-b790ba1bb78c
-              stepCounter: 21b78791-4952-458c-ab30-6a576d525e33
-            dataType: STRING
+              columnCounter: 57729a63-ff1f-4a92-82be-a5f67f90ee1b
+              stepCounter: d4480e4b-4865-4b76-958d-5c74d527ff9f
+            dataType: VARCHAR(152)
             description: ""
             hashColumns: []
             hashDetails: null
@@ -81,13 +83,28 @@ steps:
             nullable: true
             sourceColumnReferences:
               - columnReferences:
-                  - columnCounter: ec607df1-165f-431a-be96-71632650c978
-                    stepCounter: b65186e2-7b61-4231-895f-560fd63e4d6a
-                transform: ""
-              - columnReferences:
                   - columnCounter: 3dd0209e-f886-49a7-803f-3827c458300e
                     stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
                 transform: ""
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 32c18a9f-6e49-4ba2-8c12-cc979e35e896
+              stepCounter: d4480e4b-4865-4b76-958d-5c74d527ff9f
+            config: {}
+            dataType: TIMESTAMP
+            defaultValue: ""
+            description: ""
+            hashColumns: []
+            isSystemStartDate: true
+            name: SYSTEM_START_DATE
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+        cteString: ""
         enabledColumnTestIDs: []
         sourceMapping:
           - aliases: {}
@@ -95,25 +112,14 @@ steps:
               customSQL: ""
             dependencies:
               - locationName: WORK
-                nodeName: STG_NATION
-            join:
-              joinCondition: FROM {{ ref('WORK', 'STG_NATION') }} "STG_NATION"
-            name: SRC1
-            noLinkRefs: []
-          - aliases:
-              STG_NATION1: 4523a0cd-a267-4c60-89a9-224fa648480b
-            customSQL:
-              customSQL: ""
-            dependencies:
-              - locationName: WORK
                 nodeName: STG_NATION1
             join:
               joinCondition: FROM {{ ref('WORK', 'STG_NATION1') }} "STG_NATION1"
-            name: SRC2
+            name: SQL_NATION1
             noLinkRefs: []
-      name: STG_NATION2
+      name: SQL_NATION1
       overrideSQL: false
       schema: ""
-      sqlType: "29"
+      sqlType: "45"
       type: sql
-    stepCounter: 21b78791-4952-458c-ab30-6a576d525e33
+    stepCounter: d4480e4b-4865-4b76-958d-5c74d527ff9f
