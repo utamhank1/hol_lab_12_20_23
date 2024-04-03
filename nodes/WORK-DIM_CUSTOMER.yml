@@ -30,7 +30,7 @@ steps:
               -- Test for non-decimal values in C_ACCTBAL column
               SELECT *
               FROM {{this}}
-              WHERE C_ACCTBAL REGEXP '[^0-9\.-]';
+              WHERE C_ACCTBAL REGEXP '[^0-9\.-]'
         columns:
           - acceptedValues:
               strictMatch: true
