@@ -21,7 +21,7 @@ steps:
               -- Test for invalid phone number formats
               SELECT *
               FROM {{this}}
-              WHERE PHONE_NUMBER NOT LIKE '%[0-9]%'
+              WHERE C_PHONE NOT LIKE '%[0-9]%'
           - continueOnFailure: true
             description: ""
             name: Test 1
