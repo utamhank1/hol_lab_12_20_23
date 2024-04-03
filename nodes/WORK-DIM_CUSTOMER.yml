@@ -21,16 +21,16 @@ steps:
               -- Test for invalid phone number formats
               SELECT *
               FROM {{this}}
-              WHERE C_PHONE NOT LIKE '%[0-9]%'
+              WHERE C_PHONE NOT REGEXP '^\\+?\\d{1,4}?[-\\s]?\\d{3,4}[-\\s]?\\d{3,4}[-\\s]?\\d{4}$'
           - continueOnFailure: true
             description: ""
             name: Test 1
             runOrder: After
             templateString: |-
-              -- Test for invalid name formats
+              -- Test for non-decimal values in C_ACCTBAL column
               SELECT *
               FROM {{this}}
-              WHERE C_NAME NOT LIKE '%@%.%'
+              WHERE C_ACCTBAL REGEXP '[^0-9\.-]';
         columns:
           - acceptedValues:
               strictMatch: true
