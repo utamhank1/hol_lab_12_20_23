@@ -1,0 +1,88 @@
+steps:
+  ICE_NATION1-035bd1e7-a9c5-4d3e-8fd1-e5f41d8a8687:
+    operation:
+      config:
+        baseLocation: ""
+        catalogStrategy: SNOWFLAKE
+        catalogStrategy2: glueCatalogInt
+        catalogTableName: ""
+        externalVolume: ""
+        metadataFilePath: ""
+        testsEnabled: true
+        truncateBefore: false
+      database: ""
+      deployEnabled: true
+      description: Nation data as defined by TPC-H
+      isMultisource: false
+      locationName: WORK
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: ad5dcb93-e944-4fa8-a585-2ca9b01cba65
+              stepCounter: 035bd1e7-a9c5-4d3e-8fd1-e5f41d8a8687
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_NATIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: bb12a003-2bfc-4cfe-8ca0-44b190fd7b55
+                    stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
+                transform: ""
+          - columnReference:
+              columnCounter: b716f842-772b-4323-9fb1-2bdbdda8414d
+              stepCounter: 035bd1e7-a9c5-4d3e-8fd1-e5f41d8a8687
+            dataType: VARCHAR(25)
+            description: ""
+            name: N_NAME
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 00bf7118-6248-4254-8b46-c9ca39f7a33b
+                    stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
+                transform: ""
+          - columnReference:
+              columnCounter: 7f4bc90d-931c-446f-a814-5d94ae8ac198
+              stepCounter: 035bd1e7-a9c5-4d3e-8fd1-e5f41d8a8687
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_REGIONKEY
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 99562559-59c1-4253-8e8d-0be1454768d7
+                    stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
+                transform: ""
+          - columnReference:
+              columnCounter: cdeae329-3748-490c-bce7-e21a78fbdd68
+              stepCounter: 035bd1e7-a9c5-4d3e-8fd1-e5f41d8a8687
+            dataType: VARCHAR(152)
+            description: ""
+            name: N_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 3dd0209e-f886-49a7-803f-3827c458300e
+                    stepCounter: 4523a0cd-a267-4c60-89a9-224fa648480b
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases: {}
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: WORK
+                nodeName: STG_NATION1
+            join:
+              joinCondition: FROM {{ ref('WORK', 'STG_NATION1') }} "STG_NATION1"
+            name: ICE_NATION1
+            noLinkRefs: []
+      name: ICE_NATION1
+      overrideSQL: false
+      schema: ""
+      sqlType: "75"
+      type: sql
+    stepCounter: 035bd1e7-a9c5-4d3e-8fd1-e5f41d8a8687
