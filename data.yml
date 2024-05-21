@@ -394,6 +394,58 @@ stepTypes:
             {% endif %}
     name: Stage_w_Custom_Test
     version: 1
+  StepType-85:
+    id: "85"
+    isDisabled: false
+    metadata:
+      defaultStorageLocation: null
+      error: null
+      nodeMetadataSpec: |-
+        capitalized: CREATE SQL
+        short: SQL
+        plural: SQLs
+        tagColor: '#2EB67D'
+
+        deployStrategy: advanced
+
+        config:
+        - groupName: Options
+          items:
+          - displayName: SQL
+            attributeName: SQL1
+            type: textBox
+            syntax: sql
+            isRequired: true
+
+        systemColumns:
+        - displayName: SQL_SEQ
+          transform: ''
+          dataType: NUMBER IDENTITY
+          placement: beginning
+          attributeName: isSurrogateKey
+      templates:
+        create:
+          templateString: |+
+            {% if desiredState == currentState %}
+                {{ stage('Nothing to do.') }}
+                SELECT 1 = 0
+
+            {% elif desiredState %}
+
+                {% if desiredState.config.SQL1 != currentState.config.SQL1 %}
+
+                    {{ stage('SQL1') }}
+                    {{ desiredState.config.SQL1 }} 
+
+                {% endif %}
+
+            {% endif %}
+
+
+        run:
+          templateString: ""
+    name: Stored Proc Updated
+    version: 1
   StepType-Dimension:
     id: Dimension
     isDisabled: false

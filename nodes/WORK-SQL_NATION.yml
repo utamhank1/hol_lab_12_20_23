@@ -1,0 +1,193 @@
+steps:
+  SQL_NATION-b99dd9ed-42a0-400e-9ae9-8749653164e4:
+    operation:
+      config:
+        SQL1: |-
+          CREATE OR REPLACE PROCEDURE {{this}}(rdate DATE)
+                RETURNS TABLE ()
+                LANGUAGE SQL
+
+                AS
+                DECLARE
+                  res RESULTSET DEFAULT (
+                SELECT
+                    report_reference,
+                    job_number,
+                    INCIDENT_REFERENCE,
+                    INCIDENT_STATUS INCIDENT_STATUS_DESCRIPTION,
+                    INCIDENT_STATE INCIDENT_STATE_DESCRIPTION,
+                    feeder_name,
+                    substation,
+                    area,
+                    asset_area,
+                    report_faulted_asset_flag,
+                    REPORT_ASSET,
+                    REPORT_ASSET_ALIAS,
+                    incident_type incident_type_description,
+                    report_type report_type_name,
+                    report_status report_status_description,
+                    mstr_fkey,
+                    ASSET_FEATURE_CLASS_NAME,
+                    component_group,
+                    component component_description,
+                    report_description,
+                    calendar_date,
+                    time_of_day,
+                    report_total_customer_minutes,
+                    report_total_customers_interrupted,
+                    report_total_customers_reinterrupted,
+                    ORIENTATION,
+                    VOLTAGE,
+                    REPORT_PLANNED_START_DATE_TIME,
+                    REPORT_PLANNED_END_DATE_TIME,
+                    INTERRUPTION_DATE_TIME INTERRUPTION_DATE_TIME,
+                    RESTORATION_DATE_TIME RESTORATION_DATE_TIME,
+                    DATEDIFF(MINUTE,  INTERRUPTION_DATE_TIME,RESTORATION_DATE_TIME) TOTAL_DURATION,
+                    INCIDENT_CUSTOMERS_OFF_SUPPLY,
+                    INCIDENT_CUSTOMERS_PREDICTED,
+                    REPORT_TOTAL_CUSTOMERS_REINTERRUPTED,
+                    MAX_DURATION,
+                    CAUSE CAUSE_DESCRIPTION,
+                    SUBCAUSE SUBCAUSE_DESCRIPTION,
+                    CONTRIBUTORY_CAUSE CONTRIBUTORY_CAUSE_DESCRIPTION,
+                    ABS(MINUTES_BEFORE_PLANNED_START) MINUTES_BEFORE_PLANNED_START,
+                    ABS(MINUTES_AFTER_PLANNED_END_TIME) MINUTES_AFTER_PLANNED_END_TIME,
+                    REPORT_COMMENT
+                FROM
+
+                    {{ ref('DATA_MART_ELECTRICITY', 'F_OUTAGE_REPORT')}} F_OUTAGE_REPORT
+                    LEFT JOIN {{ ref('DATA_MART_ELECTRICITY', 'D_DATE')}} D_DATE on F_OUTAGE_REPORT.d_date_key = D_DATE.d_date_key
+                    LEFT JOIN {{ ref('DATA_MART_ELECTRICITY', 'D_OUTAGE_REPORT_DETAIL')}} D_OUTAGE_REPORT_DETAIL on F_OUTAGE_REPORT.d_outage_report_detail_key = D_OUTAGE_REPORT_DETAIL.d_outage_report_detail_key
+                    LEFT JOIN {{ ref('DATA_MART_ELECTRICITY', 'D_TIME_OF_DAY')}} D_TIME_OF_DAY on F_OUTAGE_REPORT.d_time_of_day_key = D_TIME_OF_DAY.d_time_of_day_key
+                    LEFT JOIN {{ ref('DATA_MART_ELECTRICITY', 'D_OUTAGE_COMPONENT')}} D_OUTAGE_COMPONENT on F_OUTAGE_REPORT.d_outage_component_key = D_OUTAGE_COMPONENT.d_outage_component_key
+                    left join {{ ref('DATA_MART_ELECTRICITY', 'D_ELECTRICITY_ASSET')}} D_ELECTRICITY_ASSET on F_OUTAGE_REPORT.d_electricity_asset_key = D_ELECTRICITY_ASSET.d_electricity_asset_key
+                    LEFT JOIN {{ ref('DATA_MART_ELECTRICITY', 'D_OUTAGE_TYPE')}} D_OUTAGE_TYPE ON F_OUTAGE_REPORT.D_OUTAGE_TYPE_KEY = D_OUTAGE_TYPE.D_OUTAGE_TYPE_KEY
+                    LEFT JOIN (
+                        SELECT
+                            report_code,
+                            MIN(INTERRUPTION_DATE_TIME) INTERRUPTION_DATE_TIME,
+                            MAX(RESTORATION_DATE_TIME) RESTORATION_DATE_TIME
+                        FROM
+                            {{ ref('DATA_MART_ELECTRICITY', 'D_RESTORATION_STAGE')}} D_RESTORATION_STAGE
+                        GROUP BY
+                            report_code
+                    ) RESTORTAION_STAGE_DETAIL on D_OUTAGE_REPORT_DETAIL.report_code = RESTORTAION_STAGE_DETAIL.report_code
+                    LEFT JOIN (
+                        SELECT
+                            MAX(STAGE_DURATION_MINUTES) MAX_DURATION,
+                            MAX(MINUTES_BEFORE_PLANNED_START) MINUTES_BEFORE_PLANNED_START,
+                            MAX(MINUTES_AFTER_PLANNED_END_TIME) MINUTES_AFTER_PLANNED_END_TIME,
+                            D_OUTAGE_REPORT_DETAIL_KEY
+                        FROM
+                            {{ ref('DATA_MART_ELECTRICITY', 'F_RESTORATION_STAGE')}} F_RESTORATION_STAGE
+                        GROUP BY
+                            D_OUTAGE_REPORT_DETAIL_KEY
+                    ) RESTORATION_STAGE ON D_OUTAGE_REPORT_DETAIL.D_OUTAGE_REPORT_DETAIL_KEY = RESTORATION_STAGE.D_OUTAGE_REPORT_DETAIL_KEY
+                WHERE
+                    (
+                        CALENDAR_DATE =:rdate
+                        AND TIME_OF_DAY > '06:01:00.0000000'
+                    )
+                    OR (
+                        CALENDAR_DATE = DATEADD(DAY, 1, :rdate)
+                        AND TIME_OF_DAY < '06:00:00.0000000'
+                    )
+                    AND D_OUTAGE_REPORT_DETAIL.REPORT_STATUS_CODE <> -6 --DISCARDED REPORTS
+
+                  );
+                BEGIN
+                  RETURN TABLE(res);
+                END;
+      database: ""
+      deployEnabled: true
+      description: Nation data as defined by TPC-H
+      isMultisource: false
+      locationName: WORK
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 7bc9bad5-44ca-4a64-a9d8-0fd2ec15f0ca
+              stepCounter: b99dd9ed-42a0-400e-9ae9-8749653164e4
+            config: {}
+            dataType: NUMBER IDENTITY
+            defaultValue: ""
+            description: ""
+            isSurrogateKey: true
+            name: SQL_SEQ
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - columnReference:
+              columnCounter: e512d48e-ca7b-47d7-999f-7454dd530598
+              stepCounter: b99dd9ed-42a0-400e-9ae9-8749653164e4
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_NATIONKEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: a0f27a27-b24a-47d6-b68f-69279560071d
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+          - columnReference:
+              columnCounter: 0dc5045e-5012-4387-ba50-22f153ce47be
+              stepCounter: b99dd9ed-42a0-400e-9ae9-8749653164e4
+            dataType: STRING
+            description: ""
+            name: N_NAME
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 1d8b8bf6-b37d-432b-a0ab-c5f397a6fe04
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+          - columnReference:
+              columnCounter: bcba7edc-572d-4ef0-92ab-e47ba3a9f74f
+              stepCounter: b99dd9ed-42a0-400e-9ae9-8749653164e4
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_REGIONKEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 8db85ca5-243b-4451-b25d-d6ccf1457336
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+          - columnReference:
+              columnCounter: 8c5ef5b5-e229-4951-bcdb-d005b785419a
+              stepCounter: b99dd9ed-42a0-400e-9ae9-8749653164e4
+            dataType: STRING
+            description: ""
+            name: N_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: d65d2266-4489-4f3a-a482-74037e7a0399
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases: {}
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: WORK
+                nodeName: TEST_NATION
+            join:
+              joinCondition: FROM {{ ref('WORK', 'TEST_NATION') }} "TEST_NATION"
+            name: SQL_NATION
+            noLinkRefs: []
+      name: SQL_NATION
+      overrideSQL: false
+      schema: ""
+      sqlType: "85"
+      type: sql
+    stepCounter: b99dd9ed-42a0-400e-9ae9-8749653164e4
