@@ -12,7 +12,7 @@ steps:
       description: Nation data as defined by TPC-H
       isMultisource: false
       locationName: WORK
-      materializationType: table
+      materializationType: view
       metadata:
         appliedNodeTests: []
         columns:
@@ -21,7 +21,6 @@ steps:
               stepCounter: 5fede04f-eead-4994-93dd-389536a42050
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
             hashDetails: null
             name: N_NATIONKEY
             nullable: true
@@ -35,7 +34,6 @@ steps:
               stepCounter: 5fede04f-eead-4994-93dd-389536a42050
             dataType: STRING
             description: ""
-            hashColumns: []
             hashDetails: null
             name: N_NAME
             nullable: true
@@ -49,7 +47,6 @@ steps:
               stepCounter: 5fede04f-eead-4994-93dd-389536a42050
             dataType: NUMBER(38,0)
             description: ""
-            hashColumns: []
             hashDetails: null
             name: N_REGIONKEY
             nullable: true
@@ -63,7 +60,6 @@ steps:
               stepCounter: 5fede04f-eead-4994-93dd-389536a42050
             dataType: STRING
             description: ""
-            hashColumns: []
             hashDetails: null
             name: N_COMMENT
             nullable: true

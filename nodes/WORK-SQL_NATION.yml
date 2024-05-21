@@ -1,0 +1,107 @@
+steps:
+  SQL_NATION-d960ce23-5b9c-4919-a5dc-28fa2bc94f47:
+    operation:
+      config:
+        SQL1: |-
+          CREATE OR REPLACE PROCEDURE {{ ref('WORK', 'SQL_NATION') }}(MESSAGE VARCHAR)
+          RETURNS VARCHAR
+          LANGUAGE SQL
+          AS
+          $$
+          BEGIN
+              RETURN 'Helxlo, ' || MESSAGE || '!';
+          END;
+          $$;
+      database: ""
+      deployEnabled: true
+      description: Nation data as defined by TPC-H
+      isMultisource: false
+      locationName: WORK
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 8b66e245-7601-4937-9e8a-35a4cdb945dc
+              stepCounter: d960ce23-5b9c-4919-a5dc-28fa2bc94f47
+            config: {}
+            dataType: NUMBER IDENTITY
+            defaultValue: ""
+            description: ""
+            isSurrogateKey: true
+            name: SQL_SEQ
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences: []
+                transform: ""
+          - columnReference:
+              columnCounter: d75f7ed2-a3a7-4740-804a-717ff503fb6c
+              stepCounter: d960ce23-5b9c-4919-a5dc-28fa2bc94f47
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_NATIONKEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: a0f27a27-b24a-47d6-b68f-69279560071d
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+          - columnReference:
+              columnCounter: 105fcf80-940e-464d-9e22-79f0376b3f3c
+              stepCounter: d960ce23-5b9c-4919-a5dc-28fa2bc94f47
+            dataType: STRING
+            description: ""
+            name: N_NAME
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 1d8b8bf6-b37d-432b-a0ab-c5f397a6fe04
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+          - columnReference:
+              columnCounter: ec1668d4-0179-4e6b-a9a4-969a5d44b7cb
+              stepCounter: d960ce23-5b9c-4919-a5dc-28fa2bc94f47
+            dataType: NUMBER(38,0)
+            description: ""
+            name: N_REGIONKEY
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 8db85ca5-243b-4451-b25d-d6ccf1457336
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+          - columnReference:
+              columnCounter: 7542db08-0047-4500-a2aa-28c61f5bec22
+              stepCounter: d960ce23-5b9c-4919-a5dc-28fa2bc94f47
+            dataType: STRING
+            description: ""
+            name: N_COMMENT
+            nullable: true
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: d65d2266-4489-4f3a-a482-74037e7a0399
+                    stepCounter: 5fede04f-eead-4994-93dd-389536a42050
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - aliases: {}
+            customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: WORK
+                nodeName: TEST_NATION
+            join:
+              joinCondition: FROM {{ ref('WORK', 'TEST_NATION') }} "TEST_NATION"
+            name: SQL_NATION
+            noLinkRefs: []
+      name: SQL_NATION
+      overrideSQL: false
+      schema: ""
+      sqlType: "85"
+      type: sql
+    stepCounter: d960ce23-5b9c-4919-a5dc-28fa2bc94f47

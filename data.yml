@@ -425,28 +425,24 @@ stepTypes:
           attributeName: isSurrogateKey
       templates:
         create:
-          templateString: |+
+          templateString: |-
             {% if desiredState == currentState %}
                 {{ stage('Nothing to do.') }}
                 SELECT 1 = 0
 
-            {% elif desiredState %}
-
-                {% if desiredState.config.SQL1 != currentState.config.SQL1 %}
-
-                    {{ stage('SQL1') }}
-                    {{ desiredState.config.SQL1 }} 
-
-                {% endif %}
-
-            {% elif currentState == undefined %}
-                {{ stage('SQL1') }}
+            {% elif desiredState != undefined %}
+                {{ stage('Create SQL1') }}
                 {{ desiredState.config.SQL1 }} 
 
+            {% elif desiredState == undefined %}
+                {{ stage('Drop SQL1') }}
+                DROP PROCEDURE IF EXISTS {{this}}
+
+            {% else %}
+                {{ stage('Unknown State') }}
+                SELECT 1 = 0
+
             {% endif %}
-
-
-
         run:
           templateString: ""
     name: Stored Proc Updated
