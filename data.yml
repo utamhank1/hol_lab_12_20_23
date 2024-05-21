@@ -5,25 +5,25 @@ locations:
   SRC:
     mappingDefinitions:
       "23":
-        database: ""
-        schema: ""
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
       "24":
-        database: ""
-        schema: ""
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
       "25":
-        database: ""
-        schema: ""
+        database: SNOWFLAKE_SAMPLE_DATA
+        schema: TPCH_SF1
   WORK:
     mappingDefinitions:
       "23":
-        database: ""
-        schema: ""
+        database: JJ_TEST
+        schema: JJ_TEST_SCHEMA
       "24":
-        database: ""
-        schema: ""
+        database: JJ_QA
+        schema: JJ_QA_SCHEMA
       "25":
-        database: ""
-        schema: ""
+        database: JJ_PROD
+        schema: JJ_PROD_SCHEMA
 macros: {}
 packages: {}
 projects: {}
