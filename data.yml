@@ -439,7 +439,12 @@ stepTypes:
 
                 {% endif %}
 
+            {% elif currentState == undefined %}
+                {{ stage('SQL1') }}
+                {{ desiredState.config.SQL1 }} 
+
             {% endif %}
+
 
 
         run:
