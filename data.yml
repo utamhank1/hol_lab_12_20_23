@@ -448,8 +448,6 @@ stepTypes:
       templates:
         create:
           templateString: |-
-            {#-- The below block of code initialises variables in case of node typess using advance deployment strategy #}
-
             {% if desiredState %}
                 {% set columns = desiredState.columns %}
                 {% set storageLocations = desiredState.storageLocations %}
