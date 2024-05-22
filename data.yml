@@ -24,7 +24,29 @@ locations:
       "25":
         database: JJ_PROD
         schema: JJ_PROD_SCHEMA
-macros: {}
+macros:
+  Macro-1:
+    id: "1"
+    macroString: |-
+      {#-- The below block of code initialises variables in case of node typess using advance deployment strategy #}
+
+      {% if desiredState %}
+          {% set columns = desiredState.columns %}
+          {% set storageLocations = desiredState.storageLocations %}
+          {% set config = desiredState.config %}
+          {% set sources = desiredState.sources %}
+          {% set node = desiredState.node %}
+          {% set parameters = desiredState.parameters %}
+          {% set this = desiredState.this %}
+      {% else %}
+          {% set columns = currentState.columns %}
+          {% set storageLocations = currentState.storageLocations %}
+          {% set config = currentState.config %}
+          {% set sources = currentState.sources %}
+          {% set node = currentState.node %}
+          {% set parameters = currentState.parameters %}
+          {% set this = currentState.this %}
+      {% endif %}
 packages: {}
 projects: {}
 stepTypes:
@@ -434,13 +456,14 @@ stepTypes:
                 {{ stage('Create SQL1') }}
                 {{ desiredState.config.SQL1 }} 
 
-            {% elif desiredState == undefined %}
+            {% elif currentState != undefined and desiredState == undefined %}
                 {{ stage('Drop SQL1') }}
-                DROP PROCEDURE IF EXISTS {{this}}
+                {# you need to figure out what DROP SQL needs to be executed #}
+                DROP PROCEDURE IF EXISTS {{ this }} (VARCHAR)
 
             {% else %}
                 {{ stage('Unknown State') }}
-                SELECT 1 = 0
+                SELECT 1 = 1
 
             {% endif %}
         run:
