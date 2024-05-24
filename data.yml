@@ -456,14 +456,6 @@ stepTypes:
                 {% set node = desiredState.node %}
                 {% set parameters = desiredState.parameters %}
                 {% set this = desiredState.this %}
-            {% else %}
-                {% set columns = currentState.columns %}
-                {% set storageLocations = currentState.storageLocations %}
-                {% set config = currentState.config %}
-                {% set sources = currentState.sources %}
-                {% set node = currentState.node %}
-                {% set parameters = currentState.parameters %}
-                {% set this = currentState.this %}
             {% endif %}
 
 
