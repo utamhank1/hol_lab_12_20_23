@@ -37,29 +37,24 @@ macros:
           {% set sources = desiredState.sources %}
           {% set node = desiredState.node %}
           {% set parameters = desiredState.parameters %}
+          {% set this = ref_no_link(desiredState.node.location.name, desiredState.node.name) %}
+      {% elif currentState %}
+          {% set columns = currentState.columns %}
+          {% set storageLocations = currentState.storageLocations %}
+          {% set config = currentState.config %}
+          {% set sources = currentState.sources %}
+          {% set node = currentState.node %}
+          {% set parameters = currentState.parameters %}
+          {% set this = ref_no_link(currentState.node.location.name, currentState.node.name) %}
+      {% else %}
+          {% set columns = columns %}
+          {% set storageLocations = storageLocations %}
+          {% set config = config %}
+          {% set sources = sources %}
+          {% set node = node %}
+          {% set parameters = parameters %}
+          {% set this = ref_no_link(node.location.name, node.name) %}
       {% endif %}
-
-      {#-- The below block of code initialises variables in case of node typess using advance deployment strategy #}
-
-      {% if desiredState %}
-          {% set columns = desiredState.columns %}
-          {% set storageLocations = desiredState.storageLocations %}
-          {% set config = desiredState.config %}
-          {% set sources = desiredState.sources %}
-          {% set node = desiredState.node %}
-          {% set parameters = desiredState.parameters %}
-          {% set this = desiredState.this %}
-      {% endif %}
-
-      {#-- Macro to return node name #}
-      {#-- Input parmeters   - None #}
-      {#-- Return            - Order by clause #}
-
-      {%- macro node_name() -%}
-
-      {{ ref_no_link(node.location.name, node.name) }} 
-
-      {%- endmacro -%}
 packages: {}
 projects: {}
 stepTypes:
@@ -461,16 +456,6 @@ stepTypes:
       templates:
         create:
           templateString: |-
-            {% if desiredState %}
-                {% set columns = desiredState.columns %}
-                {% set storageLocations = desiredState.storageLocations %}
-                {% set config = desiredState.config %}
-                {% set sources = desiredState.sources %}
-                {% set node = desiredState.node %}
-                {% set parameters = desiredState.parameters %}
-                {% set this = desiredState.this %}
-            {% endif %}
-
             {% if desiredState == currentState %}
                 {{ stage('Nothing to do.') }}
                 SELECT 1 = 0
@@ -480,14 +465,9 @@ stepTypes:
                 {{ desiredState.config.SQL1 }} 
 
             {% elif currentState != undefined and desiredState == undefined %}
-                {# Stored Procedure Name #}
-                {% set targetObjectDatabase = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[0] %} 
-                {% set targetObjectSchema = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[1] %} 
-                {% set fullyQualifiedTargetObjectName = ref_no_link(currentState.node.location.name, currentState.node.name) %}
-                
-                {{ stage('Drop SQL1') }}
+                    {{ stage('Drop SQL1') }}
                 {# you need to figure out what DROP SQL needs to be executed #}
-                DROP PROCEDURE IF EXISTS {{ fullyQualifiedTargetObjectName }} (VARCHAR)
+                DROP PROCEDURE IF EXISTS {{ this }} (VARCHAR)
 
             {% else %}
                 {{ stage('Unknown State') }}
