@@ -471,7 +471,7 @@ stepTypes:
                 {% set this = desiredState.this %}
             {% endif %}
 
-            {% if desiredState.config == currentState.config %}
+            {% if desiredState.config.SQL1 == currentState.config.SQL1 %}
                 {{ stage('Nothing to do.') }}
                 SELECT 1 = 0
 
