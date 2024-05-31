@@ -37,17 +37,6 @@ macros:
           {% set sources = desiredState.sources %}
           {% set node = desiredState.node %}
           {% set parameters = desiredState.parameters %}
-      {% endif %}
-
-      {#-- The below block of code initialises variables in case of node typess using advance deployment strategy #}
-
-      {% if desiredState %}
-          {% set columns = desiredState.columns %}
-          {% set storageLocations = desiredState.storageLocations %}
-          {% set config = desiredState.config %}
-          {% set sources = desiredState.sources %}
-          {% set node = desiredState.node %}
-          {% set parameters = desiredState.parameters %}
           {% set this = desiredState.this %}
       {% endif %}
 
@@ -471,7 +460,7 @@ stepTypes:
             --     {% set this = desiredState.this %}
             -- {% endif %}
 
-            {% if desiredState.config == currentState.config %}
+            {% if desiredState.node.config == currentState.node.config %}
                 {{ stage('Nothing to do.') }}
                 SELECT 1 = 0
 
