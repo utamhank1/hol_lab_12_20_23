@@ -473,7 +473,7 @@ stepTypes:
                 {% set this = desiredState.this %}
             {% endif %}
 
-            {% if nodeSQLDesired == nodeSQLCurrent %}
+            {% if desiredState == currentState %}
                 {{ stage('Nothing to do.') }}
                 SELECT 1 = 0
 
