@@ -465,8 +465,6 @@ stepTypes:
                 {% set columns = desiredState.columns %}
                 {% set storageLocations = desiredState.storageLocations %}
                 {% set config = desiredState.config %}
-                {% set nodeSQLDesired = desiredState.config.SQL1 %}
-                {% set nodeSQLCurrent = currentState.config.SQL1 %}
                 {% set sources = desiredState.sources %}
                 {% set node = desiredState.node %}
                 {% set parameters = desiredState.parameters %}
