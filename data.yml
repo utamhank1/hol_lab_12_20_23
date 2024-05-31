@@ -465,13 +465,15 @@ stepTypes:
                 {% set columns = desiredState.columns %}
                 {% set storageLocations = desiredState.storageLocations %}
                 {% set config = desiredState.config %}
+                {% set nodeSQLDesired = desiredState.config.SQL1 %}
+                {% set nodeSQLCurrent = currentState.config.SQL1 %}
                 {% set sources = desiredState.sources %}
                 {% set node = desiredState.node %}
                 {% set parameters = desiredState.parameters %}
                 {% set this = desiredState.this %}
             {% endif %}
 
-            {% if desiredState.config.SQL1 == currentState.config.SQL1 %}
+            {% if nodeSQLDesired == nodeSQLCurrent %}
                 {{ stage('Nothing to do.') }}
                 SELECT 1 = 0
 
