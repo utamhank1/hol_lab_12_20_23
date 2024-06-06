@@ -440,6 +440,7 @@ steps:
               columnCounter: 86d53a9d-07ab-458f-a588-e35e5708ce79
               stepCounter: e9e0e21d-8f48-409c-9fda-201ff86243cf
             dataType: NUMBER(12,2)
+            defaultValue: "0"
             description: ""
             name: PS_SUPPLYCOST
             nullable: false
