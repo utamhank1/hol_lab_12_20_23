@@ -1,0 +1,6 @@
+{{ stage('Run Stored Procedure') }}
+BEGIN
+    USE DATABASE {{ storageLocations | selectattr('name', 'equalto', 'WORK') | map(attribute='database') | first
+ }};
+    CALL {{ config.sp_name }};
+END;
