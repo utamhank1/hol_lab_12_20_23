@@ -1,12 +1,12 @@
--- {% if desiredState %}
---     {% set columns = desiredState.columns %}
---     {% set storageLocations = desiredState.storageLocations %}
---     {% set config = desiredState.config %}
---     {% set sources = desiredState.sources %}
---     {% set node = desiredState.node %}
---     {% set parameters = desiredState.parameters %}
---     {% set this = desiredState.this %}
--- {% endif %}
+{% if desiredState %}
+    {% set columns = desiredState.columns %}
+    {% set storageLocations = desiredState.storageLocations %}
+    {% set config = desiredState.config %}
+    {% set sources = desiredState.sources %}
+    {% set node = desiredState.node %}
+    {% set parameters = desiredState.parameters %}
+    {% set this = desiredState.this %}
+{% endif %}
 
 {% if desiredState == currentState %}
     {{ stage('Nothing to do.') }}
