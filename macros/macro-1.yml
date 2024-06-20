@@ -1,0 +1,8 @@
+fileVersion: 1
+id: "1"
+macroString: |-
+  {%- macro test_var(input_) -%}
+    {{ input_ }}
+  {%- endmacro -%}
+name: macro
+type: Macro
