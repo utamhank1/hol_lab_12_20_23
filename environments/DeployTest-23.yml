@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "23"
+mappingDefinitions:
+  SRC:
+    database: ""
+    schema: ""
+  WORK:
+    database: ""
+    schema: ""
+name: Deploy Test
+type: Environment
