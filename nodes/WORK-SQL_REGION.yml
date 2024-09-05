@@ -1,0 +1,108 @@
+fileVersion: 1
+id: a98d34d9-e2f0-47a0-a070-3eebda460e36
+name: SQL_REGION
+operation:
+  config:
+    SQL1: ""
+  database: ""
+  deployEnabled: true
+  description: Region data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4181f676-c2c8-4bc8-a030-8281eef746e4
+          stepCounter: a98d34d9-e2f0-47a0-a070-3eebda460e36
+        config: {}
+        dataType: NUMBER IDENTITY
+        defaultValue: ""
+        description: ""
+        isSurrogateKey: true
+        name: SQL_SEQ
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90e2d1f6-57df-43fc-ba4b-55f096f11cc0
+          stepCounter: a98d34d9-e2f0-47a0-a070-3eebda460e36
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf37dbe8-fccb-4215-9747-a6161d7dca01
+                stepCounter: 8b6245cb-9806-4b94-a50b-a51b9024b8cd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 94eb031e-498c-4a36-8615-d282f18bd17d
+          stepCounter: a98d34d9-e2f0-47a0-a070-3eebda460e36
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 94ac2b23-c619-4161-92e8-ef02bcf5755f
+                stepCounter: 8b6245cb-9806-4b94-a50b-a51b9024b8cd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8317578-014c-48a0-8689-7ef2ae4ff320
+          stepCounter: a98d34d9-e2f0-47a0-a070-3eebda460e36
+        config: {}
+        dataType: STRING
+        description: ""
+        name: R_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ac5cb36-5c39-4eda-b5ae-bedfa3f3ef25
+                stepCounter: 8b6245cb-9806-4b94-a50b-a51b9024b8cd
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b639735a-d150-4966-be48-c837cb8401c2
+          stepCounter: a98d34d9-e2f0-47a0-a070-3eebda460e36
+        config: {}
+        dataType: STRING
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6fc5570a-82c3-408a-ae61-1bcb22094e11
+                stepCounter: 8b6245cb-9806-4b94-a50b-a51b9024b8cd
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: SFSP_REGION
+        join:
+          joinCondition: FROM {{ ref('WORK', 'SFSP_REGION') }} "SFSP_REGION"
+        name: SQL_REGION
+        noLinkRefs: []
+  name: SQL_REGION
+  overrideSQL: false
+  schema: ""
+  sqlType: "85"
+  type: sql
+  version: 1
+type: Node

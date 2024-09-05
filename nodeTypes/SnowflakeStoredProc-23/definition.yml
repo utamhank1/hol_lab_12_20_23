@@ -6,35 +6,26 @@ metadata:
   error: null
   nodeMetadataSpec: |-
     capitalized: Snowflake Stored Proc
-    short: SFSP
-    plural: Snowflake Stored Procedures
-    tagColor: 'yellow'
+    short: SQL
+    plural: SQLs
+    tagColor: '#2EB67D'
+
+    deployStrategy: advanced
+
     config:
     - groupName: Options
       items:
-
-      - displayName: Stored Procedure Definition (Required if not already defined in your Snowflake instance)
-        attributeName: sp_def
+      - displayName: SQL
+        attributeName: SQL1
         type: textBox
-        isRequired: false
-
-      - displayName: Stored Procedure Name with parameters (ex. my_sp('param_one', 'param_two', 'param_three'...))
-        attributeName: sp_name
-        type: textBox
-        isRequired: true
-
-      - displayName: Storage Location Name
-        attributeName: storageLoc
-        type: textBox
-        isRequired: true
-
-
+      syntax: sql
+      isRequired: true
 
     systemColumns:
-    - displayName: 'VALUE'
-      attributeName: 'VALUE'
+    - displayName: SQL_SEQ
       transform: ''
-      dataType: VARIANT
+      dataType: NUMBER IDENTITY
       placement: beginning
+      attributeName: isSurrogateKey
 name: Snowflake Stored Proc
 type: NodeType

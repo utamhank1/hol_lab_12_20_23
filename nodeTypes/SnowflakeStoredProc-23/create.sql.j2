@@ -1,10 +1,32 @@
-{{ stage('Create Stored Procedure if given') }}
-{% if config.sp_def %}
+{% if desiredState == currentState %}
+{{ stage('Nothing to do.') }}
+SELECT 1 = 0
+
+ 
+
+{% elif desiredState != undefined %}
+{{ stage('Create SQL1') }}
 BEGIN
     USE DATABASE {{ storageLocations | selectattr('name', 'equalto', 'WORK') | map(attribute='database') | first
  }};
-    CREATE OR REPLACE PROCEDURE {{ config.sp_def }};
-END;
+{{ desiredState.config.SQL1 }};
+END
+
+{% elif currentState != undefined and desiredState == undefined %}
+
+{# Stored Procedure Name #}
+
+{% set targetObjectDatabase = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[0] %}
+
+{% set targetObjectSchema = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[1] %}
+
+{% set fullyQualifiedTargetObjectName = ref_no_link(currentState.node.location.name, currentState.node.name) %}
+
+{{ stage('Drop SQL1') }}
+
+DROP PROCEDURE IF EXISTS {{ fullyQualifiedTargetObjectName }} (VARCHAR)
+
 {% else %}
-SELECT False;
+{{ stage('Unknown State') }}
+SELECT 1 = 1
 {% endif %}
