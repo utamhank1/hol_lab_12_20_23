@@ -1,7 +1,0 @@
-excludeSelector: ""
-fileVersion: 1
-id: "15"
-includeSelector: "{ location: WORK name: SFSP_REGION }"
-name: stored_proc
-type: Job
-version: 2

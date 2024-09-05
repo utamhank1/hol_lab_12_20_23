@@ -1,0 +1,7 @@
+excludeSelector: ""
+fileVersion: 1
+id: "17"
+includeSelector: "+{ location: WORK name: hello_world }"
+name: Stored_Proc_Region
+type: Job
+version: 2
