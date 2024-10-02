@@ -1,17 +1,54 @@
 fileVersion: 1
 id: 8c89d802-6c5d-45ff-b078-458127ad74e2
-name: hello_world
+name: Refresh_PowerBI_Dataset
 operation:
   config:
     SQL1: |-
-      CREATE OR REPLACE PROCEDURE hello_world()
+      CREATE OR REPLACE PROCEDURE REFRESH_POWERBI_DATASET(DATASET_ID STRING)
       RETURNS STRING
-      LANGUAGE SQL
+      LANGUAGE PYTHON
+      RUNTIME_VERSION = '3.8'
+      PACKAGES = ('requests', 'snowflake-snowpark-python')
+      HANDLER = 'refresh_dataset'
       AS
       $$
-      BEGIN
-        RETURN 'Hello, World!';
-      END;
+      import requests
+      import json
+      from snowflake.snowpark.exceptions import SnowparkSQLException
+
+      def refresh_dataset(snowpark_session, dataset_id):
+          try:
+              if not dataset_id:
+                  raise ValueError("Dataset ID cannot be empty")
+              
+              # Power BI API endpoint using the provided dataset_id
+              api_url = f'https://api.powerbi.com/v1.0/myorg/datasets/{dataset_id}/refreshes'
+              
+              # Replace with your actual bearer token or implement token retrieval logic
+              bearer_token = 'your_bearer_token'
+              
+              # Headers for the API request
+              headers = {
+                  'Authorization': f'Bearer {bearer_token}',
+                  'Content-Type': 'application/json'
+              }
+              
+              # Make the POST request to trigger the refresh
+              response = requests.post(api_url, headers=headers)
+              
+              # Check if the request was successful
+              if response.status_code == 202:
+                  return f'Successfully initiated refresh for dataset {dataset_id}'
+              else:
+                  return f'Failed to refresh dataset. Status code: {response.status_code}, Response: {response.text}'
+          
+          except ValueError as ve:
+              return f'Validation error: {str(ve)}'
+          except requests.RequestException as re:
+              return f'API request error: {str(re)}'
+          except Exception as e:
+              return f'Unexpected error: {str(e)}'
+
       $$;
   database: ""
   deployEnabled: true
@@ -92,9 +129,9 @@ operation:
             nodeName: STG_REGION
         join:
           joinCondition: FROM {{ ref('WORK', 'STG_REGION') }} "STG_REGION"
-        name: hello_world
+        name: Refresh_PowerBI_Dataset
         noLinkRefs: []
-  name: hello_world
+  name: Refresh_PowerBI_Dataset
   overrideSQL: false
   schema: ""
   sqlType: "23"
