@@ -7,7 +7,7 @@ SELECT 1 = 0
 {% elif desiredState != undefined %}
 {{ stage('Create SQL1') }}
 BEGIN
-    USE DATABASE {{ storageLocations | selectattr('name', 'equalto', 'WORK') | map(attribute='database') | first
+    USE DATABASE {{ desiredState.storageLocations | selectattr('name', 'equalto', 'WORK') | map(attribute='database') | first
  }};
 {{ desiredState.config.SQL1 }};
 END
