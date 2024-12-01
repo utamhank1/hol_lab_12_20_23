@@ -152,26 +152,6 @@ operation:
               - columnCounter: 3c7d39cf-a47a-4dfd-8244-44419d8f5b8c
                 stepCounter: 31be2011-41ed-4757-806b-c651f9879fc8
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: e8c2bfea-b3e7-45b7-ba7d-279f9bbc5f38
-          stepCounter: 3d91567e-eadf-43f6-aba3-914d73955fab
-        config: {}
-        dataType: STRING
-        defaultValue: ""
-        description: ""
-        keyColumnType: None
-        name: test
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: "0"
-                stepCounter: "0"
-            transform: "{{ test_var(\"{{ parameters.filename }}\") }}"
-        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
