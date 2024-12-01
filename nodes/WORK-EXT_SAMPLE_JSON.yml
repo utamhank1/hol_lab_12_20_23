@@ -10,7 +10,7 @@ operation:
     fieldEnclosed: \042
     fileFormatLoc: EXT_STG_AZURE
     fileFormatName: azure_blob_json_format
-    fileFormatType: File Format Name
+    fileFormatType: File Format Values
     filePattern: ""
     fileType: JSON
     integration: ""
@@ -22,7 +22,7 @@ operation:
     snsTopic: arn:aws:sns:us-east-1:121674918127:prod-emea-s3-notification
     stageName: AZURE_BLOB_EXTERNAL_STAGE/json_files_jj
     stageStorageLocationName: EXT_STG_AZURE
-    stripouterarray: false
+    stripouterarray: true
     trimSpace: true
   database: ""
   deployEnabled: true

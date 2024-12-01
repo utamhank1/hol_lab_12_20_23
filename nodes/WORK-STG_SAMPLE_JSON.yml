@@ -1,5 +1,5 @@
 fileVersion: 1
-id: 2af633cd-abdb-45d8-9071-c23713e5157b
+id: 2d9504f3-705d-426e-8464-3b44730f9bfc
 name: STG_SAMPLE_JSON
 operation:
   config:
@@ -19,8 +19,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: acee1331-de0d-4d70-a4eb-c1c9b2b74c28
-          stepCounter: 2af633cd-abdb-45d8-9071-c23713e5157b
+          columnCounter: 26500128-08b9-4f1f-85f9-278ea61ec2a3
+          stepCounter: 2d9504f3-705d-426e-8464-3b44730f9bfc
         config: {}
         dataType: VARIANT
         description: ""
@@ -33,8 +33,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 234c07f9-0783-4538-982d-69305b607db3
-          stepCounter: 2af633cd-abdb-45d8-9071-c23713e5157b
+          columnCounter: e7c6218f-f718-40f7-b53a-7cdc1b6050da
+          stepCounter: 2d9504f3-705d-426e-8464-3b44730f9bfc
         config: {}
         dataType: STRING
         description: ""
@@ -45,6 +45,91 @@ operation:
               - columnCounter: 2c050bba-d030-4e41-823c-99b3e2a34629
                 stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 726ae05a-60da-4165-b68d-f0ae1071a111
+          stepCounter: 2d9504f3-705d-426e-8464-3b44730f9bfc
+        config: {}
+        dataType: STRING
+        description: ""
+        name: album
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f4fe45c-3b75-40b7-a844-3501731ec053
+                stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+            transform: "\"VALUE\".value:\"album\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e8a055d-8109-4fa0-824c-fa67269d42bb
+          stepCounter: 2d9504f3-705d-426e-8464-3b44730f9bfc
+        config: {}
+        dataType: STRING
+        description: ""
+        name: lyrics
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f4fe45c-3b75-40b7-a844-3501731ec053
+                stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+            transform: "\"VALUE\".value:\"lyrics\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8cfaa89b-2405-4eb5-b491-bbc5860b7114
+          stepCounter: 2d9504f3-705d-426e-8464-3b44730f9bfc
+        config: {}
+        dataType: STRING
+        description: ""
+        name: lyrics_title
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f4fe45c-3b75-40b7-a844-3501731ec053
+                stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+            transform: "\"VALUE\".value:\"lyrics_title\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8c77112-b329-4f59-bac0-3dc31529694b
+          stepCounter: 2d9504f3-705d-426e-8464-3b44730f9bfc
+        config: {}
+        dataType: STRING
+        description: ""
+        name: lyrics_url
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f4fe45c-3b75-40b7-a844-3501731ec053
+                stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+            transform: "\"VALUE\".value:\"lyrics_url\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9643a76a-b31b-4d8a-85ae-e2a91095b8d3
+          stepCounter: 2d9504f3-705d-426e-8464-3b44730f9bfc
+        config: {}
+        dataType: STRING
+        description: ""
+        name: track_views
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5f4fe45c-3b75-40b7-a844-3501731ec053
+                stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+            transform: "\"VALUE\".value:\"track_views\"::STRING"
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
