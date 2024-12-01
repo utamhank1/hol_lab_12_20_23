@@ -1,0 +1,67 @@
+fileVersion: 1
+id: 407f5dc4-d4c0-4c57-a166-1167e20dbcb8
+name: STG_SAMPLE_CSV
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f9ea379-4a3f-4629-86c5-71f0a2022b7a
+          stepCounter: 407f5dc4-d4c0-4c57-a166-1167e20dbcb8
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2436f06f-83f2-49f0-8438-209706b82e5e
+                stepCounter: cb16db91-9dda-484a-95cc-166de3c0b05b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec8d9b6c-fadd-42fd-8be2-11bc4eb0f736
+          stepCounter: 407f5dc4-d4c0-4c57-a166-1167e20dbcb8
+        config: {}
+        dataType: STRING
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a84eaaba-6f73-4cb7-a57e-656700cbf913
+                stepCounter: cb16db91-9dda-484a-95cc-166de3c0b05b
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: EXT_CUSTOMERS_CSV
+        join:
+          joinCondition: FROM {{ ref('WORK', 'EXT_CUSTOMERS_CSV') }} "EXT_CUSTOMERS_CSV"
+        name: STG_SAMPLE_CSV
+        noLinkRefs: []
+  name: STG_SAMPLE_CSV
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

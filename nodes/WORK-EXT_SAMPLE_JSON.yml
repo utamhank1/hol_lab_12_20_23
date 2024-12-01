@@ -1,0 +1,87 @@
+fileVersion: 1
+id: 61388132-21ea-42d9-9032-cd739e9c8b6f
+name: EXT_SAMPLE_JSON
+operation:
+  config:
+    autoRefresh: false
+    cloudProvider: AWS
+    compression: NONE
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: EXT_STG_AZURE
+    fileFormatName: azure_blob_json_format
+    fileFormatType: File Format Name
+    filePattern: ""
+    fileType: JSON
+    integration: ""
+    recDelim: |+
+
+    replaceinvalidcharacters: true
+    skipBlankLines: true
+    skipHeader: "1"
+    snsTopic: arn:aws:sns:us-east-1:121674918127:prod-emea-s3-notification
+    stageName: AZURE_BLOB_EXTERNAL_STAGE/json_files_jj
+    stageStorageLocationName: EXT_STG_AZURE
+    stripouterarray: false
+    trimSpace: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - VALUE: true
+        acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f4fe45c-3b75-40b7-a844-3501731ec053
+          stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - METADATA$FILENAME: true
+        acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c050bba-d030-4e41-823c-99b3e2a34629
+          stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: EXT_SAMPLE_JSON
+        noLinkRefs: []
+  name: EXT_SAMPLE_JSON
+  overrideSQL: false
+  schema: ""
+  sqlType: external-data:::298
+  type: sql
+  version: 1
+type: Node

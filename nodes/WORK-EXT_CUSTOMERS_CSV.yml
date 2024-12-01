@@ -1,6 +1,6 @@
 fileVersion: 1
 id: cb16db91-9dda-484a-95cc-166de3c0b05b
-name: EXT_CUSTOMERS
+name: EXT_CUSTOMERS_CSV
 operation:
   config:
     autoRefresh: false
@@ -76,9 +76,9 @@ operation:
         dependencies: []
         join:
           joinCondition: ""
-        name: EXT_CUSTOMERS
+        name: EXT_CUSTOMERS_CSV
         noLinkRefs: []
-  name: EXT_CUSTOMERS
+  name: EXT_CUSTOMERS_CSV
   overrideSQL: false
   schema: ""
   sqlType: external-data:::298
