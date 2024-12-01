@@ -1,6 +1,9 @@
 fileVersion: 1
 id: "24"
 mappingDefinitions:
+  EXT_STG_AZURE:
+    database: ""
+    schema: ""
   SRC:
     database: SNOWFLAKE_SAMPLE_DATA
     schema: TPCH_SF1

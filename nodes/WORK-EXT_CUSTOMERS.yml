@@ -1,0 +1,87 @@
+fileVersion: 1
+id: cb16db91-9dda-484a-95cc-166de3c0b05b
+name: EXT_CUSTOMERS
+operation:
+  config:
+    autoRefresh: false
+    cloudProvider: AWS
+    compression: NONE
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: ""
+    fileFormatName: azure_blob_csv_format
+    fileFormatType: File Format Values
+    filePattern: ""
+    fileType: CSV
+    integration: ""
+    recDelim: |+
+
+    replaceinvalidcharacters: false
+    skipBlankLines: true
+    skipHeader: "1"
+    snsTopic: arn:aws:sns:us-east-1:121674918127:prod-emea-s3-notification
+    stageName: AZURE_BLOB_EXTERNAL_STAGE/csv_files_jj
+    stageStorageLocationName: EXT_STG_AZURE
+    stripouterarray: false
+    trimSpace: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - VALUE: true
+        acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2436f06f-83f2-49f0-8438-209706b82e5e
+          stepCounter: cb16db91-9dda-484a-95cc-166de3c0b05b
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - METADATA$FILENAME: true
+        acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a84eaaba-6f73-4cb7-a57e-656700cbf913
+          stepCounter: cb16db91-9dda-484a-95cc-166de3c0b05b
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: EXT_CUSTOMERS
+        noLinkRefs: []
+  name: EXT_CUSTOMERS
+  overrideSQL: false
+  schema: ""
+  sqlType: external-data:::298
+  type: sql
+  version: 1
+type: Node
