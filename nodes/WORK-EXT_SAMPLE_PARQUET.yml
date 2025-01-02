@@ -1,0 +1,87 @@
+fileVersion: 1
+id: 979e9369-0f91-4069-8d56-2d12d59a3271
+name: EXT_SAMPLE_PARQUET
+operation:
+  config:
+    autoRefresh: false
+    cloudProvider: AWS
+    compression: AUTO
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: AZURE_BLOB_EXTERNAL_STAGE/json_files_jj
+    fileFormatName: ""
+    fileFormatType: File Format Values
+    filePattern: ""
+    fileType: PARQUET
+    integration: ""
+    recDelim: |+
+
+    replaceinvalidcharacters: true
+    skipBlankLines: true
+    skipHeader: "1"
+    snsTopic: arn:aws:sns:us-east-1:121674918127:prod-emea-s3-notification
+    stageName: AZURE_BLOB_EXTERNAL_STAGE/json_files_jj
+    stageStorageLocationName: EXT_STG_AZURE
+    stripouterarray: false
+    trimSpace: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - VALUE: true
+        acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+          stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - METADATA$FILENAME: true
+        acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea8a88bb-b96e-4fa2-b17d-63fad39dca7f
+          stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: EXT_SAMPLE_PARQUET
+        noLinkRefs: []
+  name: EXT_SAMPLE_PARQUET
+  overrideSQL: false
+  schema: ""
+  sqlType: external-data:::298
+  type: sql
+  version: 1
+type: Node
