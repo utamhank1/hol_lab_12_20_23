@@ -1,0 +1,288 @@
+fileVersion: 1
+id: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+name: STG_SAMPLE_PARQUET
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 53d636f4-e216-4b34-81ab-d2933139a155
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 64c7d727-8f25-4f5f-87ea-955dedd872a4
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ea8a88bb-b96e-4fa2-b17d-63fad39dca7f
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97437658-2b39-47fc-a3b2-1b1013cc0781
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: birthdate
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"birthdate\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 435648da-ffac-4d90-a19d-4f3ed4656482
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: cc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"cc\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70a06469-4736-4e7e-9b0a-30ea977472e7
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: comments
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"comments\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eec6ee34-4518-4dcb-81b9-146034fe00d9
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: country
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"country\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbef9d5b-6449-40aa-a6a9-32d731dd49d0
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: email
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"email\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf636229-004e-463e-a733-d1fdbf8db858
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: first_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"first_name\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9edec0fc-5db7-4b05-86e3-79626f4e76da
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: gender
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"gender\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f69f46f6-32d5-4a86-879f-ef5efba40cff
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: DOUBLE
+        description: ""
+        name: id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"id\"::DOUBLE"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ff8d41dc-a32d-485a-b1e4-26887769312c
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: ip_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"ip_address\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1229dd65-eed4-4623-9a5c-aedc327fb8dc
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: last_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"last_name\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 496afde1-efe6-49fc-a6f2-cd5df01a0352
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: registration_dttm
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"registration_dttm\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5138e574-54ea-4d86-b2d4-44e866a29f14
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: DOUBLE
+        description: ""
+        name: salary
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"salary\"::DOUBLE"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfa03241-1410-415a-bac9-68229a291d58
+          stepCounter: 602f1ba2-64da-478c-8da9-e6c4a2fe244f
+        config: {}
+        dataType: STRING
+        description: ""
+        name: title
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb04610a-de70-4f66-9fb0-4fc7c120c710
+                stepCounter: 979e9369-0f91-4069-8d56-2d12d59a3271
+            transform: "\"EXT_SAMPLE_PARQUET\".\"VALUE\":\"title\"::STRING"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: EXT_SAMPLE_PARQUET
+        join:
+          joinCondition: FROM {{ ref('WORK', 'EXT_SAMPLE_PARQUET') }} "EXT_SAMPLE_PARQUET"
+        name: STG_SAMPLE_PARQUET
+        noLinkRefs: []
+  name: STG_SAMPLE_PARQUET
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

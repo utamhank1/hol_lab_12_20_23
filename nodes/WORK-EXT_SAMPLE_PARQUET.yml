@@ -20,7 +20,7 @@ operation:
     skipBlankLines: true
     skipHeader: "1"
     snsTopic: arn:aws:sns:us-east-1:121674918127:prod-emea-s3-notification
-    stageName: AZURE_BLOB_EXTERNAL_STAGE/json_files_jj
+    stageName: AZURE_BLOB_EXTERNAL_STAGE/parquet_files_jj
     stageStorageLocationName: EXT_STG_AZURE
     stripouterarray: false
     trimSpace: true
