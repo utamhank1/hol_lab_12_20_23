@@ -138,7 +138,7 @@ operation:
   name: STG_SUPPLIER
   overrideSQL: false
   schema: ""
-  sqlType: Stage
+  sqlType: incremental-loading-1-1-1:::230
   type: sql
   version: 1
 type: Node

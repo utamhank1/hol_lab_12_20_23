@@ -3,7 +3,6 @@ id: 2075ce9d-a64a-4909-855c-97ee0f39b6d6
 name: PARTSUPP
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: Partsupp data as defined by TPC-H
   locationName: SRC
@@ -84,12 +83,9 @@ operation:
         nullable: true
         primaryKey: false
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SRC', 'PARTSUPP') }}
   name: PARTSUPP
   schema: ""
   sqlType: Source
-  table: PARTSUPP
   type: sourceInput
   version: 1
 type: Node

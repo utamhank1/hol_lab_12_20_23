@@ -1,8 +1,13 @@
 fileVersion: 1
 id: "1"
 macroString: |-
-  {%- macro test_var(input_) -%}
-    {{ input_ }}
-  {%- endmacro -%}
+  {% macro calculate_profit(extendedprice_col, discount_col, tax_col, supplycost_col, qty_col) %}
+      ({{ extendedprice_col }} * (1 - {{ discount_col }})) - ({{ supplycost_col }} * {{ qty_col }})
+  {% endmacro %}
+
+  {# Macro to calculate total price including tax #}
+  {% macro calculate_total_price(extendedprice_col, discount_col, tax_col) %}
+      {{ extendedprice_col }} * (1 - {{ discount_col }}) * (1 + {{ tax_col }})
+  {% endmacro %}
 name: macro
 type: Macro

@@ -285,6 +285,46 @@ operation:
               - columnCounter: def1928e-34e1-400a-a685-d43326c1c6bc
                 stepCounter: 2075ce9d-a64a-4909-855c-97ee0f39b6d6
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 98c49194-9e95-4684-86d1-3a506af9ebe0
+          stepCounter: a0f1da98-d38a-4d6b-9fff-2dfe5b5e6c21
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: ITEM_PROFIT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "{{ calculate_profit('L_EXTENDEDPRICE', 'L_DISCOUNT', 'L_TAX', 'PS_SUPPLYCOST', 'L_QUANTITY') }}"
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14730cc5-c1bd-4cd0-bf6a-56b231b509e9
+          stepCounter: a0f1da98-d38a-4d6b-9fff-2dfe5b5e6c21
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TOTAL_PRICE_WITH_TAX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "{{ calculate_total_price('L_EXTENDEDPRICE', 'L_DISCOUNT', 'L_TAX') }}"
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
