@@ -1,12 +1,21 @@
 fileVersion: 1
 id: "24"
 mappingDefinitions:
+  AUDIT:
+    database: ""
+    schema: ""
   EXT_STG_AZURE:
     database: ""
     schema: ""
   SRC:
     database: SNOWFLAKE_SAMPLE_DATA
     schema: TPCH_SF1
+  SRC_XML:
+    database: ""
+    schema: ""
+  UTIL:
+    database: ""
+    schema: ""
   WORK:
     database: TXM_DEMO_DW_DB_PROD_UAT
     schema: TXM_DEMO_DW_SCHEMA_PROD_UAT

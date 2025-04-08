@@ -1,0 +1,35 @@
+fileVersion: 1
+id: a190827c-d73c-4836-add5-0862daeef027
+name: CREDITDATA_RAW
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC_XML
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+          stepCounter: a190827c-d73c-4836-add5-0862daeef027
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: RAW_XML
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: CREDITDATA_RAW
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

@@ -1,0 +1,4574 @@
+fileVersion: 1
+id: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+name: STG_CREDITDATA_RAW_FULL_XML
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 791217ed-abb3-486a-a2f2-597b5f5fb2c4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: RAW_XML
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 35a32450-e019-4c1b-aa26-4e76619bbdaf
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@customer_address')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5dd581f8-a995-4a4b-83e6-a6367b203680
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_citystatezip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@customer_citystatezip')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3dfb8839-cd71-4351-beb5-5bd60246c3e3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@customer_name')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e1c26acf-4d54-4083-86f1-fe2b4f45d06c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@customer_number')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 627a1c7a-ef05-4704-9a77-4577ab6867a3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@customer_phone')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3917e6f9-c3b4-42cc-8f89-7dc647252aae
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_date_ordered
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@date_ordered')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ee3a8f5-9f72-456b-b5cc-0844a6d6f878
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_fnma_job
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@fnma_job')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4476fb7e-365e-482b-b41e-b805bbeee420
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_instant_view_pw
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@instant_view_pw')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 49baa33a-8da6-49d7-bb5a-dd870e260bb8
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_loan_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@loan_type')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 791a8454-a2d0-436a-892a-fe45bc6ab1c2
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_property_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@property_address')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2378e26e-f1f3-462b-9411-ba1e7ce128e4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_reference_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@reference_number')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5c3800e-f35b-4fcb-9d55-d353666ae23d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_charge
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@report_charge')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 036608c6-6df0-4deb-903e-9a57dd2748bb
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@report_date')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b447f068-a291-4a67-9694-8e0785e4d294
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@report_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aad5ef86-ece1-46f8-8953-4fbd5b5ba421
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_owner
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@report_owner')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62a407ad-8916-44b7-a338-cd09472c23f9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_to
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@report_to')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c10e6f69-889f-4686-9d9b-9dd9c2cff036
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_repositories
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'HEADER'), '@repositories')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48f18bd8-96ac-4ffb-9896-7c4d5806ed55
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 046e3274-7605-4da8-a163-a6e2644cd9ac
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_dependents
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@dependents')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1f9db4eb-fa03-4100-b7c6-acda8dc5a531
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_dob
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@dob')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5356e37b-8147-4f9b-8d5f-f958d0dd5355
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_firstname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@firstname')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f857ac1d-bdc8-445a-bd8f-711ff4c95b07
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_lastname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@lastname')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 28ac04fc-9a4c-4450-98bc-3bb526cf26f4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_marital_status
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@marital_status')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7ed64524-97ae-4bee-b576-0e85e409fa88
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_middlename
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@middlename')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a679b9e-a625-4a6d-b8cf-0469973dd8b7
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_ssn
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@ssn')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46e90693-19ac-44e2-9f55-08148b9eb742
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_suffix
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER.value, '@suffix')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f7092fad-9c1c-4323-8395-ebd14abb17fe
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_aptnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@aptnumber')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb0ed151-7a05-4d0f-9175-109a9d5278ea
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_city
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@city')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8058c433-756b-480a-8952-1fdd8e7f017d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_state
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@state')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eed77e02-4a98-493f-bbeb-8abe894b8701
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streetdirection
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@streetdirection')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ca93f60-d4fa-4f02-81d9-2ea16e10b21d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streetname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@streetname')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ccc5b92b-1fb5-4f1f-b805-9b7b8f41bff1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streetnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@streetnumber')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b1dedc97-c653-4187-b073-50c4a26557b3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streettype
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@streettype')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d38bc5a9-49bd-4c91-8289-bd6af675437a
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_years_at_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@years_at_address')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9674b392-127e-45e7-acfb-1b83b4020687
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_zip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'ADDRESS'), '@zip')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89b7ac8d-adf0-4cd2-8f6b-768b7fd1fc80
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51879df1-d4c5-451c-940f-7f6230cdf997
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c362de95-7106-4719-8f41-e2ddd6470f8f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5386120e-395f-49d0-9f5f-476facbb5a36
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_lpq_ignore_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@lpq_ignore_score')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ef57283-2298-43dd-88eb-27ce99bf5705
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_maximum_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@maximum_score')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e1c90e1-a399-4f65-a503-a45f3b1dd9d2
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_minimum_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@minimum_score')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 616e6d20-4e31-4f7d-bd42-497504e3b92b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_model_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@model_name')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ed3c0ed-0b5c-479e-ab3f-f671de9cd356
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_model_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@model_type')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a8ac058-873a-4e42-bddb-d23b8eba4aa9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_percentile
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@percentile')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dcd78ad1-f7ca-47d1-96ee-2d6650c2960f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_risk_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@risk_score')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9063e36-9b7c-45bb-824c-5d747b0d825f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90f1f964-1da7-4d05-870a-447438f5e281
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_RISK_FACTOR_factor_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RISK_MODEL.value, 'RISK_FACTOR'), '@factor_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a85022c7-4f9a-41e3-9a3a-b0df655efe1b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_RISK_FACTOR_factor_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RISK_MODEL.value, 'RISK_FACTOR'), '@factor_text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bce8352-74fa-48b0-90fa-ffa584fe50ad
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_RISK_FACTOR_fact_inquiries
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_RISK_MODEL_RISK_FACTOR.value, '@fact_inquiries')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56635c24-8779-42c0-901e-3a00420a7f1e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_day_30
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@day_30')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93246d7e-e01b-47ec-a030-39c758aebbd8
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_day_60
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@day_60')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d2d3ca1-27c5-4949-8811-1fb7b092a05a
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_day_90
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@day_90')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2733c76-f238-4954-b416-e500f3d985a4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_derog_other
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@derog_other')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6bcef810-32e4-4efd-9227-4d97902496b4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_dispute_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@dispute_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5a1d474e-f79b-4fd9-a18a-1a37c3c5dca8
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_inquiry_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@inquiry_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a63d3262-122b-44a1-8ab3-aff57f4322ce
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_latest_late_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@latest_late_date')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f27c61c1-1e68-4e8e-be90-9c4c3a123e49
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_pubrec_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@pubrec_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a0c1f26-dc6f-4cbb-8448-e74882f3067d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_bankruptcy_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_bankruptcy_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c4de52f-d95e-415e-b4b8-add2d82468a8
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_chargeoff_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_chargeoff_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74422a37-70fc-4a7e-9a0c-44313479028e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_collection_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_collection_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5528006a-c80b-4a51-8379-89094ccd63d4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_current_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_current_adverse_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b5a7635-784b-4e8f-a372-09ca9cada80b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_oldest_credname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_oldest_credname')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5b87cf3b-f45f-431c-adc5-506d9386fd4f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_oldest_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_oldest_date')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 68d38122-6754-40ff-973c-9b7dc4103525
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_previous_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_previous_adverse_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe5a4ebe-7138-438e-aeaa-ccba39d78c4f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_satisfactory_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'DEROGATORY_SUMMARY'), '@trade_satisfactory_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d66be74-8096-484a-82b6-c8340d3612c2
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@account_number')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd52a62e-6543-49f8-a034-9d7b4c33ee0a
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_status_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@account_status_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0928cdb-b1d3-457e-9afc-ccab4dfce257
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_status_ext
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@account_status_ext')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67cb877a-60db-48b7-8523-b54ac8a30bf7
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_status_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@account_status_text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 364c3a4c-9985-46ca-a5ec-d1f651afb753
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_type_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@account_type_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89d8056b-1294-4374-a34b-7f4da4c070e1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_type_ext
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@account_type_ext')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0cad7b63-db19-4d0a-9c3a-74d3c52bf61f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_type_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@account_type_text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9338cc3-9810-4f32-a9f8-e5760a22e2b6
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@address')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba2c687d-4830-4c97-bd1b-05f659197ec3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c7933d54-6ef8-4134-8edd-cd6a74f2e8e8
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_city
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@city')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39d89f4c-e181-4b0d-8cea-71cd494acad1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef644605-c70f-4cd6-bb79-39cafba4351f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_credit_limit
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@credit_limit')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7b33668-c9a4-4c3c-97b1-0bbb08406d27
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_creditor_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@creditor_name')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 921f3eb0-201b-4558-8539-264610d06140
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_date_last_past_due
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@date_last_past_due')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b504674-860b-458e-ac74-6ae8f6a6fedf
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_date_open
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@date_open')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b3d712a0-3204-4da9-b758-5ba250f883ce
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_date_reported
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@date_reported')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 839310e9-7671-47dd-b7e8-37b88ebfbb8b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_day_30
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@day_30')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d5c454e-f59c-42c8-a78f-807c17d4c4c5
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_day_60
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@day_60')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc7c058b-37d3-423d-88d2-ef6a3a8d429c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_day_90
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@day_90')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1bca7ed4-7369-4b3a-bac4-701f594c9d5c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_ecoa
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@ecoa')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 785f8deb-c629-4145-92bd-b19e0d20eb9d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_edited
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@edited')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 713ca4ca-bd98-4e45-97fd-7b18bb07a966
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: afb9ee1a-d844-45a5-8066-d99b2c762a3c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_high_credit
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@high_credit')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e46de427-3718-43a2-b21a-9363b05aa2eb
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_history_startdate
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@history_startdate')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d4a277c-a369-467b-ba71-612b669f963b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a01f237-3a0f-437d-9f74-58ab0686c2be
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_include_in_debt
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@include_in_debt')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0fdabc89-5c4d-400d-92ca-434fa9541e98
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_is_current_lender
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@is_current_lender')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be588da0-84e4-4ca9-9e3a-8cf4b6600aff
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_kind_of_business
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@kind_of_business')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d3f11f0-cbeb-4439-8c6c-2083db007556
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_last_activity
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@last_activity')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 95a9a3be-c7f0-47e2-926b-339133786cd6
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_late_dates
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@late_dates')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c66de83-7542-4b6a-bd99-09c6cb65527b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_months_reviewed
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@months_reviewed')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4d8735c-cfea-4593-8f95-7039ed9875b8
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_open_status
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@open_status')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 25484749-c339-4772-aad0-969b79237585
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_owner
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@owner')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08823f1c-d2f9-46d0-b6fa-c0e1072b38c1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_past_due
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@past_due')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55f1362e-1ef4-4051-b952-8f07975e2773
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d39caf5-2b7e-41f0-8a5e-dbe0df18ddf0
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@phone')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c446bc8a-a471-499b-9c98-bffc5c26e95c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_remark_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@remark_text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a8be4f6-9f32-4a3f-8564-e1263182bc5e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_secured
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@secured')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 353725e3-e716-4e72-b7aa-8444695d1d31
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2bd401b9-897b-40b1-a971-eb11fb7d22a8
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_state
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@state')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd8fdbae-9bed-4da9-8b17-cb0e243e35e0
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_subscriber_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@subscriber_number')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2d7ea5d7-e6cc-44b5-b30b-5476ff0b76bf
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_supplement
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@supplement')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2da70f6-7aba-4689-a661-19764cc3f279
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_term
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@term')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ea60c65-f911-4615-af17-223e1c58deae
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_two_year_history
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@two_year_history')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16fb23a5-1c48-4ff6-908b-ba8471fa1890
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_zip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@zip')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc93eac1-191d-4075-a251-ae0ef6380b49
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_comment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@comment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91ae6f73-a348-40bb-a6cd-e6c0c2ab2b91
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_lpq_last_modified_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@lpq_last_modified_date')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a5b5a9a-2056-4d00-9152-44057fd5332c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_deleted
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_TRADELINE.value, '@deleted')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 981041db-f28e-4c66-9179-795629b0130a
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4a4aebc5-9087-4155-ba3b-4e1740480ba0
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_ecoa
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@ecoa')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00b3d959-d246-41da-96a6-6faed9745f85
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_edited
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@edited')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45c3a423-ba8e-4681-b2b3-36e4ae3def79
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0da54d5b-bdf0-4364-a391-fc02f49354dc
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5c6cbdf-c859-4857-ae7d-8d4ac5857920
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_inquiry_company
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@inquiry_company')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: be3acad1-3d35-4d0d-9190-9c0ce523dd80
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_inquiry_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@inquiry_date')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc1463fc-ce67-434c-96e5-b78e8b0b37ce
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_kind_of_business
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@kind_of_business')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ba8f4662-547e-4446-b69b-722d0aab3724
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00a9570d-1627-4060-8d1b-b029eee96590
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_subscriber_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@subscriber_number')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9a2cd8f7-7136-4255-91f8-0e0eed79a01f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_supplement
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INQUIRY.value, '@supplement')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3787563-1cc9-475d-84ad-8e3135638006
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb9393fd-2630-4382-8f18-971c1e1e51c2
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_date_requested
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@date_requested')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b3623005-7ab8-4ec1-abde-feb44217099e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_error_message
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@error_message')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d861f7fe-1857-4634-801f-31ced96c6d6e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e38c3817-f8b2-448f-81a1-c7481860e045
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 22428900-f509-4482-9838-a7184d2d9f34
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_infile_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@infile_date')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a50bb756-1b95-4514-af9d-91f7b16bf162
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_no_record_found
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@no_record_found')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32b1aa38-2160-44e7-b1e0-351d72527768
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 97c003b4-5daa-4292-b5b0-e4b53b94267d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_ssn_mismatch
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_INFILE.value, '@ssn_mismatch')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1f267f2e-57dd-4ddb-a18b-e7ef3c3dc0e1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SSN_VARIATION.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b62bb68-8ed7-4d85-b717-65aade81b6ac
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SSN_VARIATION.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d64b844c-2d26-4533-8cf9-59dc1957b5f5
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SSN_VARIATION.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99c39bc6-3483-425b-9590-096d18389bf9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SSN_VARIATION.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1f99584c-a7a5-43e4-98c3-066277e14c3c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_ssn
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SSN_VARIATION.value, '@ssn')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bb5fe71-16fa-4eec-87be-13b9ce47db9c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_alias
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALIAS_VARIATION.value, '@alias')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d0ae158-597d-46a1-bd79-60f99cc7f7b7
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALIAS_VARIATION.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 075c65a2-e7af-4d4c-8195-82028b1442e3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALIAS_VARIATION.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2dffd65-75b7-4029-b4fd-4a73f90bbb96
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALIAS_VARIATION.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d905b25c-bd6c-4e08-b708-bc41fe22f2bd
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALIAS_VARIATION.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d4097a8c-3ff3-44bf-b218-fbd92bd997e0
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@address')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39260d1c-1509-4edd-955c-dc7e01ed836d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_address_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@address_type')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f300bba-aefa-4966-a929-95603c4b1a85
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_aptnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@aptnumber')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8a387153-8246-4eb8-aead-6878c394f42b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_city
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@city')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96e7fac3-fdeb-4f22-aed5-9975fcb12054
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 50f877fe-53b0-4e10-883c-d8b8de3f8a4d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17483e44-41d2-44be-ad4f-b4867396d932
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f21287d-2324-464e-9d3e-3d4e01d74229
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_reported
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@reported')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd237cf0-b293-4c72-8b1f-2b51de7d2deb
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_since
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@since')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81af8834-7e1d-4265-b7d8-d3f105bfe783
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e11e986-9d9c-4ea3-aa6c-31cef828bd27
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_state
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@state')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88cb6a11-f54c-4a32-bc40-3712d65ef9c7
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streetdirection
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@streetdirection')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1fdab55d-f33f-4f27-a4b1-052acf7eb2eb
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streetname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@streetname')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 203c72f6-e1cb-4c3b-8764-e87be439a7c9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streetnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@streetnumber')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ff06fd1-d775-4169-a06c-6d3e94c922eb
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streettype
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@streettype')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe6df44c-eb79-43e4-935c-8f92110ea5fd
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_zip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ADDRESS_VARIATION.value, '@zip')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b159e7f-6e4e-4c21-9d34-ede19b23937d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@address')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d560f1c6-9c4f-49a2-8404-3739c530929c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67268db0-5553-422e-a2b0-5f0220d5b2bc
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b8394b7e-9e4b-4130-8c2f-b82b7a8c3a0e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8f75faa-9276-448a-8bd0-0838e186924e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@name')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6001293c-838a-4af4-9f56-67b382dca86d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_position
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@position')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0bb68511-41f4-4e2a-a130-1ead78b09009
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_since
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@since')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dced0cb4-20d8-4aa9-a553-f76b840c5dec
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_EMPLOYER_VARIATION.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6fb71bc5-0401-4ff4-89e6-2b9182534be6
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_area_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@area_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59f8c02c-9332-4ba1-a2fc-350bb59c04c0
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3152f21b-73e5-4a02-9c1c-8f2567fbddfc
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_date_reported
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@date_reported')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c5bc89e-f799-42c4-9b6d-44633c7cdea3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_extension
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@extension')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac4c9b22-6a2e-48f1-b9ac-ae8874521bb0
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8094efe-76c2-4606-81ce-545177e11c5e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9327ef8d-dfb9-47c8-9fa6-f507ff05dcd2
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@number')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 04d7716e-af28-4f55-b1be-aa787d269bc2
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 03130e31-d5e5-4005-a0ef-2a7c68bfcc7f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'PHONE_VARIATION'), '@type')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06401ce3-5e4b-495a-aa0f-a6917d07c003
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_FRAUD_PRODUCT.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d8e660dd-46bc-4da1-b490-5350afc589b1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_FRAUD_PRODUCT.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4f6cf6d-2115-4994-aeae-2e117e045b27
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_FRAUD_PRODUCT.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63061183-6d6f-4e44-932b-45a95b9c5399
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_remark
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_FRAUD_PRODUCT.value, '@remark')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 111911f8-490f-4bf6-adbf-c5038b0d9962
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_FRAUD_PRODUCT.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: abe52afc-42de-459b-98a3-d1d641f3b1f9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR.value, '@code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ecb335dc-622a-4e15-98f1-5d7160ef4941
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR.value, '@text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 264252ea-2732-4382-abfd-d97ee226f634
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SAFE_SCAN.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0631eca7-fa35-45cf-817e-84c7c9656c79
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SAFE_SCAN.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 477bbfd6-28be-4633-9329-b2f34035d279
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SAFE_SCAN.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55dbde9f-3d28-40e1-9057-78eb5036ebb3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_indicator_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SAFE_SCAN.value, '@indicator_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c0e3df1-9d31-488a-9ea2-b1d5a9522209
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_safe_scan_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SAFE_SCAN.value, '@safe_scan_text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96afe54c-9df6-4985-a442-c13ba794c9a5
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_SAFE_SCAN.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2718bd91-8b4c-4035-b78a-1fb9235e23d5
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 73ec2310-d621-492e-89f7-ccaead794275
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 627d8375-9927-41aa-842f-67487c4abc9c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4a2df76b-8c5c-42c1-8ec0-23640d38faa4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_hide
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@hide')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7777f388-2b95-4c5d-9c00-ca6ad656f5c1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c202bc1-4ab8-4131-8f64-0632b039d0d2
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_last_modified
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@last_modified')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 025e4aaf-897f-407f-9887-ed6dc50c7e46
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_modified_by
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@modified_by')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4cfac74a-a31a-4645-9748-e24cb7abf60c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_remark_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@remark_text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3735e5b4-c17a-47ac-875f-a0c142f492a9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 42b141bb-dee6-4765-8ef0-994c65fe3ea6
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_ALERT.value, '@type')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 292f95fa-108c-43ba-b09a-9713ad2e9d68
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c69d8bdf-0e17-423d-99bc-aebd3cdd03ae
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f1fcb23-d9f3-46bd-82cb-8f5acd830a4b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_hide
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@hide')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c4c768a-18df-4b91-ab00-a4ca34cd4f50
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06a9115d-bf1f-4c9f-8804-bac8c872041b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_last_modified
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@last_modified')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e0b27581-b93e-4e5b-8573-2629485f8dee
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_modified_by
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@modified_by')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea5d056c-1681-4229-a379-ea7d22282651
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_remark_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@remark_text')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 815620e4-2db4-4daa-bd89-3faad4c8d297
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_REMARK.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1404a808-b9a3-446d-ae59-bf45f7943655
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@address')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 296d5c7b-00a0-4066-8b05-1a6141aa9bec
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_citystatezip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@citystatezip')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8639a390-e6a1-4d8e-9520-25159ccc8947
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@consumer_code')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26e940b5-fce0-4203-83ec-7a7a07eef4a1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@file_id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 679f944e-d668-4eb7-a506-03bee2416882
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@id')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 62035054-68a3-4995-b997-6dfa59418a26
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@name')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93b01e97-73bd-4634-8531-c66e62d47e35
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@phone')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7fc2af0d-8f43-4f8e-8642-d37af28ef848
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(CREDITDATA_CONSUMER_REFERRAL.value, '@source_bureau')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 680ca931-7abf-4324-8f69-8bbf4d376b19
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_public_record_count_pc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@bankruptcy_public_record_count_pc')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 99dbf256-f376-41c6-a0be-5ce86f12a644
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_public_record_count_sc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@bankruptcy_public_record_count_sc')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e9e40e87-34bf-4676-bca8-c2dda8c921fe
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_trade_count_pc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@bankruptcy_trade_count_pc')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a64c679c-605b-4d2e-8cae-a13983ab22ec
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_trade_count_sc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@bankruptcy_trade_count_sc')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 013befad-4300-4394-a0e8-6eccf41ac1ee
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_day_30
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@day_30')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60380375-1e71-4842-a532-814d3c78a57f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_day_60
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@day_60')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 223e08bb-c1e3-452e-b7a9-b35cd60a6616
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_day_90
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@day_90')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 69aa0c43-fa7c-4149-b01e-843110aa2997
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@installment_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27b53fc7-1869-4e5e-bcc4-376d0231500c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@installment_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fecf49c9-7099-404a-aea8-e8f1fdac7417
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@installment_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3910767b-0984-4e05-b543-1a211a195169
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@installment_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 24b4a31f-cb7a-426a-bdae-05630853fc6f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@mortgage_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9533567-ae11-42ca-b4db-b4141c31457f
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@mortgage_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c2feaac2-443a-47f9-ad22-1904436cb443
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@mortgage_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 493bab2a-f5d4-42fb-a783-4897709e6cba
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@mortgage_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 255e193b-0d6e-49cc-86a4-ceb022cb18cd
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@open_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6a390be-00c6-4bb1-b8dc-447ee7e9ca9c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@open_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f9cd7b41-bba5-480c-a8a4-33339f5fc8d4
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@open_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e1103ab-91e8-40da-a1e2-428dd0232077
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@open_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93700fc4-516f-4b67-8cb8-bb0268cf5c9d
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_original_unsecure_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@original_unsecure_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59a56436-4fd4-4779-8118-cbec97a18776
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@revolving_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8fea1234-ecfc-41a0-a7e1-d7c6937f0b90
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@revolving_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4f9fb56-994f-467c-a3ec-5b87cfe11f8b
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@revolving_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ace9b775-dac4-41df-9dd3-b8ac365ebf66
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@revolving_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3408aef5-6389-4230-af5b-20e6c806abf9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a05ffc4d-4e17-4ac2-8287-7f2821895153
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f62ebb5d-70ef-4c61-9545-89c8eb1348fe
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_no_mortgage_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3d9714a6-2ab9-4b81-a366-64a35e3feed9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_no_mortgage_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c529a97d-af45-47e0-91ec-571e4ada1001
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_no_mortgage_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f73e4e06-14e5-4bae-8237-87d704190aad
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_no_mortgage_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ea63bdb-b5d3-4c57-a2d1-03b233d111f3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aacd1461-578f-4fb6-9ba1-832e887e29c7
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@secure_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b1f8f07d-714c-4d6c-88be-636dbd2f7d0a
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@total_trade_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae83e8af-f31e-4bd7-8582-e69d8fe1f183
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@total_trade_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 37aeb768-4ab2-4663-b1a9-f2283ccf2955
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@total_trade_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5201e625-5288-4c59-bcbe-844745bd4e55
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@total_trade_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70a9fef6-e53e-4cec-859e-837e79575ca1
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_chargeoff_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@trade_chargeoff_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7abb0ab2-6e1f-47e9-a941-a63f7d145674
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_current_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@trade_current_adverse_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dbd1c518-0f41-47af-8409-4da0c853abf3
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_oldest_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@trade_oldest_date')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4daa4f05-bba3-4275-95a8-dd961c37f8b7
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_previous_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@trade_previous_adverse_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a10c458c-6c67-4869-8586-1f70a75af7f9
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_satisfactory_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@trade_satisfactory_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6bf561e-df05-4ecb-905f-9362dae7c802
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unknown_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6224f84-d0b7-474e-882a-4d337d46c2d6
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unknown_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5577508-316a-4ff4-af31-cb46e9a6e074
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unknown_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8e0ad049-a703-4ffb-ac2a-2408ec20139c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unknown_payment')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 93ce26ba-f93c-4eb6-84ea-882da2b4da0e
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unsecure_balance')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1cbf62f-9bff-4cdb-b10b-6e1b0022756c
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unsecure_count')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fcbfb23d-1889-42b0-9104-a0113f051ffe
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unsecure_pastdue')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67bf1e75-02d0-401e-96f4-8e804c70f3be
+          stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+                stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+            transform: get(xmlget(CREDITDATA_RAW_FULL_XML.RAW_XML, 'TRADE_SUMMARY'), '@unsecure_payment')
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC_XML
+            nodeName: CREDITDATA_RAW_FULL_XML
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC_XML', 'CREDITDATA_RAW_FULL_XML') }} "CREDITDATA_RAW_FULL_XML", 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_CONSUMER, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_RISK_MODEL, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RISK_MODEL.value, '$')) CREDITDATA_RISK_MODEL_RISK_FACTOR, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_TRADELINE, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_INQUIRY, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_INFILE, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_SSN_VARIATION, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_ALIAS_VARIATION, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_ADDRESS_VARIATION, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_EMPLOYER_VARIATION, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_FRAUD_PRODUCT, 
+            LATERAL FLATTEN(input => get(CREDITDATA_FRAUD_PRODUCT.value, '$')) CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_SAFE_SCAN, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_ALERT, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_REMARK, 
+            LATERAL FLATTEN(input => get(CREDITDATA_RAW_FULL_XML.RAW_XML, '$')) CREDITDATA_CONSUMER_REFERRAL
+            where get(CREDITDATA_CONSUMER.value, '@') = 'CONSUMER'
+             and get(CREDITDATA_RISK_MODEL.value, '@') = 'RISK_MODEL'
+             and get(CREDITDATA_RISK_MODEL_RISK_FACTOR.value, '@') = 'RISK_FACTOR'
+             and get(CREDITDATA_TRADELINE.value, '@') = 'TRADELINE'
+             and get(CREDITDATA_INQUIRY.value, '@') = 'INQUIRY'
+             and get(CREDITDATA_INFILE.value, '@') = 'INFILE'
+             and get(CREDITDATA_SSN_VARIATION.value, '@') = 'SSN_VARIATION'
+             and get(CREDITDATA_ALIAS_VARIATION.value, '@') = 'ALIAS_VARIATION'
+             and get(CREDITDATA_ADDRESS_VARIATION.value, '@') = 'ADDRESS_VARIATION'
+             and get(CREDITDATA_EMPLOYER_VARIATION.value, '@') = 'EMPLOYER_VARIATION'
+             and get(CREDITDATA_FRAUD_PRODUCT.value, '@') = 'FRAUD_PRODUCT'
+             and get(CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR.value, '@') = 'FRAUD_INDICATOR'
+             and get(CREDITDATA_SAFE_SCAN.value, '@') = 'SAFE_SCAN'
+             and get(CREDITDATA_ALERT.value, '@') = 'ALERT'
+             and get(CREDITDATA_REMARK.value, '@') = 'REMARK'
+             and get(CREDITDATA_CONSUMER_REFERRAL.value, '@') = 'CONSUMER_REFERRAL'
+        name: STG_CREDITDATA_RAW_FULL_XML
+        noLinkRefs: []
+  name: STG_CREDITDATA_RAW_FULL_XML
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

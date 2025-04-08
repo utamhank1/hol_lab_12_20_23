@@ -1,0 +1,55 @@
+fileVersion: 1
+id: 7ca1c4f4-8442-449e-8f24-586a2e6a68fa
+name: INFER_NODE
+operation:
+  config:
+    fileFormatLoc: UTIL
+    fileFormatName: FF_CSV
+    fileNames: csv_files_jj/customers-10000.csv
+    redeploymentBehavior: Create or Replace
+    stageName: AZURE_BLOB_EXTERNAL_STAGE
+    stageStorageLocationName: EXT_STG_AZURE
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14af5bce-98ff-4b3c-9241-725cea9f7863
+          stepCounter: 7ca1c4f4-8442-449e-8f24-586a2e6a68fa
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        dummycolumn: true
+        name: DATA
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: This column is not part of inferred table
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: INFER_NODE
+        noLinkRefs: []
+  name: INFER_NODE
+  overrideSQL: false
+  schema: ""
+  sqlType: external-data-package-1-2-0:::299
+  type: sql
+  version: 1
+type: Node

@@ -1,6 +1,9 @@
 defaultStorageMapping: WORK
 fileVersion: 1
 locations:
+  - AUDIT
   - EXT_STG_AZURE
   - SRC
+  - SRC_XML
+  - UTIL
   - WORK

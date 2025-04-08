@@ -1,0 +1,75 @@
+fileVersion: 1
+id: 507ea939-7038-4606-8eae-ed13651703ed
+name: RUN_AUDIT_LOG_RAW
+operation:
+  config:
+    extIntegration: COALESCE_API_INTEGRATION_DB_JJ
+    headers: |-
+      {
+                  'Accept': 'application/json',
+                  'Authorization': f'Bearer {{parameters.api_token}}'
+              }
+    method: get
+    payload: ""
+    uri: https://app.coalescesoftware.io/api/v1/runs/657/results
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e01ed5f5-ac8d-4040-a5f4-8a1664063cf9
+          stepCounter: 507ea939-7038-4606-8eae-ed13651703ed
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: URI
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        uri: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 186cdebf-2a14-41d4-86c9-33d28f75bfde
+          stepCounter: 507ea939-7038-4606-8eae-ed13651703ed
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: RESPONSE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        value: true
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: RUN_AUDIT_LOG_RAW
+        noLinkRefs: []
+  name: RUN_AUDIT_LOG_RAW
+  overrideSQL: false
+  schema: ""
+  sqlType: external-data-package-1-2-0:::303
+  type: sql
+  version: 1
+type: Node

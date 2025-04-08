@@ -1,12 +1,21 @@
 fileVersion: 1
 id: "23"
 mappingDefinitions:
+  AUDIT:
+    database: ""
+    schema: ""
   EXT_STG_AZURE:
     database: ""
     schema: ""
   SRC:
     database: SNOWFLAKE_SAMPLE_DATA
     schema: TPCH_SF1
+  SRC_XML:
+    database: ""
+    schema: ""
+  UTIL:
+    database: ""
+    schema: ""
   WORK:
     database: JJ_TEST
     schema: JJ_TEST_SCHEMA

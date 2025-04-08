@@ -3,7 +3,6 @@ id: 31be2011-41ed-4757-806b-c651f9879fc8
 name: PART
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: Part data as defined by TPC-H
   locationName: SRC
@@ -144,12 +143,9 @@ operation:
         nullable: true
         primaryKey: false
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SRC', 'PART') }}
   name: PART
   schema: ""
   sqlType: Source
-  table: PART
   type: sourceInput
   version: 1
 type: Node

@@ -1,0 +1,302 @@
+fileVersion: 1
+id: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+name: COPY_NODE1
+operation:
+  config:
+    awsSnsTopic: test
+    cloudProvider: AWS
+    compression: NONE
+    dateformat: ""
+    enforceLength: ""
+    errornumber: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: UTIL
+    fileFormatName: FF_CSV
+    fileFormatType: File Format Values
+    fileNames: "'csv_files_jj/customers-10000.csv'"
+    filePattern: ""
+    fileType: CSV
+    flagLoadHistorical: true
+    flagSnowpipe: Enable Snowpipe
+    forceLoad: ""
+    inferschema: false
+    integration: null
+    intextstage: true
+    loadUncertainFiles: ""
+    onError: ""
+    purgeBehavior: ""
+    recDelim: |+
+
+    replaceinvalidcharacters: false
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: AZURE_BLOB_EXTERNAL_STAGE
+    stageStorageLocationName: EXT_STG_AZURE
+    storageintegration: ""
+    stripouterarray: false
+    subfolder: csv_files_jj
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateBefore: true
+    truncateColumns: ""
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3314b3a4-99f0-4aeb-b9e0-972d7076fab5
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: NUMBER(5,0)
+        defaultValue: ""
+        description: ""
+        name: Index
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ad010ad4-7cef-400b-82f7-80b0255405f9
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Customer Id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8dfd097b-b3d5-472a-acf3-4210cfb6f892
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: First Name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1590d507-80d1-49b7-9d9d-afca957d01f0
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Last Name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c44ba9d-f861-4ece-942e-1d7bd2d2fe61
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Company
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 66a74f81-668b-43d6-8071-46f7d85ae3c4
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: City
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5f7f0fb-2e17-4f00-86f8-ba290e9f0288
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Country
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb7fc946-1023-481c-bd74-6e8814c3102f
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Phone 1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4ed3cbe7-adee-4831-a71a-40a701cf1444
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Phone 2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86e18f45-6a4e-4122-bfaa-1518798512d9
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Email
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 606c4239-1eb2-4745-8b1c-76dceffca86d
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: Subscription Date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 847b380e-e31f-4774-8b67-8f12311109db
+          stepCounter: 481a4da7-c51b-4b82-94e0-3e9acb1437d7
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: Website
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: COPY_NODE1
+        noLinkRefs: []
+  name: COPY_NODE1
+  overrideSQL: false
+  schema: ""
+  sqlType: "125"
+  type: sql
+  version: 1
+type: Node

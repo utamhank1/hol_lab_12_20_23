@@ -1,0 +1,329 @@
+fileVersion: 1
+id: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+name: STG_CREDITDATA_RAW
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3e6b0fe6-c8f0-48c3-bb21-b9281635bd09
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: RAW_XML
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 673c83f1-b73f-47c5-b436-d8d12d88e6af
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |
+              '1'
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe08755b-91f8-4721-a691-3c04031fe8db
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_FRAUD_PRODUCT_id".split('_')[-1] %}
+
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL 
+                  END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 68e34e90-a1a9-4c1b-a8b7-6f10288d1fd6
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_FRAUD_PRODUCT_id".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67203b5b-a46d-4ef9-940a-451a2ba88f4a
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_remark
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_FRAUD_PRODUCT_remark".split('_')[-1] %}
+
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: de51b33e-465f-4451-9fee-1c70514964f9
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@source_bureau']::STRING 
+                      ELSE NULL 
+                  END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d78cbe7-bd33-44dd-930a-d60743e4e3f9
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_code".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b7836b4-2bc1-4610-bc6d-7e44f4e0be89
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_text".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: acb95974-a7bf-4397-8a2e-25b2ac7c8f3a
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@consumer_code']::STRING 
+                      ELSE NULL 
+                  END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f0257f3e-acbf-42e0-af79-e950bdb8cf0f
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_SAFE_SCAN_file_id".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b899e3bb-96de-434c-a44b-8e27ee01ec8b
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_SAFE_SCAN_id".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a932e5b6-0100-45d3-897f-9071bd504416
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_indicator_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_SAFE_SCAN_indicator_code".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe2af86e-fb47-47de-8e9b-7b8dece7d330
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_safe_scan_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_SAFE_SCAN_safe_scan_text".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fe20e036-d4aa-497e-80f5-9b490c2cc171
+          stepCounter: 9a18eb4e-8786-4ebb-920c-9c9e7fa9a452
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cf397f10-8241-4f1e-aca3-0b5023c857f2
+                stepCounter: a190827c-d73c-4836-add5-0862daeef027
+            transform: |-
+              {% set target_col = "CREDITDATA_SAFE_SCAN_source_bureau".split('_')[-1] %}
+              CASE 
+                      WHEN GET(fraud_unnested.value, '@') = 'FRAUD_PRODUCT' THEN fraud_unnested.value['@{{target_col}}']::STRING 
+                      ELSE NULL END
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CREDITDATA_RAW: a190827c-d73c-4836-add5-0862daeef027
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC_XML
+            nodeName: CREDITDATA_RAW
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC_XML', 'CREDITDATA_RAW') }} "CREDITDATA_RAW", 
+            LATERAL FLATTEN(CREDITDATA_RAW.RAW_XML:"$") fraud_unnested,
+        name: STG_CREDITDATA_RAW
+        noLinkRefs: []
+  name: STG_CREDITDATA_RAW
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

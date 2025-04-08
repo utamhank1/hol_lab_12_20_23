@@ -1,0 +1,35 @@
+fileVersion: 1
+id: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+name: CREDITDATA_RAW_FULL_XML
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC_XML
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 24466bdc-c392-4b12-a863-51c4c3e4a34e
+          stepCounter: c27cf3bf-a91d-4f2c-9a38-af5ba91de629
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: RAW_XML
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: CREDITDATA_RAW_FULL_XML
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
