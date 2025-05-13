@@ -1,0 +1,197 @@
+fileVersion: 1
+id: 67302c62-11ae-429f-babb-3d06589068eb
+name: TEST_RESULTS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7d7be9a5-5551-46f4-96b3-bb06a0eb28ae
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: NUMBER IDENTITY
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TEST_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 646ee506-217d-488a-8fb9-eec5e7385241
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: NODE_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf4d5ec3-7391-42fd-97e8-7c4765a1c14c
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TEST_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06168a4d-7778-4f9b-bc67-b7ac27c31e10
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: VARCHAR(10)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TEST_STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7780f2d2-08c0-4231-95a4-45df933de10d
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: PIPELINE_RUN_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e15f80af-5049-435e-af8d-b9f41f0b1044
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: TIMESTAMP_LTZ
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: EXECUTION_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20a98a21-346f-4859-b63b-751d60921893
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: VIOLATION_COUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 687322b6-8efc-4f00-b9d1-4b7784d9158d
+          stepCounter: 67302c62-11ae-429f-babb-3d06589068eb
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: VIOLATIONS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: TEST_RESULTS
+        noLinkRefs: []
+  name: TEST_RESULTS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

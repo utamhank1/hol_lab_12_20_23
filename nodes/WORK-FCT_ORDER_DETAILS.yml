@@ -3,7 +3,99 @@ id: b47e362c-562b-4f32-a1cc-4e4f1ffcaa02
 name: FCT_ORDER_DETAILS
 operation:
   config:
-    postSQL: ""
+    postSQL: |-
+      -- Test 1: Failing test with medium sample size
+      INSERT INTO {{ ref('WORK', 'TEST_RESULTS') }} (
+          NODE_NAME,
+          TEST_NAME,
+          PIPELINE_RUN_ID,
+          TEST_STATUS,
+          EXECUTION_TIME,
+          VIOLATION_COUNT,
+          VIOLATIONS
+      )
+      WITH violations AS (
+          SELECT *
+          FROM {{this}}
+          LIMIT 15  -- This will return the first 15 rows
+      )
+      SELECT 
+          '{{node.name}}' AS NODE_NAME,
+          'Sample Quality Check - Medium' AS TEST_NAME,
+          '1' AS PIPELINE_RUN_ID,
+          'FAIL' AS TEST_STATUS,  -- Always fail
+          CURRENT_TIMESTAMP() AS EXECUTION_TIME,
+          COUNT(*) AS VIOLATION_COUNT,
+          OBJECT_CONSTRUCT('violations', ARRAY_AGG(OBJECT_CONSTRUCT(*))) AS VIOLATIONS
+      FROM violations;
+
+      -- Test 2: Failing test with small sample size
+      {{ stage('Sample Quality Check - Small') }}
+      INSERT INTO {{ ref('WORK', 'TEST_RESULTS') }} (
+          NODE_NAME,
+          TEST_NAME,
+          PIPELINE_RUN_ID,
+          TEST_STATUS,
+          EXECUTION_TIME,
+          VIOLATION_COUNT,
+          VIOLATIONS
+      )
+      WITH violations AS (
+          SELECT *
+          FROM {{this}}
+          LIMIT 5  -- This will return the first 5 rows
+      )
+      SELECT 
+          '{{node.name}}' AS NODE_NAME,
+          'Sample Quality Check - Small' AS TEST_NAME,
+          '1' AS PIPELINE_RUN_ID,
+          'FAIL' AS TEST_STATUS,  -- Always fail
+          CURRENT_TIMESTAMP() AS EXECUTION_TIME,
+          COUNT(*) AS VIOLATION_COUNT,
+          OBJECT_CONSTRUCT('violations', ARRAY_AGG(OBJECT_CONSTRUCT(*))) AS VIOLATIONS
+      FROM violations;
+
+      -- Test 3: Successful test - Date Validation
+      {{ stage('Date Validation Check') }}
+      INSERT INTO {{ ref('WORK', 'TEST_RESULTS') }} (
+          NODE_NAME,
+          TEST_NAME,
+          PIPELINE_RUN_ID,
+          TEST_STATUS,
+          EXECUTION_TIME,
+          VIOLATION_COUNT,
+          VIOLATIONS
+      )
+      SELECT 
+          '{{node.name}}' AS NODE_NAME,
+          'Date Validation Check' AS TEST_NAME,
+          '1' AS PIPELINE_RUN_ID,
+          'PASS' AS TEST_STATUS,
+          CURRENT_TIMESTAMP() AS EXECUTION_TIME,
+          0 AS VIOLATION_COUNT,
+          NULL AS VIOLATIONS
+      FROM (SELECT 1) d;
+
+      -- Test 4: Successful test - Supply Cost Validation
+      {{ stage('Supply Cost Validation') }}
+      INSERT INTO {{ ref('WORK', 'TEST_RESULTS') }} (
+          NODE_NAME,
+          TEST_NAME,
+          PIPELINE_RUN_ID,
+          TEST_STATUS,
+          EXECUTION_TIME,
+          VIOLATION_COUNT,
+          VIOLATIONS
+      )
+      SELECT 
+          '{{node.name}}' AS NODE_NAME,
+          'Supply Cost Validation' AS TEST_NAME,
+          '1' AS PIPELINE_RUN_ID,
+          'PASS' AS TEST_STATUS,
+          CURRENT_TIMESTAMP() AS EXECUTION_TIME,
+          0 AS VIOLATION_COUNT,
+          NULL AS VIOLATIONS
+      FROM (SELECT 1) d;
     preSQL: ALTER SESSION SET QUOTED_IDENTIFIERS_IGNORE_CASE = {{ parameters.Quoted_identifier_ignore_case }};
     testsEnabled: true
   database: ""
