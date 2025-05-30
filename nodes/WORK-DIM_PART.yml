@@ -3,7 +3,7 @@ id: 41fb7aad-7e97-4060-bbeb-33c1dc403223
 name: DIM_PART
 operation:
   config:
-    postSQL: ""
+    postSQL: Select 1=1
     preSQL: ALTER SESSION SET QUOTED_IDENTIFIERS_IGNORE_CASE = {{ parameters.Quoted_identifier_ignore_case }};
     testsEnabled: true
   database: ""
@@ -13,7 +13,12 @@ operation:
   locationName: WORK
   materializationType: table
   metadata:
-    appliedNodeTests: []
+    appliedNodeTests:
+      - continueOnFailure: false
+        description: ""
+        name: Test
+        runOrder: After
+        templateString: select * from {{this}} where P_PARTKEY <  120002
     columns:
       - acceptedValues:
           strictMatch: true
