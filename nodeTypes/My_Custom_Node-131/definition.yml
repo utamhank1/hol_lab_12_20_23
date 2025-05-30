@@ -1,12 +1,11 @@
 fileVersion: 1
-id: Stage
+id: "131"
 isDisabled: false
 metadata:
   defaultStorageLocation: null
   error: null
   nodeMetadataSpec: |
-    capitalized: Stage
-    short: STG
+    capitalized: My_Custom_Node
     plural: Stages
     tagColor: '#2EB67D'
 
@@ -37,6 +36,16 @@ metadata:
         isRequired: true
         enableIf: "{% if node.isMultisource %} true {% else %} false {% endif %}"
 
+      - attributeName: insertStrategy2
+        type: dropdownSelector
+        default: INSERT
+        options:
+        - "INSERT"
+        - "UNION"
+        - "UNION ALL"
+        isRequired: true
+        enableIf: "{% if node.isMultisource %} true {% else %} false {% endif %}"
+
       - displayName: Truncate Before
         attributeName: truncateBefore
         type: toggleButton
@@ -58,5 +67,5 @@ metadata:
         type: textBox
         syntax: sql
         isRequired: false
-name: Stage
+name: My_Custom_Node
 type: NodeType
