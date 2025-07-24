@@ -140,14 +140,15 @@ operation:
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          CUSTOMER: 7117c1b2-268c-4551-b8af-80afdb1c3a83
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC
             nodeName: CUSTOMER
         join:
-          joinCondition: FROM {{ ref('SRC', 'CUSTOMER') }} "CUSTOMER"
+          joinCondition: FROM {{ ref('SRC', 'CUSTOMER') }} "CUSTOMER" LIMIT 50 OFFSET 50
         name: STG_CUSTOMER
         noLinkRefs: []
   name: STG_CUSTOMER

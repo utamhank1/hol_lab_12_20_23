@@ -52,6 +52,26 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91a0913b-3eb3-4f34-b1eb-74a45117c63d
+          stepCounter: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: MY_SEQUENCE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "\"JJ_DEV\".\"JJ_DEV_SCHEMA\".my_sequence.NEXTVAL"
+        systemColumnType: None
       - appliedColumnTests:
           hasNull: true
           isDistinct: true
