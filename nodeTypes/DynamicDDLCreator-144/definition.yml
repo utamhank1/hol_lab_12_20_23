@@ -1,0 +1,75 @@
+fileVersion: 1
+id: "144"
+isDisabled: false
+metadata:
+  defaultStorageLocation: null
+  error: null
+  nodeMetadataSpec: |-
+    capitalized: Dynamic Table Creator
+    short: 'DTC'
+    tagColor: '#FF6F61' # A distinct color for DDL management nodes
+    isDisabled: false
+    plural: Dynamic Table Creators
+    deployStrategy: advanced # Advanced to allow for custom create/run logic
+    isColumnResyncEnabled: false # Columns are managed dynamically, not by Coalesce UI directly
+
+    config:
+      - groupName: Metadata Configuration
+        items:
+          - displayName: Metadata Table Location
+            attributeName: metadataTableLocation
+            type: textBox
+            isRequired: true
+            description: Select the storage location where your metadata table resides.
+
+          - displayName: Metadata Table Name
+            attributeName: metadataTableName
+            type: textBox
+            default: 'FILE_METADATA' # Example default name
+            isRequired: true
+            description: The name of the table containing file ingestion metadata (e.g., TARGET_DB, TARGET_SCHEMA, TARGET_TABLE_NAME).
+
+          - displayName: Infer Schema on Create
+            attributeName: inferSchemaOnCreate
+            type: toggleButton
+            default: false
+            description: >
+              If true, the node will attempt to infer the schema from source files based on metadata.
+              Requires 'stageName' and 'fileNames' or 'filePattern' in metadata.
+              WARNING: Can be slow for many tables. Consider pre-inferring and storing schema in metadata.
+
+      - groupName: Staging Information (if schema inference is enabled)
+        enableIf: "{% if config.inferSchemaOnCreate %} true {% else %} false {% endif %}"
+        items:
+          - displayName: Source Stage Storage Location
+            attributeName: sourceStageLocation
+            type: textBox
+            isRequired: true
+            description: The storage location for the stages referenced in your metadata.
+            
+    systemColumns:
+      - displayName: STATUS
+        transform: 'NULL' # Populated by the stored procedure in the create template
+        dataType: VARCHAR
+        placement: end
+        attributeName: status
+
+      - displayName: TARGET_TABLE
+        transform: 'NULL'
+        dataType: VARCHAR
+        placement: end
+        attributeName: targetTable
+
+      - displayName: OPERATION_TYPE
+        transform: 'NULL' # e.g., 'CREATE', 'ALTER', 'SKIP'
+        dataType: VARCHAR
+        placement: end
+        attributeName: operationType
+
+      - displayName: TIMESTAMP
+        transform: 'CURRENT_TIMESTAMP()::TIMESTAMP_NTZ'
+        dataType: TIMESTAMP_NTZ
+        placement: end
+        attributeName: timestamp
+name: Dynamic DDL Creator
+type: NodeType

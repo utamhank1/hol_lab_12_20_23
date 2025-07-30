@@ -17,7 +17,7 @@ operation:
     fileFormatName: FF_CSV
     fileFormatType: File Format Values
     fileNames: "'csv_files_jj/customers-10000.csv'"
-    filePattern: ""
+    filePattern: "*[get_timestamp_formatted()]"
     fileType: CSV
     flagLoadHistorical: true
     flagSnowpipe: Enable Snowpipe

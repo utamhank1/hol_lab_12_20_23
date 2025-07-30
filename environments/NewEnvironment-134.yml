@@ -1,8 +1,0 @@
-fileVersion: 1
-id: "134"
-mappingDefinitions:
-  AUDIT:
-    database: ""
-    schema: ""
-name: New Environment
-type: Environment

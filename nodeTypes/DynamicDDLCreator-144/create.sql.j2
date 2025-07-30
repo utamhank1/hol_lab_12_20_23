@@ -1,0 +1,172 @@
+{#
+    Copyright (c) 2025 Coalesce. All rights reserved.
+    This template is for the "Dynamic Table Creator" node, designed to
+    create/alter target tables based on metadata from a configuration table.
+    It separates DDL management from data loading.
+#}
+
+{% if desiredState %}
+
+    {# == Step 1: Manage the DDL for THIS node's own output table (for logging) == #}
+    {# This ensures the log table for the DDL operations exists and is correctly configured. #}
+
+    {% if desiredState.node.materializationType == 'table' or desiredState.node.materializationType == 'transient table' %}
+
+        {% if currentState != undefined and currentState.node.materializationType != desiredState.node.materializationType %}
+            {# Change in materialization type #}
+            {{ stage('Drop ' + currentState.node.materializationType + ' ' + ref_no_link(currentState.node.location.name, currentState.node.name)) }}
+            {% if currentState.node.materializationType == 'view' %}
+                  DROP {{currentState.node.materializationType}} IF EXISTS {{ ref_no_link(currentState.node.location.name, currentState.node.name) }}
+            {% else %}
+                  DROP TABLE IF EXISTS {{ ref_no_link(currentState.node.location.name, currentState.node.name) }}
+            {% endif %}
+        {% endif %}
+
+        {{ stage('Create/Replace Logging Table for Dynamic Table Creator') }}
+        CREATE OR REPLACE {{desiredState.node.materializationType}} {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }}
+        (
+            {% for col in desiredState.columns %}
+                "{{ col.name }}" {{ col.dataType }}
+                {%- if not col.nullable %} NOT NULL
+                    {%- if col.defaultValue | length > 0 %} DEFAULT {{ col.defaultValue }}{% endif %}
+                {% endif %}
+                {%- if col.description | length > 0 %} COMMENT '{{ col.description | escape }}'{% endif %}
+                {%- if not loop.last -%}, {% endif %}
+            {% endfor %}
+        )
+        {%- if desiredState.node.description | length > 0 %} COMMENT = '{{ desiredState.node.description | escape }}'{% endif %};
+
+    {% endif %}
+
+    {# == Step 2: Execute an anonymous stored procedure to dynamically create/alter target tables == #}
+    {# This procedure reads from the metadata table and applies DDL. #}
+    {{ stage('Execute Dynamic Table Creation Logic') }}
+
+    DECLARE
+        metadata_cursor CURSOR FOR SELECT * FROM {{ ref(config.metadataTableLocation, config.metadataTableName) }};
+        target_db VARCHAR;
+        target_schema VARCHAR;
+        target_table VARCHAR;
+        table_ddl_statement VARCHAR;
+        create_or_alter_sql VARCHAR;
+        log_message VARCHAR;
+        log_status VARCHAR;
+        log_operation VARCHAR;
+        current_stage_name VARCHAR;
+        current_file_name VARCHAR;
+        current_subfolder VARCHAR;
+        current_file_format_name VARCHAR;
+        source_stage_db VARCHAR;
+        source_stage_sch VARCHAR;
+        file_list_for_infer VARCHAR;
+        inferred_schema_query VARCHAR;
+        dynamic_cols_list VARCHAR;
+        col_type VARCHAR;
+    BEGIN
+        log_message := 'Starting dynamic table creation for node {{ desiredState.node.name }}.';
+        INSERT INTO {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }} (STATUS, TARGET_TABLE, OPERATION_TYPE, TIMESTAMP)
+        VALUES ('INFO', 'N/A', log_message, CURRENT_TIMESTAMP());
+
+        FOR record IN metadata_cursor DO
+            target_db := record.TARGET_DB;
+            target_schema := record.TARGET_SCHEMA;
+            target_table := record.TARGET_TABLE_NAME;
+            log_status := 'SUCCESS';
+            log_operation := 'CREATE/ALTER';
+
+            -- Construct fully qualified target table name
+            create_or_alter_sql := 'CREATE OR REPLACE TABLE ' || target_db || '.' || target_schema || '."' || target_table || '"';
+
+            -- Option 1: Infer Schema dynamically on creation (less performant for many tables)
+            {% if config.inferSchemaOnCreate %}
+                current_stage_name := record.SOURCE_STAGE_NAME;
+                current_file_name := record.SOURCE_FILE_NAME; -- Assuming FILE_NAME or FILE_PATTERN column in metadata
+                current_subfolder := record.SOURCE_SUBFOLDER;
+                current_file_format_name := record.FILE_FORMAT_NAME;
+
+                -- Get the actual database and schema for the source stage location from Coalesce's context
+                -- This requires accessing storageLocations which is usually only available in Run template.
+                -- For Create template, you'd need to manually pass/configure these or hardcode for specific stages.
+                -- A more robust way would be to get these from a separate metadata table that maps stage names to db/schema
+                {% set stage_location_map = {} %}
+                {% for loc in desiredState.storageLocations %}
+                    {% if loc.name == config.sourceStageLocation %}
+                        {% set _ = stage_location_map.update({'db': loc.database, 'schema': loc.schema}) %}
+                    {% endif %}
+                {% endfor %}
+                source_stage_db := '{{ stage_location_map.db | default("YOUR_DEFAULT_STAGE_DB") }}';
+                source_stage_sch := '{{ stage_location_map.schema | default("YOUR_DEFAULT_STAGE_SCHEMA") }}';
+
+                IF (current_file_name IS NOT NULL AND LENGTH(current_file_name) > 0) THEN
+                    file_list_for_infer := 'FILES => (''' || REPLACE(current_file_name, ',', ''',''') || ''')';
+                ELSEIF (record.SOURCE_FILE_PATTERN IS NOT NULL AND LENGTH(record.SOURCE_FILE_PATTERN) > 0) THEN
+                     file_list_for_infer := 'PATTERN => ''' || record.SOURCE_FILE_PATTERN || '''';
+                ELSE
+                    file_list_for_infer := ''; -- Infer from all files in the stage/subfolder
+                END IF;
+
+                -- Construct the INFER_SCHEMA call
+                inferred_schema_query := 'SELECT ARRAY_AGG(OBJECT_CONSTRUCT(*)) FROM TABLE(INFER_SCHEMA(' ||
+                                         'LOCATION => ''@' || source_stage_db || '.' || source_stage_sch || '.' || current_stage_name || '/' || current_subfolder || ''', ' ||
+                                         file_list_for_infer || ', ' ||
+                                         'FILE_FORMAT => ''' || target_db || '.' || target_schema || '."' || current_file_format_name || '"' ||
+                                         '))';
+
+                -- Execute INFER_SCHEMA and build DDL. This is an advanced technique and requires careful handling
+                -- of the RESULT_SCAN and dynamic column parsing.
+                -- For simplicity, this example will just use the inferred columns for the CREATE TABLE AS SELECT.
+                -- A full robust dynamic DDL generation from INFER_SCHEMA result is complex for a Jinja template.
+                -- Consider pre-inferring and storing the DDL or schema JSON in metadata if possible.
+
+                -- Simplified INFER_SCHEMA approach: Directly creating table using INFER_SCHEMA output.
+                -- Note: This might not be suitable for all cases or complex column mappings.
+                create_or_alter_sql := create_or_alter_sql || ' USING TEMPLATE (' || inferred_schema_query || ')';
+
+            {% else %}
+                -- Option 2: Use TABLE_DDL column from metadata (recommended for simplicity and performance with many tables)
+                -- Assume your metadata table has a column named 'TABLE_DDL' which contains the full CREATE TABLE statement
+                table_ddl_statement := record.TABLE_DDL;
+
+                IF (table_ddl_statement IS NULL OR LENGTH(table_ddl_statement) = 0) THEN
+                    log_status := 'ERROR';
+                    log_message := 'Missing TABLE_DDL for ' || target_db || '.' || target_schema || '."' || target_table || '"';
+                    -- Skip execution for this record
+                ELSE
+                    create_or_alter_sql := table_ddl_statement;
+                END IF;
+            {% endif %}
+
+            IF (log_status != 'ERROR') THEN
+                BEGIN
+                    EXECUTE IMMEDIATE create_or_alter_sql;
+                    log_message := 'Successfully created/altered table ' || target_db || '.' || target_schema || '."' || target_table || '"';
+                EXCEPTION
+                    WHEN OTHER THEN
+                        log_status := 'FAILED';
+                        log_operation := 'ERROR';
+                        log_message := 'Error creating/altering table ' || target_db || '.' || target_schema || '."' || target_table || '": ' || SQLERRM;
+                END;
+            END IF;
+
+            INSERT INTO {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }} (STATUS, TARGET_TABLE, OPERATION_TYPE, TIMESTAMP)
+            VALUES (:log_status, :target_table, :log_message, CURRENT_TIMESTAMP());
+
+        END FOR;
+
+        log_message := 'Finished dynamic table creation for node {{ desiredState.node.name }}.';
+        INSERT INTO {{ ref_no_link(desiredState.node.location.name, desiredState.node.name) }} (STATUS, TARGET_TABLE, OPERATION_TYPE, TIMESTAMP)
+        VALUES ('INFO', 'N/A', log_message, CURRENT_TIMESTAMP());
+
+        RETURN 'Dynamic table creation process completed.';
+    END;
+
+{% elif currentState != undefined and desiredState == undefined %}
+
+    {# == Step 3: Handle Node Deletion == #}
+    {# When the "Dynamic Table Creator" node itself is deleted, clean up its log table. #}
+    {% set fullyQualifiedTargetObjectName = ref_no_link(currentState.node.location.name, currentState.node.name) %}
+
+    {{ stage('Drop Logging Table for Dynamic Table Creator') }}
+    DROP TABLE IF EXISTS {{ fullyQualifiedTargetObjectName }};
+
+{% endif %}

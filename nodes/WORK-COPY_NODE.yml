@@ -1,0 +1,241 @@
+fileVersion: 1
+id: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+name: COPY_NODE
+operation:
+  config:
+    binformat: HEX
+    bytemark: true
+    columnmismatch: false
+    compression: ""
+    dateformat: ""
+    emptyfield: true
+    encoding: UTF8
+    enforceLength: ""
+    errornumber: ""
+    escapeenclosed: \134
+    escapeval: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: ""
+    fileFormatName: ""
+    fileFormatType: File Format Name
+    fileNames: ""
+    filePattern: ""
+    fileType: CSV
+    forceLoad: ""
+    inferschema: false
+    intextstage: false
+    loadUncertainFiles: ""
+    mulline: true
+    nullchar: ('\N')
+    onError: ""
+    parsehdr: true
+    parsehdr1: true
+    purgeBehavior: ""
+    recDelim: |+
+
+    replaceinvalidcharacters: true
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
+    skipHeader: "1"
+    stageName: Enter stage name-stage_name
+    stageStorageLocationName: Enter Storage Location name
+    storageintegration: ""
+    stripouterarray: true
+    subfolder: Enter folder name in stage if applicable-folder/subfolder
+    timeformat: ""
+    timestampformat: ""
+    trimSpace: false
+    truncateBefore: false
+    truncateColumns: ""
+    usevectscan: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e5e3a72-e5a2-48a7-9be1-ea93c043b8bd
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6381e83-0024-46cb-b884-27dfb9cb6aec
+                stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a99756a-64f0-49e3-b247-26b7c2420d2d
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TARGET_TABLE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5ee7bfd2-c64f-4551-9630-9f10862aec36
+                stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef7d03df-889d-4373-91ad-61920fbb36ca
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: OPERATION_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 51bd0b6b-2c48-4ba2-9a17-743aa989b65a
+                stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3812a13-9850-4e70-936c-19f8892eb0f4
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        description: ""
+        name: TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f1fd7a9b-c789-49b2-96b8-c03d134a3170
+                stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5fd8feca-4aaf-4760-a780-2ea85b508868
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: SRC
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: $1
+        sysJSON: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5483f823-33d0-44f9-bb72-709a6647ef3b
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: LOAD_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: current_timestamp()::timestamp_ntz
+        sysLdTs: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbceb212-e309-417d-8bb9-e23f19c42482
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILENAME
+        sysFlNm: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d24b189f-572d-4e14-8a2c-317ee822d6fb
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: FILE_ROW_NUMBER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_ROW_NUMBER
+        sysFlRwNm: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 22d39bde-8e97-49f9-891c-bf484cf5bcbd
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$FILE_LAST_MODIFIED
+        sysFlLtMd: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7e88326f-f23f-4b21-9614-dd8d35001ca8
+          stepCounter: 72d69bf5-a8e8-45bf-9604-3ccd2e08f176
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: SCAN_TIME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: METADATA$START_SCAN_TIME
+        sysFlScTm: true
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: DTC_NODE
+        join:
+          joinCondition: FROM {{ ref('WORK', 'DTC_NODE') }} "DTC_NODE"
+        name: COPY_NODE
+        noLinkRefs: []
+  name: COPY_NODE
+  overrideSQL: false
+  schema: ""
+  sqlType: external-data-package-2-0-0:::324
+  type: sql
+  version: 1
+type: Node

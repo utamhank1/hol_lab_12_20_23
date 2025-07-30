@@ -1,8 +1,8 @@
 fileVersion: 1
 id: "1"
 macroString: |-
-  {%- macro test_var(input_) -%}
-    {{ input_ }}
+  {%- macro get_current_timestamp_formatted(input_) -%}
+    CURRENT_TIMESTAMP(YYYY-MM-DD) - OFFSET ()
   {%- endmacro -%}
 name: macro
 type: Macro

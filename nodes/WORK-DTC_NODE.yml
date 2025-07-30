@@ -1,0 +1,104 @@
+fileVersion: 1
+id: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+name: DTC_NODE
+operation:
+  config:
+    inferSchemaOnCreate: false
+    metadataTableLocation: UTIL
+    metadataTableName: FILE_METADATA
+    sourceStageLocation: ""
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c6381e83-0024-46cb-b884-27dfb9cb6aec
+          stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        name: STATUS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        status: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ee7bfd2-c64f-4551-9630-9f10862aec36
+          stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        name: TARGET_TABLE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+        targetTable: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51bd0b6b-2c48-4ba2-9a17-743aa989b65a
+          stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        name: OPERATION_TYPE
+        nullable: true
+        operationType: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "NULL"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1fd7a9b-c789-49b2-96b8-c03d134a3170
+          stepCounter: e0cdd4dd-741a-4c37-8b2a-c34ad1819340
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        name: TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CURRENT_TIMESTAMP()::TIMESTAMP_NTZ
+        timestamp: true
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: DTC_NODE
+        noLinkRefs: []
+  name: DTC_NODE
+  overrideSQL: false
+  schema: ""
+  sqlType: "144"
+  type: sql
+  version: 1
+type: Node

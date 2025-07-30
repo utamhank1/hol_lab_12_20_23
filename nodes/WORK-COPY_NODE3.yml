@@ -1,40 +1,46 @@
 fileVersion: 1
-id: 6d81d9f2-ee18-4578-b45c-7667e31061bb
-name: COPY_NODE_TEST_VONTIER
+id: 1b781a5b-c70a-4db0-beb2-a83b0a336516
+name: COPY_NODE3
 operation:
   config:
-    awsSnsTopic: ""
-    cloudProvider: AWS
     compression: ""
     dateformat: ""
     enforceLength: ""
     errornumber: ""
+    externalURI: Enter external URI-Ex:s3://snowflake-docs
+    extlocation: false
     fieldDelim: ","
     fieldEnclosed: \042
-    fileFormatLoc: JJ_UTIL
-    fileFormatName: FF_CSV
+    fileFormatLoc: ""
+    fileFormatName: ""
     fileFormatType: File Format Name
-    fileNames: "'csv_files_jj/customers-10000.csv'"
+    fileNames: ""
     filePattern: ""
     fileType: CSV
-    flagLoadHistorical: false
-    flagSnowpipe: Test Copy Statement
+    forceLoad: ""
     inferschema: false
-    integration: ""
+    intextstage: false
+    loadUncertainFiles: ""
     onError: ""
+    purgeBehavior: ""
     recDelim: |+
 
-    redeploymentBehavior: Create or Replace
     replaceinvalidcharacters: false
-    skipBlankLines: true
+    returnFailedOnly: ""
+    sizeLimit: ""
+    skipBlankLines: false
     skipHeader: "1"
-    stageName: AZURE_BLOB_EXTERNAL_STAGE
-    stageStorageLocationName: EXT_STG_AZURE
+    stageName: Enter stage name-stage_name
+    stageStorageLocationName: Enter Storage Location name
+    storageintegration: ""
     stripouterarray: false
+    subfolder: Enter folder name in stage if applicable-folder/subfolder
     timeformat: ""
     timestampformat: ""
     trimSpace: false
+    truncateBefore: false
     truncateColumns: ""
+    usevectscan: false
   database: ""
   deployEnabled: true
   description: ""
@@ -44,27 +50,13 @@ operation:
   metadata:
     appliedNodeTests: []
     columns:
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 089ae8e1-524c-4a7a-ba0d-fd8eac75ebe2
-          stepCounter: 6d81d9f2-ee18-4578-b45c-7667e31061bb
-        config: {}
-        dataType: STRING
-        description: ""
-        name: DATA
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 14af5bce-98ff-4b3c-9241-725cea9f7863
-                stepCounter: 7ca1c4f4-8442-449e-8f24-586a2e6a68fa
-            transform: ""
       - acceptedValues:
           strictMatch: true
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 94230183-626b-442b-8dc7-26117c753be6
-          stepCounter: 6d81d9f2-ee18-4578-b45c-7667e31061bb
+          columnCounter: 458aa9e1-6f8b-4099-b26a-cf52cd2398c4
+          stepCounter: 1b781a5b-c70a-4db0-beb2-a83b0a336516
         config: {}
         dataType: VARIANT
         defaultValue: ""
@@ -80,8 +72,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 4f8ad306-2743-4c08-92aa-ce67c0586f31
-          stepCounter: 6d81d9f2-ee18-4578-b45c-7667e31061bb
+          columnCounter: 29360da0-2260-4816-8153-e203a201b07b
+          stepCounter: 1b781a5b-c70a-4db0-beb2-a83b0a336516
         config: {}
         dataType: TIMESTAMP_NTZ
         defaultValue: ""
@@ -97,8 +89,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e2bf2fcf-24a3-46e6-a9c0-59191da9b22a
-          stepCounter: 6d81d9f2-ee18-4578-b45c-7667e31061bb
+          columnCounter: 3b9ce1b5-3034-4a7c-9283-cf744b761214
+          stepCounter: 1b781a5b-c70a-4db0-beb2-a83b0a336516
         config: {}
         dataType: STRING
         defaultValue: ""
@@ -114,8 +106,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 5cfc593d-b6c8-46c1-a59d-cd924b0a4a66
-          stepCounter: 6d81d9f2-ee18-4578-b45c-7667e31061bb
+          columnCounter: 8dba4275-3e9b-46b7-a6f8-fb7d0dbf5867
+          stepCounter: 1b781a5b-c70a-4db0-beb2-a83b0a336516
         config: {}
         dataType: NUMBER
         defaultValue: ""
@@ -131,8 +123,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 4eceb31b-9016-491d-abcc-5601f5b747df
-          stepCounter: 6d81d9f2-ee18-4578-b45c-7667e31061bb
+          columnCounter: 43ad3d27-4176-422b-9007-c1a034952e5e
+          stepCounter: 1b781a5b-c70a-4db0-beb2-a83b0a336516
         config: {}
         dataType: TIMESTAMP_NTZ
         defaultValue: ""
@@ -148,8 +140,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: a46020d0-10a0-4a5e-975d-0893a4da7058
-          stepCounter: 6d81d9f2-ee18-4578-b45c-7667e31061bb
+          columnCounter: b15d2fa4-cff1-4871-a9be-04d034797a57
+          stepCounter: 1b781a5b-c70a-4db0-beb2-a83b0a336516
         config: {}
         dataType: TIMESTAMP_NTZ
         defaultValue: ""
@@ -166,17 +158,15 @@ operation:
       - aliases: {}
         customSQL:
           customSQL: ""
-        dependencies:
-          - locationName: WORK
-            nodeName: INFER_NODE_TEST_VONTIER
+        dependencies: []
         join:
-          joinCondition: FROM {{ ref('WORK', 'INFER_NODE_TEST_VONTIER') }} "INFER_NODE_TEST_VONTIER"
-        name: COPY_NODE_TEST_VONTIER
+          joinCondition: ""
+        name: COPY_NODE3
         noLinkRefs: []
-  name: COPY_NODE_TEST_VONTIER
+  name: COPY_NODE3
   overrideSQL: false
   schema: ""
-  sqlType: external-data-package-1-2-0:::299
+  sqlType: external-1-2-4:::324
   type: sql
   version: 1
 type: Node
