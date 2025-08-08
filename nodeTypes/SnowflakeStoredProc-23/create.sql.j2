@@ -1,0 +1,10 @@
+{{ stage('Create Stored Procedure if given') }}
+{% if config.sp_def %}
+BEGIN
+    USE DATABASE {{ storageLocations | selectattr('name', 'equalto', 'WORK') | map(attribute='database') | first
+ }};
+    CREATE OR REPLACE PROCEDURE {{ config.sp_def }};
+END;
+{% else %}
+SELECT False;
+{% endif %}

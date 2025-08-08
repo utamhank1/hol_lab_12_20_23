@@ -1,0 +1,40 @@
+fileVersion: 1
+id: "23"
+isDisabled: false
+metadata:
+  defaultStorageLocation: null
+  error: null
+  nodeMetadataSpec: |-
+    capitalized: Snowflake Stored Proc
+    short: SFSP
+    plural: Snowflake Stored Procedures
+    tagColor: 'yellow'
+    config:
+    - groupName: Options
+      items:
+
+      - displayName: Stored Procedure Definition (Required if not already defined in your Snowflake instance)
+        attributeName: sp_def
+        type: textBox
+        isRequired: false
+
+      - displayName: Stored Procedure Name with parameters (ex. my_sp('param_one', 'param_two', 'param_three'...))
+        attributeName: sp_name
+        type: textBox
+        isRequired: true
+
+      - displayName: Storage Location Name
+        attributeName: storageLoc
+        type: textBox
+        isRequired: true
+
+
+
+    systemColumns:
+    - displayName: 'VALUE'
+      attributeName: 'VALUE'
+      transform: ''
+      dataType: VARIANT
+      placement: beginning
+name: Snowflake Stored Proc
+type: NodeType

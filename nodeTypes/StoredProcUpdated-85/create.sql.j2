@@ -1,0 +1,18 @@
+{% if desiredState == currentState %}
+    {{ stage('Nothing to do.') }}
+    SELECT 1 = 0
+
+{% elif desiredState != undefined %}
+    {{ stage('Create SQL1') }}
+    {{ desiredState.config.SQL1 }} 
+
+{% elif currentState != undefined and desiredState == undefined %}
+        {{ stage('Drop SQL1') }}
+    {# you need to figure out what DROP SQL needs to be executed #}
+    DROP PROCEDURE IF EXISTS {{ this }} (VARCHAR)
+
+{% else %}
+    {{ stage('Unknown State') }}
+    SELECT 1 = 1
+
+{% endif %}
