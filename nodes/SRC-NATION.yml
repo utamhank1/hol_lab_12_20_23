@@ -3,7 +3,6 @@ id: 0a326d6b-0643-43fa-8cba-3c3d5a06ca80
 name: NATION
 operation:
   database: ""
-  dataset: ""
   deployEnabled: true
   description: Nation data as defined by TPC-H
   locationName: SRC
@@ -69,12 +68,9 @@ operation:
         nullable: true
         primaryKey: false
         uniqueKey: false
-    join:
-      joinCondition: FROM {{ ref('SRC', 'NATION') }}
   name: NATION
   schema: ""
   sqlType: Source
-  table: NATION
   type: sourceInput
   version: 1
 type: Node
