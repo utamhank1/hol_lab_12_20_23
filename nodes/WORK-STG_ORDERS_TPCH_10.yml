@@ -1,6 +1,6 @@
 fileVersion: 1
 id: bb2d2064-af1b-4bed-b334-14c006a18bb8
-name: STG_ORDERS
+name: STG_ORDERS_TPCH_10
 operation:
   config:
     insertStrategy: INSERT
@@ -10,7 +10,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: Orders data as defined by TPC-H
+  description: Orders data as defined by TPC-H-10
   isMultisource: false
   locationName: WORK
   materializationType: table
@@ -165,9 +165,9 @@ operation:
         join:
           joinCondition: |
             FROM {{ ref('SRC', 'ORDERS') }} "ORDERS"
-        name: STG_ORDERS
+        name: STG_ORDERS_TPCH_10
         noLinkRefs: []
-  name: STG_ORDERS
+  name: STG_ORDERS_TPCH_10
   overrideSQL: false
   schema: ""
   sqlType: Stage
