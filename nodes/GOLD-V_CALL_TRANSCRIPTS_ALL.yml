@@ -1,0 +1,181 @@
+fileVersion: 1
+id: 20b9095a-081e-4d45-95a5-44156e795f4b
+name: V_CALL_TRANSCRIPTS_ALL
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: Stage table for German call transcripts
+  isMultisource: false
+  locationName: GOLD
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7ba7927a-745b-4f9c-8213-0efd60703449
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: DATE
+        description: ""
+        name: DATE_CREATED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5d3af774-b460-4ae6-9b38-c73f98c475d6
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 847fab32-7a81-484a-b92c-4da729a83744
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LANGUAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 346fbee3-8159-44f3-8267-a907613b22c5
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fdf831ce-9e75-431f-9d08-635ca72477f7
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9df56dbd-b832-4ebe-be50-32f8d7f860af
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33c15d81-44f4-4a6e-b86a-54a351e5b3e4
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PRODUCT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 702c6b8a-ac34-4952-8f93-8312baf22dc3
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7556d65a-dc6f-4462-910d-5ad9241aa673
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6c0e56ab-455c-4f10-aff6-d5075b63cdf7
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7300b6e6-6c24-4097-8998-1a620347f638
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DAMAGE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: edae0233-c96a-4cc9-b0f7-a010869c98e9
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa3602d2-2c89-40f1-b823-45eb818f19be
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TRANSCRIPT_SENTIMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 68e24eb6-50ba-4aff-bab9-c11985bf72f4
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b3b4d0c7-84d2-4063-bf8c-d2c98a2b8a20
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: ARRAY
+        description: ""
+        name: TRANSCRIPT_CUSTOMER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d460e7c6-45c2-4ad4-8032-d555e77df792
+                stepCounter: 184d77a8-1762-4d8e-9e78-43459cae0f84
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e9467ad-76b4-4412-8fa0-f3e06cd5ee28
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CUSTOMER
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "\"TRANSCRIPT_CUSTOMER\".value:\"answer\"::STRING"
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3fd31df2-dc2f-4ec4-abd8-9549f637db4f
+          stepCounter: 20b9095a-081e-4d45-95a5-44156e795f4b
+        config: {}
+        dataType: DOUBLE
+        description: ""
+        name: CONFIDENCE_SCORE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "\"TRANSCRIPT_CUSTOMER\".value:\"score\"::DOUBLE"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LLM_CALL_TRANSCRIPTS_ALL: 184d77a8-1762-4d8e-9e78-43459cae0f84
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: LLM_CALL_TRANSCRIPTS_ALL
+        join:
+          joinCondition: |-
+            FROM {{ ref('SILVER', 'LLM_CALL_TRANSCRIPTS_ALL') }} "LLM_CALL_TRANSCRIPTS_ALL", 
+            lateral flatten(input => "TRANSCRIPT_CUSTOMER", OUTER => TRUE) "TRANSCRIPT_CUSTOMER"
+        name: V_CALL_TRANSCRIPTS_ALL
+        noLinkRefs: []
+  name: V_CALL_TRANSCRIPTS_ALL
+  overrideSQL: false
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node

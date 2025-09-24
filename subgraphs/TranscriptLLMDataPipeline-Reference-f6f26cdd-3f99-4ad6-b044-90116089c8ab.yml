@@ -1,0 +1,13 @@
+fileVersion: 1
+id: f6f26cdd-3f99-4ad6-b044-90116089c8ab
+name: Transcript LLM Data Pipeline - Reference
+steps:
+  - 184d77a8-1762-4d8e-9e78-43459cae0f84
+  - 20b9095a-081e-4d45-95a5-44156e795f4b
+  - 362e5e57-05dd-4189-8b5f-46a4b851cb13
+  - 580bef39-4671-4d63-a315-d214f0c889de
+  - 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+  - a6f071d7-9788-4307-b50b-4ceffe36c72c
+  - c1e87101-0b75-4e2b-8552-c3d0edeaee92
+  - d2bc5886-9768-4765-80f7-fd4b5c96ef64
+type: Subgraph
