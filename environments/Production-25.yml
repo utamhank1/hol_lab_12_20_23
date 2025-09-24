@@ -1,11 +1,14 @@
 fileVersion: 1
 id: "25"
 mappingDefinitions:
-  SRC:
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF1
-  WORK:
-    database: TXM_DEMO_DW_DB_PROD
-    schema: TXM_DEMO_DW_SCHEMA_PROD
+  BRONZE:
+    database: ""
+    schema: ""
+  GOLD:
+    database: ""
+    schema: ""
+  SILVER:
+    database: ""
+    schema: ""
 name: Production
 type: Environment

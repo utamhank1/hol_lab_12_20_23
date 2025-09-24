@@ -1,5 +1,6 @@
-defaultStorageMapping: WORK
+defaultStorageMapping: SILVER
 fileVersion: 1
 locations:
-  - SRC
-  - WORK
+  - BRONZE
+  - GOLD
+  - SILVER

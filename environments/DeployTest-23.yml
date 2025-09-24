@@ -1,11 +1,14 @@
 fileVersion: 1
 id: "23"
 mappingDefinitions:
-  SRC:
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF1
-  WORK:
-    database: JJ_TEST
-    schema: JJ_TEST_SCHEMA
+  BRONZE:
+    database: ""
+    schema: ""
+  GOLD:
+    database: ""
+    schema: ""
+  SILVER:
+    database: ""
+    schema: ""
 name: Deploy Test
 type: Environment
