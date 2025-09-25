@@ -1,0 +1,157 @@
+fileVersion: 1
+id: a6f071d7-9788-4307-b50b-4ceffe36c72c
+name: LLM_CALL_TRANSCRIPTS_FRENCH
+operation:
+  config:
+    exby:
+      items:
+        - {}
+    extractfunction: false
+    insertStrategy: INSERT
+    pby:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    sby:
+      items:
+        - {}
+    sentimentfunction: false
+    summarizefunction: false
+    tby:
+      items:
+        - lanorder: "'fr', 'en'"
+          tpartColName:
+            columnCounter: aa53927e-4d7c-48e3-8996-309a2a19165d
+            stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+    testsEnabled: true
+    translatefunction: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Stage table for French call transcripts
+  isMultisource: false
+  locationName: SILVER
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 63267c5b-c6bc-40a9-984f-78f3525e1701
+          stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+        config: {}
+        dataType: DATE
+        description: ""
+        name: DATE_CREATED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 393d57d7-9de1-4b56-8344-0132261d5c82
+                stepCounter: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfbc8df1-5cd9-403e-b6aa-b9050317cb28
+          stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: LANGUAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5463d656-02cf-4d09-9ca0-0e20ec0c85f5
+                stepCounter: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4080cf15-292c-4f36-a31c-6c7fe3211e18
+          stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 189116db-4a5b-4aad-ab91-c84d2a89020a
+                stepCounter: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a30ed9d7-df52-48d8-85ef-2d5d78f247cd
+          stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: PRODUCT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cbfe7b18-0c14-4552-9fb9-a4bde55885db
+                stepCounter: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 372201e8-8dc8-43ed-b08b-2ff61f2c10fb
+          stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: CATEGORY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 07b45e75-133a-4c3a-b6a9-abc9f88bf62e
+                stepCounter: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c9d2288-17f3-4dbe-91ed-3f0b7208a889
+          stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: DAMAGE_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 79dce5e7-bcbd-4076-8508-7b1f66c0da81
+                stepCounter: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa53927e-4d7c-48e3-8996-309a2a19165d
+          stepCounter: a6f071d7-9788-4307-b50b-4ceffe36c72c
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: TRANSCRIPT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3949160-05eb-40e3-9f43-51ffca243f45
+                stepCounter: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_CALL_TRANSCRIPTS_FRENCH: 9b2c3a45-80e8-4e3c-8d10-0f0eccfa344a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SILVER
+            nodeName: STG_CALL_TRANSCRIPTS_FRENCH
+        join:
+          joinCondition: FROM {{ ref('SILVER', 'STG_CALL_TRANSCRIPTS_FRENCH') }} "STG_CALL_TRANSCRIPTS_FRENCH"
+        name: LLM_CALL_TRANSCRIPTS_FRENCH
+        noLinkRefs: []
+  name: LLM_CALL_TRANSCRIPTS_FRENCH
+  overrideSQL: false
+  schema: ""
+  sqlType: cortex-3-0-0:::271
+  type: sql
+  version: 1
+type: Node
