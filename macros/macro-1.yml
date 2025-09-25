@@ -1,7 +1,7 @@
 fileVersion: 1
 id: "1"
 macroString: |-
-  {% macro calculate_profit(extendedprice_col, discount_col, tax_col, supplycost_col, qty_col) %}
+  {% macro calculate_profit(extendedprice_col,tax_col, supplycost_col, qty_co discount_col, l) %}
       ({{ extendedprice_col }} * (1 - {{ discount_col }})) - ({{ supplycost_col }} * {{ qty_col }})
   {% endmacro %}
 

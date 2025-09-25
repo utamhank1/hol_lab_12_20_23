@@ -152,6 +152,26 @@ operation:
               - columnCounter: 88ce61e8-6e03-41c6-95d0-25545d2bc777
                 stepCounter: 8c7bf8f1-9a54-4ee2-9bb3-21042b6a5317
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b42d07e-d9d2-42e3-9794-32408d90392c
+          stepCounter: bb2d2064-af1b-4bed-b334-14c006a18bb8
+        config: {}
+        dataType: ""
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TOTAL_PRICE_EXCLUDING_TAX
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: " calculate_total_price(\"ORDERS\".\"O_TOTALPRICE\", .08)"
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
