@@ -3,4 +3,6 @@ fileVersion: 1
 locations:
   - BRONZE
   - GOLD
+  - SAMPLE
   - SILVER
+  - SRC_JJ_DEV

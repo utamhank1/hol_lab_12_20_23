@@ -1,0 +1,149 @@
+fileVersion: 1
+id: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+name: EXT_JSON
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC_JJ_DEV
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 249be925-17bc-4085-97b9-1da4583e44cb
+          stepCounter: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: The value of this row
+        name: VALUE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47023cba-9c40-4efc-a9a9-8dde5a85cf11
+          stepCounter: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: album
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c819e1a-a84e-4283-aa8d-1cdcdd76f184
+          stepCounter: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: lyrics
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7812092-d9d7-496b-8377-fbb58d7dfbf8
+          stepCounter: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: lyrics_title
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b82c627-85d8-492b-911b-ad47ebcf24ee
+          stepCounter: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: lyrics_url
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca81c96a-faab-417b-bb37-466fd1f96c7b
+          stepCounter: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: track_views
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d69893e-507a-49a5-b584-9e21d907befa
+          stepCounter: 77f5a986-8086-4a71-a61a-a4b2b08da02a
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: EXT_JSON
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

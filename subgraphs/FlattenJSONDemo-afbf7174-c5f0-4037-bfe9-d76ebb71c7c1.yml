@@ -1,0 +1,6 @@
+fileVersion: 1
+id: afbf7174-c5f0-4037-bfe9-d76ebb71c7c1
+name: Flatten JSON Demo
+steps:
+  - 77f5a986-8086-4a71-a61a-a4b2b08da02a
+type: Subgraph
