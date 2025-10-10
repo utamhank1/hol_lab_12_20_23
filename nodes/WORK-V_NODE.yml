@@ -1,0 +1,39 @@
+fileVersion: 1
+id: c31699d0-72f2-4fe9-a289-9a81c5d44148
+name: V_NODE
+operation:
+  config:
+    insertStrategy: UNION
+    selectDistinct: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns: []
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: |-
+            {{ stage('Override Create SQL') }}
+            	CALL CONVERT_RDS_TO_TABLE('@my_file_stage/my_data.rds', 'MY_NEW_RDS_TABLE');
+
+             FROM 
+            	)
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: V_NODE
+        noLinkRefs: []
+  name: V_NODE
+  overrideSQL: true
+  schema: ""
+  sqlType: View
+  type: sql
+  version: 1
+type: Node

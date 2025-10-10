@@ -67,6 +67,26 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: METADATA$FILENAME
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b50f1c5f-20fb-4797-8acb-3d3f4cb72636
+          stepCounter: 61388132-21ea-42d9-9032-cd739e9c8b6f
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: ALBUM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: VALUE:album::STRING
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

@@ -1,0 +1,3750 @@
+fileVersion: 1
+id: 2d572b01-fd82-4de9-86fb-ec7851e06705
+name: STG_CREDITDATA_RAW_FULL_XML1
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0ce37e1-655d-4f74-85f5-125722628d94
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: VARIANT
+        description: ""
+        name: RAW_XML
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 791217ed-abb3-486a-a2f2-597b5f5fb2c4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0b749aa1-2631-4bad-82df-a505cb3a6d1d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 35a32450-e019-4c1b-aa26-4e76619bbdaf
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 94116cd4-371a-4a5f-a43e-de20d8254334
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_citystatezip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5dd581f8-a995-4a4b-83e6-a6367b203680
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8e61865-a243-4fe0-bd9a-31012ac0e555
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3dfb8839-cd71-4351-beb5-5bd60246c3e3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be7da931-6f88-4653-80a7-dd11e86fc80e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e1c26acf-4d54-4083-86f1-fe2b4f45d06c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e9aa635-e80e-4986-83fd-f51aa7d1ccb0
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_customer_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 627a1c7a-ef05-4704-9a77-4577ab6867a3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81d8ae9e-9d55-49d3-b1ab-5c9d678424aa
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_date_ordered
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3917e6f9-c3b4-42cc-8f89-7dc647252aae
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71372874-4339-4c78-9bcf-e621e2d28ddf
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_fnma_job
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9ee3a8f5-9f72-456b-b5cc-0844a6d6f878
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e059b522-5b48-4c5f-89d7-0618cacf8272
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_instant_view_pw
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4476fb7e-365e-482b-b41e-b805bbeee420
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9ae0aa9d-d376-49f6-9649-f4a304a2cbea
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_loan_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 49baa33a-8da6-49d7-bb5a-dd870e260bb8
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7930f2a1-5f07-4cdd-a056-39d0266a65af
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_property_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 791a8454-a2d0-436a-892a-fe45bc6ab1c2
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be6a58e0-4ef8-406b-99c9-73cdc388c1e9
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_reference_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2378e26e-f1f3-462b-9411-ba1e7ce128e4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c09f4c5c-9468-4519-bd7c-4011d4468d1d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_charge
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5c3800e-f35b-4fcb-9d55-d353666ae23d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d63bd428-ca53-4638-ae30-795fddf632f9
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 036608c6-6df0-4deb-903e-9a57dd2748bb
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 159db1f5-0b73-4654-b2c8-e0298bc3511f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b447f068-a291-4a67-9694-8e0785e4d294
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9d565368-4c07-471d-bcb0-9a78df48e482
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_owner
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aad5ef86-ece1-46f8-8953-4fbd5b5ba421
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2af235e4-1e69-4334-ae0d-fb01090f9250
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_report_to
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62a407ad-8916-44b7-a338-cd09472c23f9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 82f3a8b4-c305-433a-9113-8b640119561c
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_HEADER_repositories
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c10e6f69-889f-4686-9d9b-9dd9c2cff036
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f4c680c5-bd50-4376-8f2e-74877d3b1743
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 48f18bd8-96ac-4ffb-9896-7c4d5806ed55
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 15968959-8081-4b09-aa6e-06f7094c308c
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_dependents
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 046e3274-7605-4da8-a163-a6e2644cd9ac
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 55554f37-3cef-49d3-b4d5-9d4c5f647b65
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_dob
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f9db4eb-fa03-4100-b7c6-acda8dc5a531
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6fff537c-9640-4ad0-ace6-ef0ee5c69b51
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_firstname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5356e37b-8147-4f9b-8d5f-f958d0dd5355
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b9e2418-c03d-4656-b821-9cc11cfe37e6
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_lastname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f857ac1d-bdc8-445a-bd8f-711ff4c95b07
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2a2342c8-0b03-44e3-afa1-c55aa2d7f261
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_marital_status
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 28ac04fc-9a4c-4450-98bc-3bb526cf26f4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e1bcac5-400b-4de1-b0cd-6be068413369
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_middlename
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ed64524-97ae-4bee-b576-0e85e409fa88
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d94c14c2-a99b-480c-9236-f6a57be576ed
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_ssn
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a679b9e-a625-4a6d-b8cf-0469973dd8b7
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5554c8a-755c-40e3-91c8-e173a1242d17
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_suffix
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 46e90693-19ac-44e2-9f55-08148b9eb742
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b623b324-57ac-48f1-aaf0-a61bf91cbb7d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_aptnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f7092fad-9c1c-4323-8395-ebd14abb17fe
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1427273-a493-4c4c-993b-14f067466381
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_city
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb0ed151-7a05-4d0f-9175-109a9d5278ea
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a19e63c-0f74-48fd-8479-b736703d51dc
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_state
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8058c433-756b-480a-8952-1fdd8e7f017d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85b314ba-f5cd-4bf2-8922-a73a877a18de
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streetdirection
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eed77e02-4a98-493f-bbeb-8abe894b8701
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2077cb59-4c1b-4477-87cb-0ea490bc27d4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streetname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ca93f60-d4fa-4f02-81d9-2ea16e10b21d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fd5a7573-d6ab-45d2-8d8d-7381fc66ab34
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streetnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ccc5b92b-1fb5-4f1f-b805-9b7b8f41bff1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a624494-ad33-4e93-848d-e6c59784acb5
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_streettype
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1dedc97-c653-4187-b073-50c4a26557b3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e6e9f5fd-6340-4ad8-92f8-44bc601b10f0
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_years_at_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d38bc5a9-49bd-4c91-8289-bd6af675437a
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 819d0889-589e-4642-810d-9a01e2bda6ff
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_zip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9674b392-127e-45e7-acfb-1b83b4020687
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 83507c20-5d58-4aaf-a241-b4df5f723be9
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89b7ac8d-adf0-4cd2-8f6b-768b7fd1fc80
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 249a0a78-d7f2-434d-a3f0-48a809d5d2e4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 51879df1-d4c5-451c-940f-7f6230cdf997
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31fa9de4-bbe6-4683-85c9-a017e2dcb027
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c362de95-7106-4719-8f41-e2ddd6470f8f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e881a3cb-dfc2-45ca-9052-87796446baac
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_lpq_ignore_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5386120e-395f-49d0-9f5f-476facbb5a36
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6a496a50-8ed1-4f5e-ad09-99fdab308074
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_maximum_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2ef57283-2298-43dd-88eb-27ce99bf5705
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47b506d3-9841-4898-8a3a-a2200364883a
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_minimum_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e1c90e1-a399-4f65-a503-a45f3b1dd9d2
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b75fa7a0-5549-458e-94d8-8e599201c1da
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_model_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 616e6d20-4e31-4f7d-bd42-497504e3b92b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a64fffcc-9f1c-4b2b-b4a4-afa239aa25d0
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_model_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6ed3c0ed-0b5c-479e-ab3f-f671de9cd356
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a41c96b9-e7d6-4bc4-a995-33115f058393
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_percentile
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a8ac058-873a-4e42-bddb-d23b8eba4aa9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61ea99f8-5725-4e83-a995-ed8c74bbe5fb
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_risk_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dcd78ad1-f7ca-47d1-96ee-2d6650c2960f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ef8b172c-5bf9-41be-910f-d194b112198f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c9063e36-9b7c-45bb-824c-5d747b0d825f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 65a7bbc7-ed59-4d9c-8ac5-eb8fb5addc39
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_RISK_FACTOR_factor_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 90f1f964-1da7-4d05-870a-447438f5e281
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e05431e1-4a80-4025-95c4-b8a0e0555052
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_RISK_FACTOR_factor_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a85022c7-4f9a-41e3-9a3a-b0df655efe1b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 809ade22-24a7-418a-b78a-29b30eefe654
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_RISK_MODEL_RISK_FACTOR_fact_inquiries
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0bce8352-74fa-48b0-90fa-ffa584fe50ad
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17c448e6-c932-47cc-a39e-d92330f006d5
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_day_30
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56635c24-8779-42c0-901e-3a00420a7f1e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 264c4aa0-b68d-48ec-a083-942e9a48b703
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_day_60
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93246d7e-e01b-47ec-a030-39c758aebbd8
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3579699d-e60e-40d9-b3dc-a4933e81de82
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_day_90
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0d2d3ca1-27c5-4949-8811-1fb7b092a05a
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 944b2955-cd69-4b97-96ba-8a9ea94dbcb7
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_derog_other
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e2733c76-f238-4954-b416-e500f3d985a4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 09395e57-5d29-48fa-836f-e632abd1de9d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_dispute_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6bcef810-32e4-4efd-9227-4d97902496b4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5f7923c-5571-4df2-9e4c-7b8e70a09cbc
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_inquiry_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5a1d474e-f79b-4fd9-a18a-1a37c3c5dca8
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c9df7bb2-efc1-403d-a3d1-eadd7c97c1c7
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_latest_late_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a63d3262-122b-44a1-8ab3-aff57f4322ce
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae0ef926-901d-483e-b9ce-1c85c10fc043
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_pubrec_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f27c61c1-1e68-4e8e-be90-9c4c3a123e49
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9eb6e552-82f8-4d24-b6b3-7ef646c0caf9
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_bankruptcy_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8a0c1f26-dc6f-4cbb-8448-e74882f3067d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4bd79606-f720-4993-b425-7a78006af5d4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_chargeoff_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5c4de52f-d95e-415e-b4b8-add2d82468a8
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e400e4ff-69ac-431d-9e89-67868c5061b1
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_collection_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74422a37-70fc-4a7e-9a0c-44313479028e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0f263d1-2b74-4102-aac3-a7c76bca7105
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_current_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5528006a-c80b-4a51-8379-89094ccd63d4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30f1023a-5a76-4876-bf29-5f9755551e69
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_oldest_credname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b5a7635-784b-4e8f-a372-09ca9cada80b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e00715fc-0cf3-4ac8-9d8d-63742392c2f5
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_oldest_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b87cf3b-f45f-431c-adc5-506d9386fd4f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea763ac2-9986-4ca4-9654-0ee76f08aaea
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_previous_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 68d38122-6754-40ff-973c-9b7dc4103525
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27374790-e193-4e38-a3e3-6e7a78050f10
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_DEROGATORY_SUMMARY_trade_satisfactory_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fe5a4ebe-7138-438e-aeaa-ccba39d78c4f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca42e817-ed72-455d-9198-f861cda7fbbc
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4d66be74-8096-484a-82b6-c8340d3612c2
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a04b5e38-d00c-4881-b8d2-3fe5ee366599
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_status_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fd52a62e-6543-49f8-a034-9d7b4c33ee0a
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac337726-bd5e-4c89-983c-3839c1a44b1b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_status_ext
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a0928cdb-b1d3-457e-9afc-ccab4dfce257
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfbc0e1c-e5b3-4b89-a80c-b237294e2073
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_status_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67cb877a-60db-48b7-8523-b54ac8a30bf7
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27a3d8af-d49a-42a9-a0cb-59d6639fe18d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_type_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 364c3a4c-9985-46ca-a5ec-d1f651afb753
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 997baadd-16ee-46e5-8655-fa5dc7c03efc
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_type_ext
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 89d8056b-1294-4374-a34b-7f4da4c070e1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cd2ef182-d03d-44b4-adfa-81fbfbc94b0d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_account_type_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0cad7b63-db19-4d0a-9c3a-74d3c52bf61f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bcf35333-78d8-41aa-9f95-e228a8c2a579
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d9338cc3-9810-4f32-a9f8-e5760a22e2b6
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 36c91938-b62d-430e-afdc-ec4a7b909df8
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba2c687d-4830-4c97-bd1b-05f659197ec3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 46f97a09-c978-4623-a09b-3294d28d9571
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_city
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7933d54-6ef8-4134-8edd-cd6a74f2e8e8
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e3da32f7-1c05-4ff6-9358-843c5a28ce93
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39d89f4c-e181-4b0d-8cea-71cd494acad1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a47d871-f47e-4f67-9f82-5e151e409bec
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_credit_limit
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef644605-c70f-4cd6-bb79-39cafba4351f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: efaf68c1-67f1-449b-bfaa-b8f8e9830bab
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_creditor_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a7b33668-c9a4-4c3c-97b1-0bbb08406d27
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bcb92090-6474-4158-80a2-1b90c67107ba
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_date_last_past_due
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 921f3eb0-201b-4558-8539-264610d06140
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 261bde5c-5843-4d05-81de-eb5ce16d1cdf
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_date_open
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b504674-860b-458e-ac74-6ae8f6a6fedf
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33c30781-c193-441a-a8fc-7651312f1208
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_date_reported
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3d712a0-3204-4da9-b758-5ba250f883ce
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bb8ae325-0007-46a7-a113-d9d1000cf135
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_day_30
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 839310e9-7671-47dd-b7e8-37b88ebfbb8b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6aca2148-3dd5-4709-a675-550627dcbb43
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_day_60
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d5c454e-f59c-42c8-a78f-807c17d4c4c5
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8aa9b9ea-fd85-4e03-ac61-c858d9d43e69
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_day_90
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc7c058b-37d3-423d-88d2-ef6a3a8d429c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8eb2c47-6b61-469c-bffd-02f2a24df164
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_ecoa
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1bca7ed4-7369-4b3a-bac4-701f594c9d5c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2323cd3-2cf1-4346-a2f8-5e9693e98271
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_edited
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 785f8deb-c629-4145-92bd-b19e0d20eb9d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: deed91d7-0819-443d-81a0-d04699fbcc09
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 713ca4ca-bd98-4e45-97fd-7b18bb07a966
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e9dfa7b-4e46-4d48-833f-77096afbd8da
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_high_credit
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: afb9ee1a-d844-45a5-8066-d99b2c762a3c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1242c3db-7282-41bc-bc8d-1aaed0049b3b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_history_startdate
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e46de427-3718-43a2-b21a-9363b05aa2eb
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c6d18647-6220-4f45-88c2-d1e3009062f1
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1d4a277c-a369-467b-ba71-612b669f963b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d6e74dd-9e32-4f53-b451-6786a84f5c08
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_include_in_debt
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0a01f237-3a0f-437d-9f74-58ab0686c2be
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 01c0b221-7aa0-4d43-8c65-063ba7aba328
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_is_current_lender
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fdabc89-5c4d-400d-92ca-434fa9541e98
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c76795d-05bb-4861-b43b-ca43a303bdca
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_kind_of_business
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be588da0-84e4-4ca9-9e3a-8cf4b6600aff
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3a2ee23-cbaf-467a-9907-40682c42e2ac
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_last_activity
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8d3f11f0-cbeb-4439-8c6c-2083db007556
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d33fc73-e379-4c8f-82df-e7f9e9380e3d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_late_dates
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 95a9a3be-c7f0-47e2-926b-339133786cd6
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f5c474c0-dfc7-4083-a80c-e81a8f07c392
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_months_reviewed
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c66de83-7542-4b6a-bd99-09c6cb65527b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 36862542-d4e9-4f68-b44b-8fec240d1732
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_open_status
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4d8735c-cfea-4593-8f95-7039ed9875b8
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da95f670-93bf-4be2-8aca-e4e02426e38f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_owner
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 25484749-c339-4772-aad0-969b79237585
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: afb16c5b-c37f-4b56-b455-8d3b5f053062
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_past_due
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 08823f1c-d2f9-46d0-b6fa-c0e1072b38c1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 675dbe44-e7af-4600-968a-fe192040b519
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55f1362e-1ef4-4051-b952-8f07975e2773
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9398e2c-24a9-4131-bd49-8a5f1237c279
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1d39caf5-2b7e-41f0-8a5e-dbe0df18ddf0
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a4fd0fe2-807f-40b0-9494-679095b941e4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_remark_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c446bc8a-a471-499b-9c98-bffc5c26e95c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 884d458e-5990-42fe-af90-3607478f0c3c
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_secured
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7a8be4f6-9f32-4a3f-8564-e1263182bc5e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c63346b2-9e70-4c7d-8371-f8538e7f49e1
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 353725e3-e716-4e72-b7aa-8444695d1d31
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d14b5967-6bc1-4028-8210-fba3f3518278
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_state
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2bd401b9-897b-40b1-a971-eb11fb7d22a8
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7dc6cc3-89d8-4280-a1b2-29d696d94ee6
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_subscriber_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bd8fdbae-9bed-4da9-8b17-cb0e243e35e0
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eba01ec7-dae3-4a31-8d0b-ef8f925a0343
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_supplement
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d7ea5d7-e6cc-44b5-b30b-5476ff0b76bf
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 60d9f748-28d5-4002-9d30-8db0050594ee
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_term
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2da70f6-7aba-4689-a661-19764cc3f279
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08b9594b-853e-4e43-809e-bc460c6c7a00
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_two_year_history
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6ea60c65-f911-4615-af17-223e1c58deae
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d459131-85b7-482b-aa0e-4f86c36d3adf
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_zip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 16fb23a5-1c48-4ff6-908b-ba8471fa1890
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 027635a7-f34c-41a7-8f38-75ee65e302ed
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_comment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dc93eac1-191d-4075-a251-ae0ef6380b49
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7cc3cdf9-c9a0-40dc-a83b-9a3fcb4339bb
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_lpq_last_modified_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91ae6f73-a348-40bb-a6cd-e6c0c2ab2b91
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 238a769d-91f5-4efc-9c38-1aa7f654f86d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADELINE_deleted
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a5b5a9a-2056-4d00-9152-44057fd5332c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 961c11d7-20df-4b9a-b13b-52eb030c3c6b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 981041db-f28e-4c66-9179-795629b0130a
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f28e04f5-1a27-4365-a3ee-13091ac3074b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_ecoa
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4a4aebc5-9087-4155-ba3b-4e1740480ba0
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a174def6-8ee9-4107-a356-325f2cb10964
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_edited
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00b3d959-d246-41da-96a6-6faed9745f85
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0a36fdb8-47f3-46ea-ac3f-8513b361859e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 45c3a423-ba8e-4681-b2b3-36e4ae3def79
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9bd9af69-fb0a-445b-96af-fff9f9d6e5ab
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0da54d5b-bdf0-4364-a391-fc02f49354dc
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf47c185-9ba4-49ee-a62a-c2385ef14822
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_inquiry_company
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5c6cbdf-c859-4857-ae7d-8d4ac5857920
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19db6fbd-4217-4de6-87db-84c79b9b4e81
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_inquiry_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be3acad1-3d35-4d0d-9190-9c0ce523dd80
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e05f9410-a37d-4c44-9944-8f6b40ebfc09
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_kind_of_business
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc1463fc-ce67-434c-96e5-b78e8b0b37ce
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 130835ea-511a-4912-87ac-8251d12f5407
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ba8f4662-547e-4446-b69b-722d0aab3724
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8452c6e1-47a2-4b6d-bbb1-281dec6613b1
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_subscriber_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 00a9570d-1627-4060-8d1b-b029eee96590
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0509bf8f-3192-4632-9a62-efb6944bdddb
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INQUIRY_supplement
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9a2cd8f7-7136-4255-91f8-0e0eed79a01f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84ff1d70-07f1-4f33-91e0-df7b6c4a8b2e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c3787563-1cc9-475d-84ad-8e3135638006
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7cda364d-40a7-4f14-a8db-ebd000f06f3b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_date_requested
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb9393fd-2630-4382-8f18-971c1e1e51c2
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 961f3b40-fbe8-4da3-9f57-14096445009a
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_error_message
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b3623005-7ab8-4ec1-abde-feb44217099e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30819082-2216-4171-95b7-53edf1b38406
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d861f7fe-1857-4634-801f-31ced96c6d6e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f330282-2a81-406f-9325-d4478225aaa6
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e38c3817-f8b2-448f-81a1-c7481860e045
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d5095bb5-215a-4c50-a7f3-7167670336af
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_infile_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 22428900-f509-4482-9838-a7184d2d9f34
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 183446f8-fb35-47d4-a61f-8a2e37b9d588
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_no_record_found
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a50bb756-1b95-4514-af9d-91f7b16bf162
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa239176-ce16-43a3-b599-5383fe4266fb
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32b1aa38-2160-44e7-b1e0-351d72527768
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67a3eba8-cebd-4030-907a-200f58b1bbaf
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_INFILE_ssn_mismatch
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 97c003b4-5daa-4292-b5b0-e4b53b94267d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: febf97af-8bc3-48aa-81f0-91c6bbc75ebe
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f267f2e-57dd-4ddb-a18b-e7ef3c3dc0e1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 978efdbd-502a-4d61-a092-389274d29ff3
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9b62bb68-8ed7-4d85-b717-65aade81b6ac
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b106c52-9ab3-4d86-8290-5fb4c7d23cc8
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d64b844c-2d26-4533-8cf9-59dc1957b5f5
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9cb184d-ae17-4b18-bf40-8ac12a3bd92e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 99c39bc6-3483-425b-9590-096d18389bf9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb3fd111-3b61-409e-8cf3-28270b203929
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SSN_VARIATION_ssn
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1f99584c-a7a5-43e4-98c3-066277e14c3c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cae92220-8773-4a07-a3fd-ddaf12835627
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_alias
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0bb5fe71-16fa-4eec-87be-13b9ce47db9c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c425758f-0ee9-4639-a616-0fc0a04a9575
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1d0ae158-597d-46a1-bd79-60f99cc7f7b7
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b19a962a-8eb3-4ca2-b3e0-08142feee00f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 075c65a2-e7af-4d4c-8195-82028b1442e3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c7fa2cd2-e489-4434-9837-9e400d032090
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2dffd65-75b7-4029-b4fd-4a73f90bbb96
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4649bc9b-ad08-40ba-9349-f4f473be1859
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALIAS_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d905b25c-bd6c-4e08-b708-bc41fe22f2bd
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e64a1ed3-2c7f-45b9-992a-134bda44e884
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d4097a8c-3ff3-44bf-b218-fbd92bd997e0
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f2e37ed-5b5c-485b-a01d-6e9ff59bc8be
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_address_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39260d1c-1509-4edd-955c-dc7e01ed836d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c784e179-e6a8-4f84-9919-d8a9bc7b9ce3
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_aptnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f300bba-aefa-4966-a929-95603c4b1a85
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d01d0958-8fd3-4a26-b690-0718c5d8acff
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_city
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8a387153-8246-4eb8-aead-6878c394f42b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f145b917-2337-4572-b5ef-6bb212696853
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 96e7fac3-fdeb-4f22-aed5-9975fcb12054
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c7ad8866-54e7-4d1a-8d0a-19550b4fbb75
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50f877fe-53b0-4e10-883c-d8b8de3f8a4d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: de79a6e3-98ed-4a16-b63d-92d2df22d451
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 17483e44-41d2-44be-ad4f-b4867396d932
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57999730-e62b-462e-a41a-96ef029be368
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_reported
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f21287d-2324-464e-9d3e-3d4e01d74229
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5cb733d7-d23a-4429-85a9-cf036da1596b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_since
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cd237cf0-b293-4c72-8b1f-2b51de7d2deb
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ec3b02a-0639-482b-9eb0-68073e479c19
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81af8834-7e1d-4265-b7d8-d3f105bfe783
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a233ace3-898f-430f-8ecf-7335347174d8
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_state
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e11e986-9d9c-4ea3-aa6c-31cef828bd27
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84a1f8ef-ee2a-4136-b136-7b948b92c215
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streetdirection
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 88cb6a11-f54c-4a32-bc40-3712d65ef9c7
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c6642a75-ef4b-4a30-9412-d864056bfbc0
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streetname
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1fdab55d-f33f-4f27-a4b1-052acf7eb2eb
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c399f09-b6d8-48b4-9e77-84a315772912
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streetnumber
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 203c72f6-e1cb-4c3b-8764-e87be439a7c9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 51ddc87a-05e9-4812-acd4-61f92cbaf47d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_streettype
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0ff06fd1-d775-4169-a06c-6d3e94c922eb
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d10b91f8-655c-448a-8bd1-1e082a1cdf68
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ADDRESS_VARIATION_zip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fe6df44c-eb79-43e4-935c-8f92110ea5fd
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3289f8c8-217d-43f7-992a-fab8c37f7e9d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b159e7f-6e4e-4c21-9d34-ede19b23937d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec228ddc-4cf7-44a3-b06e-bbe62227c286
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d560f1c6-9c4f-49a2-8404-3739c530929c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33048ee5-2741-4f9a-96e6-c62d94e87f84
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67268db0-5553-422e-a2b0-5f0220d5b2bc
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5647ed81-ee8d-47b9-9d80-1e7e4ce22cc4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b8394b7e-9e4b-4130-8c2f-b82b7a8c3a0e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 54918f9a-49cf-4d46-9561-75c7f631f1df
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f8f75faa-9276-448a-8bd0-0838e186924e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 253c2804-743f-4aca-a315-b0ec3d053cdf
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_position
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6001293c-838a-4af4-9f56-67b382dca86d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a69527ef-6996-4166-9cd1-1c77cb6e4428
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_since
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0bb68511-41f4-4e2a-a130-1ead78b09009
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b8883ac-ed85-4223-878c-c16ef3813cfa
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_EMPLOYER_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dced0cb4-20d8-4aa9-a553-f76b840c5dec
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7b047cf-3c39-4e00-8d60-b1ec8b057d5b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_area_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6fb71bc5-0401-4ff4-89e6-2b9182534be6
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf9532a3-85e8-47f9-812d-6114aeedb6db
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59f8c02c-9332-4ba1-a2fc-350bb59c04c0
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14ef8c7e-29ca-42b8-a529-19458362ff48
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_date_reported
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3152f21b-73e5-4a02-9c1c-8f2567fbddfc
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 246e98b9-2a20-4379-b1a6-d1a13a47f058
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_extension
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4c5bc89e-f799-42c4-9b6d-44633c7cdea3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ba5a582-d070-41b4-89a3-2467d32724e6
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ac4c9b22-6a2e-48f1-b9ac-ae8874521bb0
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8bc3bc06-cf68-4fc5-bba5-557719c716e8
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c8094efe-76c2-4606-81ce-545177e11c5e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1c8bee53-247c-44b3-88e8-a1948ec89dae
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9327ef8d-dfb9-47c8-9fa6-f507ff05dcd2
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05c6bf4c-652f-4688-bfa6-7fc4328423f9
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04d7716e-af28-4f55-b1be-aa787d269bc2
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e3820f9c-98f7-4173-9f39-0943ed941610
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_PHONE_VARIATION_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 03130e31-d5e5-4005-a0ef-2a7c68bfcc7f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 837ba027-a18a-4b37-a329-e830b6df6cfb
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06401ce3-5e4b-495a-aa0f-a6917d07c003
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 79b4312a-0f9c-45a2-ba15-d63cf586ac58
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d8e660dd-46bc-4da1-b490-5350afc589b1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70c349dc-43ce-4201-8d03-4c7d91e21847
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a4f6cf6d-2115-4994-aeae-2e117e045b27
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ef14c5e-83f3-4a7c-9113-04d6c70a52a4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_remark
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 63061183-6d6f-4e44-932b-45a95b9c5399
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3dd6bec9-139d-401e-b160-3929abbd9251
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 111911f8-490f-4bf6-adbf-c5038b0d9962
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7ccca8bb-1de7-428f-be97-bf969ffebcd5
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: abe52afc-42de-459b-98a3-d1d641f3b1f9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4c2a7556-5988-4374-a6de-d2a16fe5711e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_FRAUD_PRODUCT_FRAUD_INDICATOR_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecb335dc-622a-4e15-98f1-5d7160ef4941
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d8d86da9-01ce-4eb5-a817-4e1182544fd0
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 264252ea-2732-4382-abfd-d97ee226f634
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6bcd2943-e2dd-4f90-a7d0-b7952814e98f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0631eca7-fa35-45cf-817e-84c7c9656c79
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1a39064e-8d84-4f8b-ac5d-fdf4a05f4b2b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 477bbfd6-28be-4633-9329-b2f34035d279
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7774c3b7-7d40-4788-bcfc-6e0099a994c0
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_indicator_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 55dbde9f-3d28-40e1-9057-78eb5036ebb3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3cfca0a3-744f-4de2-bc29-ac36676f8757
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_safe_scan_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4c0e3df1-9d31-488a-9ea2-b1d5a9522209
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fcc0ebc9-924c-480f-8138-54f5ab854fb4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_SAFE_SCAN_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 96afe54c-9df6-4985-a442-c13ba794c9a5
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 72295409-f727-40c2-87f2-c5a21911f9da
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2718bd91-8b4c-4035-b78a-1fb9235e23d5
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9aaa112c-07ae-4040-bc76-def93e685086
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73ec2310-d621-492e-89f7-ccaead794275
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d2b228cd-8967-44b0-9d8b-db3a64918ce7
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 627d8375-9927-41aa-842f-67487c4abc9c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f3a0f272-c4bb-4d3d-9e33-ac378e36c414
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_hide
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4a2df76b-8c5c-42c1-8ec0-23640d38faa4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae025400-3d2c-4302-a5bf-e30823cd84d2
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7777f388-2b95-4c5d-9c00-ca6ad656f5c1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9ffa9f5-ffd2-4b32-94ac-59e761abada6
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_last_modified
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0c202bc1-4ab8-4131-8f64-0632b039d0d2
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4582c5a6-6b81-4c97-b590-11feb499cb8d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_modified_by
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 025e4aaf-897f-407f-9887-ed6dc50c7e46
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71b9c4c1-06e0-4320-a2d9-7696ee5ffb84
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_remark_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4cfac74a-a31a-4645-9748-e24cb7abf60c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5e1ddde-b5aa-4777-81c6-7f5471a55a3e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3735e5b4-c17a-47ac-875f-a0c142f492a9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a89b1769-6074-4d84-8f24-a5db101ee00f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_ALERT_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42b141bb-dee6-4765-8ef0-994c65fe3ea6
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a9747733-9cef-4501-8dde-88e7f4df5b60
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 292f95fa-108c-43ba-b09a-9713ad2e9d68
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7252c6f6-b937-4477-86bb-520fd3d30905
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c69d8bdf-0e17-423d-99bc-aebd3cdd03ae
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f6e5c16b-a236-44a7-a865-c297c8f17848
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_hide
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f1fcb23-d9f3-46bd-82cb-8f5acd830a4b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 70000d16-9372-4972-9e8d-ccf2e130996d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9c4c768a-18df-4b91-ab00-a4ca34cd4f50
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39ee26db-5c3b-4eff-9ecf-3d8624305eec
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_last_modified
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06a9115d-bf1f-4c9f-8804-bac8c872041b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8dc8d6f5-5bd3-497d-aab6-7a2ca4620f13
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_modified_by
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e0b27581-b93e-4e5b-8573-2629485f8dee
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 646b9709-8a36-4ed8-bacc-1f46541fe20e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_remark_text
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ea5d056c-1681-4229-a379-ea7d22282651
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bf068520-32d5-45c5-b5c1-02496a474c1f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_REMARK_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 815620e4-2db4-4daa-bd89-3faad4c8d297
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 38a60c39-402b-467a-96d7-54f4759ed5dc
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_address
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1404a808-b9a3-446d-ae59-bf45f7943655
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0ddfb1a1-81fa-476e-ad11-a1845007fef4
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_citystatezip
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 296d5c7b-00a0-4066-8b05-1a6141aa9bec
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c19b7e3-3ac0-46e3-b659-bb4d9bd68a53
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_consumer_code
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8639a390-e6a1-4d8e-9520-25159ccc8947
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81a8c5db-3b1a-479e-897d-d926dc4df4e7
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_file_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 26e940b5-fce0-4203-83ec-7a7a07eef4a1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 028b5025-dc90-4717-8295-0e0ec207db01
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 679f944e-d668-4eb7-a506-03bee2416882
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3dfe31e9-7d73-4a46-9907-749237a3b0ef
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62035054-68a3-4995-b997-6dfa59418a26
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 685b2aa5-4a34-48fe-b444-40f627a46061
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_phone
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93b01e97-73bd-4634-8531-c66e62d47e35
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56c4f9a9-8622-4930-be6d-176fbe68f673
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_CONSUMER_REFERRAL_source_bureau
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7fc2af0d-8f43-4f8e-8642-d37af28ef848
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0e4b929b-b1e1-43e6-890b-3586a0f24958
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_public_record_count_pc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 680ca931-7abf-4324-8f69-8bbf4d376b19
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c243f4b-f0df-44ff-bba8-4b4c725a4a1d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_public_record_count_sc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 99dbf256-f376-41c6-a0be-5ce86f12a644
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce2634e8-d526-4198-b39b-2d729d92bd5d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_trade_count_pc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e9e40e87-34bf-4676-bca8-c2dda8c921fe
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a20c5305-06de-444f-9be3-8b8b3477466f
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_bankruptcy_trade_count_sc
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a64c679c-605b-4d2e-8cae-a13983ab22ec
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 78cd35f3-19fd-4249-9c8f-dd5d190eaa16
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_day_30
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 013befad-4300-4394-a0e8-6eccf41ac1ee
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0dfd5c13-94b6-49b8-a653-453b2a037977
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_day_60
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60380375-1e71-4842-a532-814d3c78a57f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b2a2a00-0ef4-452d-bc07-20ce641d1afa
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_day_90
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 223e08bb-c1e3-452e-b7a9-b35cd60a6616
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 745fd124-25d4-460d-813f-7e082372e148
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 69aa0c43-fa7c-4149-b01e-843110aa2997
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88f524d6-4530-49b3-9776-0bd1534c6ff7
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 27b53fc7-1869-4e5e-bcc4-376d0231500c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16caea2c-0104-4cf5-a69e-6eed70dc0899
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fecf49c9-7099-404a-aea8-e8f1fdac7417
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a359ef11-226a-4d6f-a101-c9423bc4605d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_installment_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3910767b-0984-4e05-b543-1a211a195169
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6e459a1f-438f-49f2-9ddf-ef494092771a
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 24b4a31f-cb7a-426a-bdae-05630853fc6f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ccab781-905d-430f-9a78-801a1a16201e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d9533567-ae11-42ca-b4db-b4141c31457f
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ca995410-3829-43a4-99ed-9f96aa57de98
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c2feaac2-443a-47f9-ad22-1904436cb443
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f86d77f-146b-4e90-92de-a1a29f476ee9
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_mortgage_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 493bab2a-f5d4-42fb-a783-4897709e6cba
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fc5ed431-4de6-4ad8-bc61-5d58e6ba3ca6
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 255e193b-0d6e-49cc-86a4-ceb022cb18cd
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 893eb2ed-2534-4a0b-b779-c56d1c2fb4be
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e6a390be-00c6-4bb1-b8dc-447ee7e9ca9c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0567cd6-a105-436f-8770-c1a91b4fb688
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f9cd7b41-bba5-480c-a8a4-33339f5fc8d4
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 33a0f114-c130-4f38-b55c-8ddd40de7e11
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_open_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e1103ab-91e8-40da-a1e2-428dd0232077
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4bd8c029-4d90-4572-b35a-80636ff64c7c
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_original_unsecure_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93700fc4-516f-4b67-8cb8-bb0268cf5c9d
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ca503dc-df5c-410b-b218-f5121d1b3d9b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 59a56436-4fd4-4779-8118-cbec97a18776
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 53777f17-6c33-4653-9169-b1937bb61d99
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8fea1234-ecfc-41a0-a7e1-d7c6937f0b90
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2332609b-54bd-421e-a69f-b71497fa7fed
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4f9fb56-994f-467c-a3ec-5b87cfe11f8b
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4f7a01e8-4828-499d-ad89-61d2c8636f4d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_revolving_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ace9b775-dac4-41df-9dd3-b8ac365ebf66
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: de4680a2-f16e-4080-b508-f557e1d03ecd
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3408aef5-6389-4230-af5b-20e6c806abf9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c00e6231-17b6-4b86-8cb4-30069ce5230b
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a05ffc4d-4e17-4ac2-8287-7f2821895153
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 915ab651-280d-4132-ae8a-84ccfa5381c7
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f62ebb5d-70ef-4c61-9545-89c8eb1348fe
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 319de695-2772-47f1-9e94-12f69d3c768d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d9714a6-2ab9-4b81-a366-64a35e3feed9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d695e71-4688-4f6b-9c75-5ff3d3187109
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c529a97d-af45-47e0-91ec-571e4ada1001
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2129ec1e-82f8-4f2b-82a3-5cc727f9d798
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_no_mortgage_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f73e4e06-14e5-4bae-8237-87d704190aad
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d1036fb-5069-477a-b3a8-0a1d93825af8
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ea63bdb-b5d3-4c57-a2d1-03b233d111f3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ccdb23d4-c083-460f-bc61-72a6cd538876
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_secure_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aacd1461-578f-4fb6-9ba1-832e887e29c7
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc1c0a1b-14ab-42c4-a442-3128583aa140
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b1f8f07d-714c-4d6c-88be-636dbd2f7d0a
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e0403ac6-8841-4734-baf1-e6c3d42f985c
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae83e8af-f31e-4bd7-8582-e69d8fe1f183
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c43bc878-be8a-40b1-8710-c97b33ddef4c
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37aeb768-4ab2-4663-b1a9-f2283ccf2955
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e073328-93c1-458d-ac31-3c7d4343ec21
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_total_trade_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5201e625-5288-4c59-bcbe-844745bd4e55
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eda87fe1-26e0-4a63-940f-612b74bf8789
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_chargeoff_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 70a9fef6-e53e-4cec-859e-837e79575ca1
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96e2b6ad-ad46-4509-b85a-0270feb86ace
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_current_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7abb0ab2-6e1f-47e9-a941-a63f7d145674
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 39d11e5c-8921-4606-834a-9dd576996c4d
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_oldest_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dbd1c518-0f41-47af-8409-4da0c853abf3
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86a3bc66-0bcf-42b5-b19c-4bbeb5a24637
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_previous_adverse_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4daa4f05-bba3-4275-95a8-dd961c37f8b7
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4d255a74-116e-4034-829d-9f4484e5d214
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_trade_satisfactory_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a10c458c-6c67-4869-8586-1f70a75af7f9
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84d579dd-a562-4cfa-85c3-dca498c3ab8e
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d6bf561e-df05-4ecb-905f-9362dae7c802
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cfff3f0b-524b-430d-9d8b-7040a6de86aa
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6224f84-d0b7-474e-882a-4d337d46c2d6
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86d85562-fcca-4890-9eae-c5ea460afdbc
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f5577508-316a-4ff4-af31-cb46e9a6e074
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d12c448-8505-4b55-8c8d-a80fca64bf4a
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unknown_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8e0ad049-a703-4ffb-ac2a-2408ec20139c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ede33342-82c6-4a82-a915-73bd422ea9bd
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_balance
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 93ce26ba-f93c-4eb6-84ea-882da2b4da0e
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d9873c6c-923e-4f05-9c87-0662ce7c5c65
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c1cbf62f-9bff-4cdb-b10b-6e1b0022756c
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b73eaf99-3136-4cff-9c6b-f8a9b56a81ed
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_pastdue
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fcbfb23d-1889-42b0-9104-a0113f051ffe
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30c44404-0211-47bb-bc1c-89d7b02f2e17
+          stepCounter: 2d572b01-fd82-4de9-86fb-ec7851e06705
+        config: {}
+        dataType: STRING
+        description: ""
+        name: CREDITDATA_TRADE_SUMMARY_unsecure_payment
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 67bf1e75-02d0-401e-96f4-8e804c70f3be
+                stepCounter: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_CREDITDATA_RAW_FULL_XML: 54da3c2b-6a31-4625-bdb9-fc3777b4d649
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: STG_CREDITDATA_RAW_FULL_XML
+        join:
+          joinCondition: FROM {{ ref('WORK', 'STG_CREDITDATA_RAW_FULL_XML') }} "STG_CREDITDATA_RAW_FULL_XML"
+        name: STG_CREDITDATA_RAW_FULL_XML1
+        noLinkRefs: []
+  name: STG_CREDITDATA_RAW_FULL_XML1
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

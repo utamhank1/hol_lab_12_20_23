@@ -1,0 +1,196 @@
+fileVersion: 1
+id: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+name: EXT_JSON
+operation:
+  config:
+    autoRefresh: false
+    cloudProvider: AWS
+    compression: NONE
+    cpartexpression: ""
+    emptyfield: true
+    encoding: UTF8
+    escapeenclosed: \134
+    escapeval: ""
+    fieldDelim: ","
+    fieldEnclosed: \042
+    fileFormatLoc: ""
+    fileFormatName: ""
+    fileFormatType: File Format Values
+    fileNames: ""
+    filePattern: .*[.]json
+    fileType: JSON
+    inferschema: true
+    integration: ""
+    mulline: true
+    nullchar: ('\N')
+    parsehdr: true
+    parsehdr1: true
+    partclause: false
+    recDelim: |+
+
+    replaceinvalidcharacters: true
+    skipBlankLines: false
+    skipHeader: "1"
+    snsTopic: arn:aws:sns:us-east-1:121674918127:prod-emea-s3-notification
+    stageName: AZURE_BLOB_EXTERNAL_STAGE/json_files_jj
+    stageStorageLocationName: EXT_STG_AZURE
+    stripouterarray: true
+    trimSpace: false
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - VALUE: true
+        acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 23f97916-b043-4d01-ab7e-275434a0328c
+          stepCounter: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: VALUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a2e39141-1906-4c4a-90ee-9c0c5b60ee6c
+          stepCounter: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: album
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 270c11cf-9bb2-4577-acf3-46772bb00885
+          stepCounter: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: lyrics
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 693a138a-f788-49ec-b26b-dbe85dde67d9
+          stepCounter: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: lyrics_title
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5352b55e-b85f-4b05-9a99-26d40ff1cebc
+          stepCounter: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: lyrics_url
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e170e901-b635-4e74-810f-03a3d4ef404e
+          stepCounter: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: track_views
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 676fb0c2-438b-4dc9-8058-9613f35325ce
+          stepCounter: 0caf0149-daf5-4e78-8ef5-d195bd2426c2
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: FILENAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: EXT_JSON
+        noLinkRefs: []
+  name: EXT_JSON
+  overrideSQL: false
+  schema: ""
+  sqlType: external-data-package-2-0-0:::298
+  type: sql
+  version: 1
+type: Node

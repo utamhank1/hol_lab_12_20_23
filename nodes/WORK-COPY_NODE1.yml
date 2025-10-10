@@ -23,7 +23,6 @@ operation:
     flagSnowpipe: Enable Snowpipe
     forceLoad: ""
     inferschema: false
-    integration: null
     intextstage: true
     loadUncertainFiles: ""
     onError: ""
