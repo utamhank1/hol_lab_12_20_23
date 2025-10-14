@@ -111,7 +111,10 @@ metadata:
         isRequired: true
         enableIf: "{% if config.excludeMergeToggle %} true {% else %} false {% endif %}"
 
-
+      - displayName: Hard Delete Unmatched Records
+        attributeName: hardDelete
+        type: toggleButton
+        default: false
 
       - type: toggleButton
         attributeName: insertZeroKey

@@ -9,6 +9,7 @@ operation:
       items: []
     excludeMergeToggle: false
     groupByAll: false
+    hardDelete: true
     insertStrategy: UNION ALL
     insertZeroKey: false
     insertZeroKeyAdvanced: false

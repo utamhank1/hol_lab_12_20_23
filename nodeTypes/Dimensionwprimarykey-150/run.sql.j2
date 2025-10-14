@@ -155,7 +155,7 @@ does not permit copying or modification for any other purpose.
             {% if config.groupByAll %}
             GROUP BY ALL
             {% endif %}
-            {{ sortorder_by_colv() }}
+            {% if config.orderby %}{{ sortorder_by_colv() }}{% endif %}
             )
 
             UNION ALL
@@ -234,7 +234,7 @@ does not permit copying or modification for any other purpose.
             {% if config.groupByAll %}
             GROUP BY ALL
             {% endif %}
-            {{ sortorder_by_colv() }}
+            {% if config.orderby %}{{ sortorder_by_colv() }}{% endif %}
             )
             UNION ALL
             /* Rows Needing To Be Expired Due To Type-2 Column Changes
@@ -313,7 +313,7 @@ does not permit copying or modification for any other purpose.
             {% if config.groupByAll %}
             GROUP BY ALL
             {% endif %}
-            {{ sortorder_by_colv() }}
+            {% if config.orderby %}{{ sortorder_by_colv() }}{% endif %}
             )
             {# The if-block below avoids unnecessary updates when no type 2 column changes are present #}
             {% if source.columns 
@@ -456,7 +456,7 @@ does not permit copying or modification for any other purpose.
                {% if config.groupByAll %}
                 GROUP BY ALL
                {% endif %}
-               {{ sortorder_by_colv() }} )      
+               {% if config.orderby %}{{ sortorder_by_colv() }}{% endif %} )      
             {% endif %}   
                {% if config.insertStrategy in ['UNION', 'UNION ALL'] and not loop.last %}
                 {{config.insertStrategy}}
@@ -490,10 +490,32 @@ does not permit copying or modification for any other purpose.
             {% if not loop.last %}, {% endif %}
         {% endfor -%}
         )
+        ;
 
-    
-
-
+    {%- if config.hardDelete %}
+        {{ stage('Hard Delete Unmatched Records') }}
+        DELETE FROM {{ ref_no_link(node.location.name, node.name) }} "TGT"
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM (
+            {%- for source in sources %}
+                ( SELECT DISTINCT
+                {%- for col in columns if col.isBusinessKey %}
+                    "{{ col.name }}"
+                    {%- if not loop.last %}, {% endif %}
+                {%- endfor %}
+                {{ source.join }}
+                )
+                {%- if not loop.last %} UNION ALL {% endif %}
+            {%- endfor %}
+            ) "SRC"
+            WHERE
+            {%- for col in columns if col.isBusinessKey %}
+                {% if not loop.first %} AND {% endif %}
+                "SRC"."{{ col.name }}" = "TGT"."{{ col.name }}"
+            {%- endfor %}
+        )
+    {%- endif %}
 
     {% else %}
         
@@ -529,7 +551,7 @@ does not permit copying or modification for any other purpose.
                  {% if config.groupByAll %}
                  GROUP BY ALL
                  {% endif %}
-                 {{ sortorder_by_colv() }} )     
+                 {% if config.orderby %}{{ sortorder_by_colv() }}{% endif %} )     
                  {% if config.insertStrategy in ['UNION', 'UNION ALL'] and not loop.last %}
                      {{config.insertStrategy}}
                  {% endif %}
@@ -544,74 +566,38 @@ does not permit copying or modification for any other purpose.
                 "SRC"."{{ col.name }}" = "TGT"."{{ col.name }}"
             {% endfor %}
             WHEN MATCHED
-                {% for col in columns if not (
-                    col.isBusinessKey or
-                    col.isSurrogateKey or
-                    col.isSystemVersion or
-                    col.isSystemCurrentFlag or
-                    col.isSystemStartDate or
-                    col.isSystemEndDate or
-                    col.isSystemUpdateDate or
-                    col.isSystemCreateDate or
-                    col.name in excluded_cols) %}
-
-                    {% if loop.first %}
-                        AND (
-                    {% else %}
-                        OR
-                    {% endif %}
-
-               {% if col.dataType == 'GEOGRAPHY' %}
-                    (
-                        ST_DISTANCE(
-                            (CASE 
-                                WHEN "SRC"."{{ col.name }}" IS NULL THEN TO_GEOGRAPHY('POINT(0 0)') 
-                                ELSE "SRC"."{{ col.name }}" 
-                            END),
-                            (CASE 
-                                WHEN "TGT"."{{ col.name }}" IS NULL THEN TO_GEOGRAPHY('POINT(0 0)') 
-                                ELSE "TGT"."{{ col.name }}" 
-                            END)
-                        ) > 0
-                    )
-                {% elif col.dataType == 'GEOMETRY' %}
-                    (
-                        ST_DISTANCE(
-                            
-                                (CASE 
-                                    WHEN "SRC"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') 
-                                    ELSE "SRC"."{{ col.name }}" 
-                                END),
-                                (CASE 
-                                    WHEN "TGT"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') 
-                                    ELSE "TGT"."{{ col.name }}" 
-                            END)
-                        ) > 0
-                    )
-                {% else %}
-                        (
-                            NVL(CAST("SRC"."{{ col.name }}" AS STRING), '**NULL**') <> 
-                            NVL(CAST("TGT"."{{ col.name }}" AS STRING), '**NULL**')
-                        )
-                    {% endif %}
-
-                    {% if loop.last %}
-                        )
-                    {% endif %}
-                {% endfor %}
+            {%- set change_cols = columns | rejectattr('isBusinessKey') | rejectattr('isSurrogateKey') | rejectattr('isSystemVersion') | rejectattr('isSystemCurrentFlag') | rejectattr('isSystemStartDate') | rejectattr('isSystemEndDate') | rejectattr('isSystemUpdateDate') | rejectattr('isSystemCreateDate') | rejectattr('name', 'in', excluded_cols) | list %}
+            {%- if change_cols | length > 0 %} AND (
+            {%- for col in change_cols %}
+                {% if not loop.first %} OR {% endif %}
+                {%- if col.dataType == 'GEOGRAPHY' %}
+                (
+                    ST_DISTANCE(
+                        (CASE WHEN "SRC"."{{ col.name }}" IS NULL THEN TO_GEOGRAPHY('POINT(0 0)') ELSE "SRC"."{{ col.name }}" END),
+                        (CASE WHEN "TGT"."{{ col.name }}" IS NULL THEN TO_GEOGRAPHY('POINT(0 0)') ELSE "TGT"."{{ col.name }}" END)
+                    ) > 0
+                )
+                {%- elif col.dataType == 'GEOMETRY' %}
+                (
+                    ST_DISTANCE(
+                        (CASE WHEN "SRC"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') ELSE "SRC"."{{ col.name }}" END),
+                        (CASE WHEN "TGT"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') ELSE "TGT"."{{ col.name }}" END)
+                    ) > 0
+                )
+                {%- else %}
+                (
+                    NVL(CAST("SRC"."{{ col.name }}" AS STRING), '**NULL**') <> 
+                    NVL(CAST("TGT"."{{ col.name }}" AS STRING), '**NULL**')
+                )
+                {%- endif %}
+            {%- endfor %}
+            )
+            {%- endif %}
 
             THEN UPDATE SET
-            {%- for col in columns if not (col.isBusinessKey or
-                                           col.isSurrogateKey or
-                                           col.isSystemVersion or
-                                           col.isSystemCurrentFlag or
-                                           col.isSystemStartDate or
-                                           col.isSystemEndDate or
-                                           col.isSystemCreateDate or
-                                           col.name in excluded_cols) %}
-                    "TGT"."{{ col.name }}" = "SRC"."{{ col.name }}"
-                {% if not loop.last %}, {% endif %}
-            {% endfor %}
+            {%- for col in columns if not (col.isBusinessKey or col.isSurrogateKey or col.isSystemVersion or col.isSystemCurrentFlag or col.isSystemStartDate or col.isSystemEndDate or col.isSystemCreateDate or col.name in excluded_cols) %}
+                "TGT"."{{ col.name }}" = "SRC"."{{ col.name }}"{% if not loop.last %},{% endif %}
+            {%- endfor %}
             WHEN NOT MATCHED THEN
             INSERT (
             {%- for col in columns if not col.isSurrogateKey %}
@@ -625,6 +611,32 @@ does not permit copying or modification for any other purpose.
                 {% if not loop.last %}, {% endif %}
             {% endfor -%}
             )
+            ;
+
+    {%- if config.hardDelete %}
+        {{ stage('Hard Delete Unmatched Records') }}
+        DELETE FROM {{ ref_no_link(node.location.name, node.name) }} "TGT"
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM (
+            {%- for source in sources %}
+                ( SELECT DISTINCT
+                {%- for col in columns if col.isBusinessKey %}
+                    "{{ col.name }}"
+                    {%- if not loop.last %}, {% endif %}
+                {%- endfor %}
+                {{ source.join }}
+                )
+                {%- if not loop.last %} UNION ALL {% endif %}
+            {%- endfor %}
+            ) "SRC"
+            WHERE
+            {%- for col in columns if col.isBusinessKey %}
+                {% if not loop.first %} AND {% endif %}
+                "SRC"."{{ col.name }}" = "TGT"."{{ col.name }}"
+            {%- endfor %}
+        )
+    {%- endif %}
      
     {% endif %}
 
@@ -653,4 +665,3 @@ does not permit copying or modification for any other purpose.
         {% endfor %}
     {% endfor %}
 {% endif %}
-
