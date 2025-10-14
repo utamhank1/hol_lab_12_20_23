@@ -93,7 +93,7 @@ metadata:
         isRequired: true
         enableIf: "{% if config.orderby %} true {% else %} false {% endif %}"
 
-      - displayName: Exclude Columns from Merge
+      - displayName: Exclude Columns from Merge (Type I Dim ONLY)
         attributeName: excludeMergeToggle
         type: toggleButton
         default: false

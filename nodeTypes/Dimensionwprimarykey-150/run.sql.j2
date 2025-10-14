@@ -28,10 +28,10 @@ does not permit copying or modification for any other purpose.
 
 {# == Queries to be excuted before data insertion  == #}
 
-	{% if config.preSQL %}			
-		{{ stage('Pre-SQL') }}
-		{{ config.preSQL }}
-	{% endif %}
+    {% if config.preSQL %}          
+        {{ stage('Pre-SQL') }}
+        {{ config.preSQL }}
+    {% endif %}
 
  {# == Truncate data before data insertion  == #}
 
@@ -39,74 +39,74 @@ does not permit copying or modification for any other purpose.
         {{ stage('Truncate Dimension Table') }}
         TRUNCATE IF EXISTS {{ ref_no_link(node.location.name, node.name) }}
     {% endif %}
-			{% if config.insertZeroKey %}
-				{% if config.insertZeroKeyAdvanced == true %}
-				{%- set ns = namespace(varColumnNameDefault = [],varColumnValueDefault=[]) %}
-				{%set ns.varColumnNameDefault = config.customZeroKeyValues.get('items') | map(attribute='columnNameDefault.name') | list%}
-				{%set ns.varColumnValueDefault = config.customZeroKeyValues.get('items') | map(attribute='columnValueDefault') | list%}
-				{% endif %}
-			{{ stage('Insert Zero Record') }}
-			MERGE INTO {{ ref_no_link(node.location.name, node.name) }}USING
-			(SELECT 
-			{% for col in sources[0].columns %}
-				{% set dtparams = col.dataType.partition('(')[-1].rpartition(')')[0].split(',') %}
-				{% if col.isSurrogateKey %} {{config.insertZeroKeySurrogateKey}}
-				{% elif config.insertZeroKeyAdvanced == true and col.name in ns.varColumnNameDefault %}
-					{%- for loopColumn in ns.varColumnNameDefault  -%}
-						{% if col.name ==  loopColumn %}
+            {% if config.insertZeroKey %}
+                {% if config.insertZeroKeyAdvanced == true %}
+                {%- set ns = namespace(varColumnNameDefault = [],varColumnValueDefault=[]) %}
+                {%set ns.varColumnNameDefault = config.customZeroKeyValues.get('items') | map(attribute='columnNameDefault.name') | list%}
+                {%set ns.varColumnValueDefault = config.customZeroKeyValues.get('items') | map(attribute='columnValueDefault') | list%}
+                {% endif %}
+            {{ stage('Insert Zero Record') }}
+            MERGE INTO {{ ref_no_link(node.location.name, node.name) }}USING
+            (SELECT 
+            {% for col in sources[0].columns %}
+                {% set dtparams = col.dataType.partition('(')[-1].rpartition(')')[0].split(',') %}
+                {% if col.isSurrogateKey %} {{config.insertZeroKeySurrogateKey}}
+                {% elif config.insertZeroKeyAdvanced == true and col.name in ns.varColumnNameDefault %}
+                    {%- for loopColumn in ns.varColumnNameDefault  -%}
+                        {% if col.name ==  loopColumn %}
                          {%if col.dataType[:3] | upper in ('VAR','CHA','STR','BIN')%}
-						 '{{ ns.varColumnValueDefault[loop.index0]}}'
+                         '{{ ns.varColumnValueDefault[loop.index0]}}'
                          {%else%} 
                          {{ ns.varColumnValueDefault[loop.index0]}}
                         {%endif%}
-						{% endif %}						
-					{% endfor -%}
-				{% elif col.isSystemCurrentFlag %}'Y'
-				{% elif col.isSystemStartDate or col.isSystemEndDate or col.isSystemUpdateDate or col.isSystemCreateDate %}{{ get_source_transform(col) }}
-				{% elif col.isSystemVersion%}1
-				{% elif col.dataType | upper in ('BOOLEAN') %} {{ config.insertZeroKeyBol }}
-				{% elif col.dataType[:3] | upper in ('NUM','INT','DEC','FLO') %}0
-				{% elif col.dataType [:12]| upper in ('TIMESTAMP_LT','TIMESTAMP_NT','TIMESTAMP_TZ') %} '{{config.insertZeroKeyTimestamp}}' ::{{ col.dataType |upper}}																																						 
-				{% elif col.dataType[:4] | upper in ('DATE','TIME') %}CAST(TO_TIMESTAMP( '{{config.insertZeroKeyDate}}', 'DD-MM-YYYY') AS {{ col.dataType }})
-				{% elif col.dataType[:3] | upper in ('VAR','CHA','STR','BIN') %}
-						{% if dtparams[0] and dtparams[0] | int <  config.insertZeroKeyStr | length  %}
-						SUBSTRING('{{config.insertZeroKeyStr}}',1,{{ dtparams[0] }})
-						{% else %}
-							'{{config.insertZeroKeyStr}}'
-						{% endif %}
-				{% elif col.nullable %}NULL
-				{% else %}''
-				{% endif %}
-				AS "{{ col.name }}"
-				{% if not loop.last %}, {% endif %}
-			{% endfor %}
-			FROM   DUAL
-			)AS SOURCE_ZERO
-			ON
-			{%- for col in columns if col.isSurrogateKey %}
-				{{ node.name}}.{{ col.name}} ={{config.insertZeroKeySurrogateKey}}
-			{% endfor -%}			
-			WHEN MATCHED THEN UPDATE
-			SET
+                        {% endif %}                     
+                    {% endfor -%}
+                {% elif col.isSystemCurrentFlag %}'Y'
+                {% elif col.isSystemStartDate or col.isSystemEndDate or col.isSystemUpdateDate or col.isSystemCreateDate %}{{ get_source_transform(col) }}
+                {% elif col.isSystemVersion%}1
+                {% elif col.dataType | upper in ('BOOLEAN') %} {{ config.insertZeroKeyBol }}
+                {% elif col.dataType[:3] | upper in ('NUM','INT','DEC','FLO') %}0
+                {% elif col.dataType [:12]| upper in ('TIMESTAMP_LT','TIMESTAMP_NT','TIMESTAMP_TZ') %} '{{config.insertZeroKeyTimestamp}}' ::{{ col.dataType |upper}}                                                                                                                                                        
+                {% elif col.dataType[:4] | upper in ('DATE','TIME') %}CAST(TO_TIMESTAMP( '{{config.insertZeroKeyDate}}', 'DD-MM-YYYY') AS {{ col.dataType }})
+                {% elif col.dataType[:3] | upper in ('VAR','CHA','STR','BIN') %}
+                        {% if dtparams[0] and dtparams[0] | int <  config.insertZeroKeyStr | length  %}
+                        SUBSTRING('{{config.insertZeroKeyStr}}',1,{{ dtparams[0] }})
+                        {% else %}
+                            '{{config.insertZeroKeyStr}}'
+                        {% endif %}
+                {% elif col.nullable %}NULL
+                {% else %}''
+                {% endif %}
+                AS "{{ col.name }}"
+                {% if not loop.last %}, {% endif %}
+            {% endfor %}
+            FROM   DUAL
+            )AS SOURCE_ZERO
+            ON
+            {%- for col in columns if col.isSurrogateKey %}
+                {{ node.name}}.{{ col.name}} ={{config.insertZeroKeySurrogateKey}}
+            {% endfor -%}           
+            WHEN MATCHED THEN UPDATE
+            SET
             {%- for col in columns if (not col.isSurrogateKey and not col.isBusinessKey) %}
-				{{ node.name}}.{{ col.name}} =SOURCE_ZERO.{{ col.name}}
-				{% if not loop.last %}, {% endif %}			
-			{% endfor -%}
+                {{ node.name}}.{{ col.name}} =SOURCE_ZERO.{{ col.name}}
+                {% if not loop.last %}, {% endif %}         
+            {% endfor -%}
             WHEN NOT MATCHED THEN INSERT
-			(
+            (
             {%- for col in columns %}
-				{{ col.name}}
-				{% if not loop.last %}, {% endif %}			
-			{% endfor -%}
-			)
-			VALUES
-			(
+                {{ col.name}}
+                {% if not loop.last %}, {% endif %}         
+            {% endfor -%}
+            )
+            VALUES
+            (
             {%- for col in columns %}
-			 SOURCE_ZERO.{{ col.name}}			
-				{% if not loop.last %}, {% endif %}			
-			{% endfor -%}
-			)
-		  {% endif %}	
+             SOURCE_ZERO.{{ col.name}}          
+                {% if not loop.last %}, {% endif %}         
+            {% endfor -%}
+            )
+          {% endif %}   
     {% if is_type_2 %}
          
          {# SCD-Type 2 Dimension == #}
@@ -461,7 +461,7 @@ does not permit copying or modification for any other purpose.
                {% if config.insertStrategy in ['UNION', 'UNION ALL'] and not loop.last %}
                 {{config.insertStrategy}}
                {% endif %}            
-					  
+                      
         {% endfor %}  
                          
         ) AS "SRC"
@@ -491,13 +491,19 @@ does not permit copying or modification for any other purpose.
         {% endfor -%}
         )
 
-	
+    
 
 
 
     {% else %}
         
         {# SCD-Type 1 Dimension == #}
+
+            {# Create a list of column names to exclude from the merge update, if the feature is enabled #}
+            {%- set excluded_cols = [] %}
+            {%- if config.excludeMergeToggle and config.excludeMergeList.get('items') %}
+                {%- set excluded_cols = config.excludeMergeList.get('items') | map(attribute='excludeColName.name') | list %}
+            {%- endif %}
 
             {{ stage('MERGE ' + ' Sources' | string) }}
             MERGE INTO {{ ref_no_link(node.location.name, node.name) }} "TGT"
@@ -510,9 +516,9 @@ does not permit copying or modification for any other purpose.
                 {% endif %}
                 {% for col in source.columns if not col.isSurrogateKey %}
                     {% if col.isSystemVersion %}
-                    	1
+                        1
                     {% elif col.isSystemCurrentFlag %}
-                    	'Y'
+                        'Y'
                     {% else %}
                         {{ get_source_transform(col) }}
                     {% endif %}
@@ -546,7 +552,8 @@ does not permit copying or modification for any other purpose.
                     col.isSystemStartDate or
                     col.isSystemEndDate or
                     col.isSystemUpdateDate or
-                    col.isSystemCreateDate) %}
+                    col.isSystemCreateDate or
+                    col.name in excluded_cols) %}
 
                     {% if loop.first %}
                         AND (
@@ -570,14 +577,14 @@ does not permit copying or modification for any other purpose.
                 {% elif col.dataType == 'GEOMETRY' %}
                     (
                         ST_DISTANCE(
-							
-								(CASE 
-									WHEN "SRC"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') 
-									ELSE "SRC"."{{ col.name }}" 
-								END),
-								(CASE 
-									WHEN "TGT"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') 
-									ELSE "TGT"."{{ col.name }}" 
+                            
+                                (CASE 
+                                    WHEN "SRC"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') 
+                                    ELSE "SRC"."{{ col.name }}" 
+                                END),
+                                (CASE 
+                                    WHEN "TGT"."{{ col.name }}" IS NULL THEN TO_GEOMETRY('POINT(0 0)') 
+                                    ELSE "TGT"."{{ col.name }}" 
                             END)
                         ) > 0
                     )
@@ -594,13 +601,14 @@ does not permit copying or modification for any other purpose.
                 {% endfor %}
 
             THEN UPDATE SET
-            {%- for col in columns if not (  col.isBusinessKey or
-                                                    col.isSurrogateKey or
-                                                    col.isSystemVersion or
-                                                    col.isSystemCurrentFlag or
-                                                    col.isSystemStartDate or
-                                                    col.isSystemEndDate or
-                                                    col.isSystemCreateDate) %}
+            {%- for col in columns if not (col.isBusinessKey or
+                                           col.isSurrogateKey or
+                                           col.isSystemVersion or
+                                           col.isSystemCurrentFlag or
+                                           col.isSystemStartDate or
+                                           col.isSystemEndDate or
+                                           col.isSystemCreateDate or
+                                           col.name in excluded_cols) %}
                     "TGT"."{{ col.name }}" = "SRC"."{{ col.name }}"
                 {% if not loop.last %}, {% endif %}
             {% endfor %}
@@ -617,31 +625,32 @@ does not permit copying or modification for any other purpose.
                 {% if not loop.last %}, {% endif %}
             {% endfor -%}
             )
-	 
+     
     {% endif %}
 
 {# == Queries to be excuted post data insertion  == #}
 
-	{% if config.postSQL %}			
-		{{ stage('Post-SQL') }}
-		{{ config.postSQL }}
-	{% endif %}
+    {% if config.postSQL %}         
+        {{ stage('Post-SQL') }}
+        {{ config.postSQL }}
+    {% endif %}
 {% endif %}
 
 {# == To run data quality tests after data insertion == #}
 
 {% if config.testsEnabled %}
-	{% for test in node.tests %}
-		{% if test.runOrder == 'After' %}
-			{{ test_stage(test.name, test.continueOnFailure) }}
-			{{ test.templateString }}
+    {% for test in node.tests %}
+        {% if test.runOrder == 'After' %}
+            {{ test_stage(test.name, test.continueOnFailure) }}
+            {{ test.templateString }}
         {% endif %}
-	{% endfor %}
+    {% endfor %}
 
-	{% for column in columns %}
-		{% for test in column.tests %}
-			{{ test_stage(column.name + ": " + test.name) }}
-			{{ test.templateString }}
-		{% endfor %}
-	{% endfor %}
+    {% for column in columns %}
+        {% for test in column.tests %}
+            {{ test_stage(column.name + ": " + test.name) }}
+            {{ test.templateString }}
+        {% endfor %}
+    {% endfor %}
 {% endif %}
+
