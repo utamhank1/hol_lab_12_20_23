@@ -1,0 +1,173 @@
+fileVersion: 1
+id: 26d98f90-57e9-4904-b761-5e96e268e4f4
+name: INTTBL_TPCH_SALES_SUMMARY
+operation:
+  config:
+    autoRefresh: false
+    clusterKey: true
+    clusterKeyConfig:
+      items:
+        - columnName:
+            columnCounter: 06c13179-091c-4f23-95e2-7d9dbe0cc71d
+            stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    groupByAll: true
+    insertStrategy: UNION ALL
+    lagSpecification:
+      items:
+        - lagPeriod: Minutes
+          lagValue: "60"
+    selectDistinct: false
+    testsEnabled: false
+    warehouseName: dev_wh_xs
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: interactive table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc892700-e40b-419b-a1e8-4121c9c9a1af
+          stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: C_CUSTKEY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8562a86b-dc3a-4804-8972-34571240e066
+                stepCounter: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06c13179-091c-4f23-95e2-7d9dbe0cc71d
+          stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b71b005c-4ad3-4111-9fa4-898ef91e37b1
+                stepCounter: 5efbca11-605f-4dc1-b557-bb64d69b6028
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12059506-d018-413f-9187-dbce7871338b
+          stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+        config: {}
+        dataType: STRING
+        description: ""
+        name: P_BRAND
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a681703-ed40-4dca-b6fa-27a78d8847c3
+                stepCounter: 41fb7aad-7e97-4060-bbeb-33c1dc403223
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a05836a9-4426-4b96-a4d5-bbe1e2edfdf2
+          stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+        config: {}
+        dataType: INTEGER
+        defaultValue: ""
+        description: ""
+        name: ORDER_COUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: COUNT(*)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: acde4ee1-09e4-4f45-8184-6e6bf5f1e4e5
+          stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+        config: {}
+        dataType: INTEGER
+        defaultValue: ""
+        description: ""
+        name: TOTAL_QUANTITY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 546c93fd-07de-434c-8bde-82f1b7813ce3
+                stepCounter: b47e362c-562b-4f32-a1cc-4e4f1ffcaa02
+            transform: SUM("FCT_ORDER_DETAILS"."LINEITEM_QUANTITY")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f889420e-1537-43e1-bd82-017d6948a387
+          stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: TOTAL_REVENUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae9fce0b-652c-4255-9889-72d309fff94d
+                stepCounter: b47e362c-562b-4f32-a1cc-4e4f1ffcaa02
+            transform: SUM("FCT_ORDER_DETAILS"."LINEITEM_EXTENDEDPRICE" * (1 - "FCT_ORDER_DETAILS"."LINEITEM_DISCOUNT"))
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019b8511-267e-710c-9ab4-020b6399159d
+          stepCounter: 26d98f90-57e9-4904-b761-5e96e268e4f4
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: AVG_ORDER_REVENUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ae9fce0b-652c-4255-9889-72d309fff94d
+                stepCounter: b47e362c-562b-4f32-a1cc-4e4f1ffcaa02
+            transform: SUM("FCT_ORDER_DETAILS"."LINEITEM_EXTENDEDPRICE" * (1 - "FCT_ORDER_DETAILS"."LINEITEM_DISCOUNT")) / COUNT(*)
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          DIM_CUSTOMER: cdd65dd6-35b0-4d2d-8f25-7c3dbcdc008c
+          DIM_PART: 41fb7aad-7e97-4060-bbeb-33c1dc403223
+          DIM_REGION: 5efbca11-605f-4dc1-b557-bb64d69b6028
+          FCT_ORDER_DETAILS: b47e362c-562b-4f32-a1cc-4e4f1ffcaa02
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: DIM_CUSTOMER
+          - locationName: WORK
+            nodeName: DIM_PART
+          - locationName: WORK
+            nodeName: DIM_REGION
+          - locationName: WORK
+            nodeName: FCT_ORDER_DETAILS
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'FCT_ORDER_DETAILS') }} "FCT_ORDER_DETAILS"
+            JOIN {{ ref('WORK', 'DIM_CUSTOMER') }} "DIM_CUSTOMER"
+            ON "FCT_ORDER_DETAILS"."ORDER_CUSTKEY" = "DIM_CUSTOMER"."C_CUSTKEY"
+            JOIN {{ ref('WORK', 'DIM_REGION') }} "DIM_REGION"
+            ON "DIM_CUSTOMER"."C_NATIONKEY" = "DIM_REGION"."R_REGIONKEY"
+            JOIN {{ ref('WORK', 'DIM_PART') }} "DIM_PART"
+            ON "FCT_ORDER_DETAILS"."LINEITEM_PARTKEY" = "DIM_PART"."P_PARTKEY"
+        name: INTTBL_TPCH_SALES_SUMMARY
+        noLinkRefs: []
+  name: INTTBL_TPCH_SALES_SUMMARY
+  overrideSQL: false
+  schema: ""
+  sqlType: interactive-table-1-0-0:::602
+  type: sql
+  version: 1
+type: Node
