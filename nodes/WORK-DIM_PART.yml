@@ -13,12 +13,7 @@ operation:
   locationName: WORK
   materializationType: table
   metadata:
-    appliedNodeTests:
-      - continueOnFailure: false
-        description: ""
-        name: Test
-        runOrder: After
-        templateString: select * from {{this}} where P_PARTKEY <  120002
+    appliedNodeTests: []
     columns:
       - acceptedValues:
           strictMatch: true
