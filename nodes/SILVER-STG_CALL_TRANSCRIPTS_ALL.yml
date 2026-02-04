@@ -3,7 +3,7 @@ id: 362e5e57-05dd-4189-8b5f-46a4b851cb13
 name: STG_CALL_TRANSCRIPTS_ALL
 operation:
   config:
-    insertStrategy: INSERT
+    insertStrategy: UNION
     postSQL: ""
     preSQL: ""
     testsEnabled: true
