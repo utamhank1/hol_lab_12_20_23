@@ -1,0 +1,13 @@
+fileVersion: 1
+id: a4c66c61-afcd-4d9c-ae86-16869b0407ee
+name: TPCH-Subgraph
+steps:
+  - 77501e8e-14ad-4522-9448-5f5e08b5f3d8
+  - 95fb5db9-c679-4552-8896-e9952732d18c
+  - a44a0562-debb-4c07-b68b-dd5488405d2f
+  - af4a48a8-ba46-4dc7-b43f-190daabe9e5e
+  - ea503b9d-29ee-4f7e-9e99-d85e8998f88e
+  - eed22441-654f-412c-ba7e-3c0e64487538
+  - f6858a7d-c205-4986-a674-727644caa4a1
+  - fcac877a-612a-45cf-ae59-6d2fa8e0511a
+type: Subgraph
