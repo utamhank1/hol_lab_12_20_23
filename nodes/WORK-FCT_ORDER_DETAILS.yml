@@ -85,6 +85,44 @@ operation:
           from {{ this }} t
           where t.PS_AVAILQTY is null
              or t.PS_SUPPLYCOST is null
+      - continueOnFailure: true
+        description: ""
+        name: Integrity - Referential fact → customer dimension
+        runOrder: After
+        templateString: |-
+          select
+            t.ORDER_CUSTKEY
+          from {{ this }} t
+          left join {{ ref('WORK', 'DIM_CUSTOMER') }} c
+            on t.ORDER_CUSTKEY = c.C_CUSTKEY
+          where c.C_CUSTKEY is null
+          group by 1
+      - continueOnFailure: true
+        description: ""
+        name: Integrity - Referential fact → part dimension
+        runOrder: After
+        templateString: |-
+          -- FAIL if fact part keys don't exist in DIM_PART
+          select
+            t.LINEITEM_PARTKEY
+          from {{ this }} t
+          left join {{ ref('WORK', 'DIM_PART') }} p
+            on t.LINEITEM_PARTKEY = p.P_PARTKEY
+          where p.P_PARTKEY is null
+          group by 1
+      - continueOnFailure: true
+        description: ""
+        name: Integrity - Referential fact → supplier dimension
+        runOrder: After
+        templateString: |-
+          -- FAIL if fact supplier keys don't exist in DIM_SUPPLIER
+          select
+            t.LINEITEM_SUPPKEY
+          from {{ this }} t
+          left join {{ ref('WORK', 'DIM_SUPPLIER') }} s
+            on t.LINEITEM_SUPPKEY = s.S_SUPPKEY
+          where s.S_SUPPKEY is null
+          group by 1
     columns:
       - appliedColumnTests: {}
         columnReference:
@@ -94,6 +132,7 @@ operation:
         dataType: NUMBER(38,0)
         description: ""
         hashDetails: null
+        isBusinessKey: true
         name: ORDER_CUSTKEY
         nullable: true
         sourceColumnReferences:
@@ -154,6 +193,7 @@ operation:
         dataType: NUMBER(38,0)
         description: ""
         hashDetails: null
+        isBusinessKey: true
         name: LINEITEM_LINENUMBER
         nullable: true
         sourceColumnReferences:
