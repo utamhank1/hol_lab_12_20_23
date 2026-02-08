@@ -50,6 +50,41 @@ operation:
           from {{ this }} t
           where (t.LINEITEM_COMMITDATE is not null and t.LINEITEM_SHIPDATE is not null and t.LINEITEM_COMMITDATE > t.LINEITEM_SHIPDATE)
              or (t.LINEITEM_SHIPDATE is not null and t.LINEITEM_RECEIPTDATE is not null and t.LINEITEM_SHIPDATE > t.LINEITEM_RECEIPTDATE)
+      - continueOnFailure: true
+        description: ""
+        name: Completeness -  Not-null “business keys” (fact grain)
+        runOrder: After
+        templateString: |
+          -- FAIL if key fields are missing
+          select t.*
+          from {{ this }} t
+          where t.LINEITEM_ORDERKEY is null
+             or t.LINEITEM_LINENUMBER is null
+             or t.LINEITEM_PARTKEY is null
+             or t.LINEITEM_SUPPKEY is null
+             or t.ORDER_CUSTKEY is null
+      - continueOnFailure: true
+        description: ""
+        name: Completeness - Not-null core measures
+        runOrder: After
+        templateString: |
+          -- FAIL if measures required for analytics are missing
+          select t.*
+          from {{ this }} t
+          where t.LINEITEM_QUANTITY is null
+             or t.LINEITEM_EXTENDEDPRICE is null
+             or t.LINEITEM_DISCOUNT is null
+             or t.LINEITEM_TAX is null
+      - continueOnFailure: true
+        description: ""
+        name: Completeness - Not-null PartSupp fields
+        runOrder: After
+        templateString: |
+          -- FAIL if PartSupp enrichment fields are missing
+          select t.*
+          from {{ this }} t
+          where t.PS_AVAILQTY is null
+             or t.PS_SUPPLYCOST is null
     columns:
       - appliedColumnTests: {}
         columnReference:
