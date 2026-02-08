@@ -52,7 +52,7 @@ operation:
              or (t.LINEITEM_SHIPDATE is not null and t.LINEITEM_RECEIPTDATE is not null and t.LINEITEM_SHIPDATE > t.LINEITEM_RECEIPTDATE)
       - continueOnFailure: true
         description: ""
-        name: Completeness -  Not-null “business keys” (fact grain)
+        name: Completeness -  Not-null “business keys” (fact grain).
         runOrder: After
         templateString: |
           -- FAIL if key fields are missing
@@ -65,7 +65,7 @@ operation:
              or t.ORDER_CUSTKEY is null
       - continueOnFailure: true
         description: ""
-        name: Completeness - Not-null core measures
+        name: Completeness - Not-null core measures.
         runOrder: After
         templateString: |
           -- FAIL if measures required for analytics are missing
@@ -77,7 +77,7 @@ operation:
              or t.LINEITEM_TAX is null
       - continueOnFailure: true
         description: ""
-        name: Completeness - Not-null PartSupp fields
+        name: Completeness - Not-null PartSupp fields.
         runOrder: After
         templateString: |
           -- FAIL if PartSupp enrichment fields are missing
@@ -87,7 +87,7 @@ operation:
              or t.PS_SUPPLYCOST is null
       - continueOnFailure: true
         description: ""
-        name: Integrity - Referential fact → customer dimension
+        name: Integrity - Referential fact → customer dimension.
         runOrder: After
         templateString: |-
           select
@@ -99,7 +99,7 @@ operation:
           group by 1
       - continueOnFailure: true
         description: ""
-        name: Integrity - Referential fact → part dimension
+        name: Integrity - Referential fact → part dimension.
         runOrder: After
         templateString: |-
           -- FAIL if fact part keys don't exist in DIM_PART
@@ -112,7 +112,7 @@ operation:
           group by 1
       - continueOnFailure: true
         description: ""
-        name: Integrity - Referential fact → supplier dimension
+        name: Integrity - Referential fact → supplier dimension.
         runOrder: After
         templateString: |-
           -- FAIL if fact supplier keys don't exist in DIM_SUPPLIER
@@ -123,6 +123,37 @@ operation:
             on t.LINEITEM_SUPPKEY = s.S_SUPPKEY
           where s.S_SUPPKEY is null
           group by 1
+      - continueOnFailure: true
+        description: ""
+        name: "Validity - Return flag allowed values (TPCH: A, N, R)."
+        runOrder: After
+        templateString: |
+          -- FAIL if returnflag is outside allowed domain
+          select t.*
+          from {{ this }} t
+          where t.LINEITEM_RETURNFLAG is null
+             or t.LINEITEM_RETURNFLAG not in ('A','N','R')
+      - continueOnFailure: true
+        description: ""
+        name: "Validity - Line status allowed values (TPCH: F, O)."
+        runOrder: After
+        templateString: |
+          -- FAIL if linestatus is outside allowed domain
+          select t.*
+          from {{ this }} t
+          where t.LINEITEM_LINESTATUS is null
+             or t.LINEITEM_LINESTATUS not in ('F','O')
+      - continueOnFailure: true
+        description: ""
+        name: Validity - Numeric bounds for discount/tax.
+        runOrder: After
+        templateString: |-
+          -- FAIL if discount/tax are out of bounds
+          select t.*
+          from {{ this }} t
+          where t.LINEITEM_DISCOUNT < 0 or t.LINEITEM_DISCOUNT > 1
+             or t.LINEITEM_TAX < 0 or t.LINEITEM_TAX > 1
+             or t.LINEITEM_QUANTITY <= 0
     columns:
       - appliedColumnTests: {}
         columnReference:
