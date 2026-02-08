@@ -13,7 +13,43 @@ operation:
   locationName: WORK
   materializationType: table
   metadata:
-    appliedNodeTests: []
+    appliedNodeTests:
+      - continueOnFailure: true
+        description: ""
+        name: Accuracy - Extended price plausibility.
+        runOrder: After
+        templateString: |
+          -- FAIL if extendedprice is implausibly small vs quantity
+          select
+            t.*
+          from {{ this }} t
+          where t.LINEITEM_QUANTITY > 0
+            and t.LINEITEM_EXTENDEDPRICE < (t.LINEITEM_QUANTITY * 0.01)
+      - continueOnFailure: true
+        description: ""
+        name: Accuracy - Discounted price sanity.
+        runOrder: After
+        templateString: |-
+          -- FAIL if discount produces negative net or net exceeds gross
+          select
+            t.*,
+            (t.LINEITEM_EXTENDEDPRICE * (1 - t.LINEITEM_DISCOUNT)) as NET_EXTENDEDPRICE
+          from {{ this }} t
+          where t.LINEITEM_EXTENDEDPRICE < 0
+             or t.LINEITEM_DISCOUNT < 0
+             or (t.LINEITEM_EXTENDEDPRICE * (1 - t.LINEITEM_DISCOUNT)) < 0
+             or (t.LINEITEM_EXTENDEDPRICE * (1 - t.LINEITEM_DISCOUNT)) > t.LINEITEM_EXTENDEDPRICE
+      - continueOnFailure: true
+        description: ""
+        name: Accuracy - Date ordering realism.
+        runOrder: After
+        templateString: |
+          -- FAIL if dates violate typical order flow
+          select
+            t.*
+          from {{ this }} t
+          where (t.LINEITEM_COMMITDATE is not null and t.LINEITEM_SHIPDATE is not null and t.LINEITEM_COMMITDATE > t.LINEITEM_SHIPDATE)
+             or (t.LINEITEM_SHIPDATE is not null and t.LINEITEM_RECEIPTDATE is not null and t.LINEITEM_SHIPDATE > t.LINEITEM_RECEIPTDATE)
     columns:
       - appliedColumnTests: {}
         columnReference:
