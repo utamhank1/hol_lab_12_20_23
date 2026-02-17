@@ -5,7 +5,7 @@ mappingDefinitions:
     database: SNOWFLAKE_SAMPLE_DATA
     schema: TPCH_SF1
   WORK:
-    database: TXM_DEMO_DW_DB_PROD_UAT
-    schema: TXM_DEMO_DW_SCHEMA_PROD_UAT
+    database: JJ_QA
+    schema: JJ_DQ_QA_SCHEMA
 name: QA
 type: Environment

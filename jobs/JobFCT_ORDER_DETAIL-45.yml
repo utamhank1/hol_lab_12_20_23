@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "45"
+includeSelector: "{ location: WORK name: DIM_CUSTOMER } OR { location: WORK name: DIM_PART } OR { location: WORK name: DIM_REGION } OR { location: WORK name: DIM_SUPPLIER } OR { location: WORK name: FCT_ORDER_DETAILS } OR { location: WORK name: STG_SUPPLIER } OR { location: SRC name: CUSTOMER } OR { location: SRC name: LINEITEM } OR { location: SRC name: ORDERS } OR { location: SRC name: PART } OR { location: SRC name: PARTSUPP } OR { location: SRC name: REGION } OR { location: SRC name: SUPPLIER } OR { location: WORK name: STG_CUSTOMER } OR { location: WORK name: STG_LINEITEM } OR { location: WORK name: STG_LINEITEM_ORDERS_DIM_LOOKUP } OR { location: WORK name: STG_ORDERS } OR { location: WORK name: STG_ORDERS_LINEITEM } OR { location: WORK name: STG_PART } OR { location: WORK name: STG_REGION }"
+name: Job FCT_ORDER_DETAIL
+type: Job
