@@ -160,7 +160,7 @@ operation:
         dataType: NUMBER(38,0)
         description: ""
         hashDetails: null
-        name: ORDER_ORDERKEY
+        name: O_ORDERKEY
         nullable: true
         sourceColumnReferences:
           - columnReferences:
@@ -495,6 +495,7 @@ operation:
             FROM {{ ref('WORK', 'STG_LINEITEM') }} "STG_LINEITEM"
             INNER JOIN  {{ ref('WORK', 'STG_ORDERS') }} "STG_ORDERS"
             ON "STG_LINEITEM"."L_ORDERKEY" = "STG_ORDERS"."O_ORDERKEY"
+            WHERE "STG_ORDERS"."O_ORDERKEY" IS NOT NULL
         name: STG_ORDERS_LINEITEM
         noLinkRefs: []
   name: STG_ORDERS_LINEITEM
