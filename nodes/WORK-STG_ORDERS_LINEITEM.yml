@@ -492,9 +492,9 @@ operation:
             nodeName: STG_ORDERS
         join:
           joinCondition: |-
-            FROM {{ ref('WORK', 'STG_ORDERS') }} "STG_ORDERS"
-            INNER JOIN {{ ref('WORK', 'STG_LINEITEM') }} "STG_LINEITEM"
-            ON "STG_ORDERS"."O_ORDERKEY" = "STG_LINEITEM"."L_ORDERKEY"
+            FROM {{ ref('WORK', 'STG_LINEITEM') }} "STG_LINEITEM"
+            INNER JOIN  {{ ref('WORK', 'STG_ORDERS') }} "STG_ORDERS"
+            ON "STG_LINEITEM"."L_ORDERKEY" = "STG_ORDERS"."O_ORDERKEY"
         name: STG_ORDERS_LINEITEM
         noLinkRefs: []
   name: STG_ORDERS_LINEITEM
