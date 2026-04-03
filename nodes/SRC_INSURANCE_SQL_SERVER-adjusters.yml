@@ -1,0 +1,225 @@
+fileVersion: 1
+id: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+name: adjusters
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC_INSURANCE_SQL_SERVER
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b094d263-fd4a-488a-8f07-48d4ca9030d3
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: adjuster_id
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32988f9e-5cfa-40aa-a25c-0622452952ec
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: first_name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ecb571a7-49e2-4f10-a097-08aaf9fb14e1
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: last_name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8ffdfdbb-c12f-4142-acbc-59cae439c758
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: employee_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f73d7c9d-41f1-4ab4-8ecf-3c821d0451f7
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: region
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b6a9efb0-98a4-4136-b2b6-9f730406ab11
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: specialization
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4a3636e-6afc-44cb-9b64-b66030726725
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: active
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bc3c21e2-7f52-4b29-a71a-ee68d417eef4
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        defaultValue: ""
+        description: ""
+        name: created_at
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19d240eb-b38a-479e-8cb2-2e5941714d25
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_INSERTED_AT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5dcfcb99-4d06-46c1-982b-a0a3d4b2268b
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_UPDATED_AT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f50efd53-ac01-4f70-8c31-29bb31a552a4
+          stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_DELETED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: adjusters
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

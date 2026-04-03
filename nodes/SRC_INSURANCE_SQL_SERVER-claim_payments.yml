@@ -1,0 +1,244 @@
+fileVersion: 1
+id: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+name: claim_payments
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC_INSURANCE_SQL_SERVER
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fc17cfc4-8fb7-416b-a502-81975f7c032f
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: payment_id
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b187d836-0a60-44a6-b272-e9134302e703
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: claim_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4b516de-f41b-425d-9563-4122bf401719
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: payment_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5247f722-95ba-4196-a0ce-aef7993fb170
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: NUMBER(12,2)
+        defaultValue: ""
+        description: ""
+        name: amount
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05b71ba5-caa1-4a2b-9628-5b53b6d0ed65
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: payment_type
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 402cfac5-18ab-4878-8cd1-2583065b22ef
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: payment_method
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31633398-df6e-4bef-b61d-4f4c90d613a5
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: payee_name
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 80ba537a-f950-4697-a843-387d834b818a
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: notes
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8c6a1ddb-066b-4bd3-aa93-fc13f78f6fa9
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        defaultValue: ""
+        description: ""
+        name: created_at
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3062a09d-63bb-47ae-9d79-bdf485ba65f1
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_INSERTED_AT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05c7bccb-2aae-4be7-add7-339f2ca6b7e9
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_UPDATED_AT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cf018f37-0d26-48d0-b589-18b1cec96d13
+          stepCounter: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_DELETED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: claim_payments
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

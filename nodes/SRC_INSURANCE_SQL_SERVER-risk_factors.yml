@@ -1,0 +1,225 @@
+fileVersion: 1
+id: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+name: risk_factors
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC_INSURANCE_SQL_SERVER
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14eab8b0-299e-4585-8bb7-76aec1d920e1
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: factor_id
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2822007d-814a-4fdc-adf8-2ffda6ac693a
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: policy_id
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9620ba26-3cdc-4965-99f4-973e4299bbb3
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: factor_type
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05b0875a-1c5a-466d-b06b-2cfac8ecdda8
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: factor_value
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a52f03b2-066f-44dd-a7de-353419f3b369
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: NUMBER(5,2)
+        defaultValue: ""
+        description: ""
+        name: impact_score
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0844ca8c-daec-4505-91b6-2ce7f9b7017e
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: VARCHAR(134217728)
+        defaultValue: ""
+        description: ""
+        name: source
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e3ff023-8f9e-403a-b566-5c127c3cc75a
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: assessed_date
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c323bb38-4a0a-4e95-953b-efaa5ae34f33
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        defaultValue: ""
+        description: ""
+        name: created_at
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b830bdf-d460-4326-9e9b-18958669b946
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_INSERTED_AT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 298c0b12-0e4c-4f0c-83a8-a1bb4ffc2473
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_UPDATED_AT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34977d57-1e64-4cd8-872d-5af0dcd28273
+          stepCounter: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: ""
+        name: _SNOWFLAKE_DELETED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: risk_factors
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
