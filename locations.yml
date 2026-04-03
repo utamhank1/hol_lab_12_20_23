@@ -2,4 +2,5 @@ defaultStorageMapping: WORK
 fileVersion: 1
 locations:
   - SRC
+  - SRC_SQL_SERVER
   - WORK

@@ -4,6 +4,9 @@ mappingDefinitions:
   SRC:
     database: SNOWFLAKE_SAMPLE_DATA
     schema: TPCH_SF1
+  SRC_SQL_SERVER:
+    database: ""
+    schema: ""
   WORK:
     database: TXM_DEMO_DW_DB_PROD_UAT
     schema: TXM_DEMO_DW_SCHEMA_PROD_UAT
