@@ -184,18 +184,38 @@ operation:
               - columnCounter: f50efd53-ac01-4f70-8c31-29bb31a552a4
                 stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f921457c-a2f9-4bef-a629-1c62b3246d84
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: VARCHAR
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: adjuster_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: "\"adjusters\".\"first_name\" || ' ' || \"adjusters\".\"last_name\""
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          ADJUSTERS: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+          adjusters: 53bf489d-2c14-43d9-92a1-9becb5874c5c
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: adjusters
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'adjusters') }} adjusters
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'adjusters') }} "adjusters"
         name: WRK_adjusters
         noLinkRefs: []
   name: WRK_adjusters

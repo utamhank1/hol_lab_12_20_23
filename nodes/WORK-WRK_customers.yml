@@ -331,14 +331,14 @@ operation:
     materializationOption: ""
     sourceMapping:
       - aliases:
-          CUSTOMERS: 6aa9ee87-b75c-4c66-a9ec-86c6de5be24c
+          customers: 6aa9ee87-b75c-4c66-a9ec-86c6de5be24c
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: customers
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'customers') }} customers
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'customers') }} "customers"
         name: WRK_customers
         noLinkRefs: []
   name: WRK_customers

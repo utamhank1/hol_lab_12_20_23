@@ -188,14 +188,14 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          RISK_FACTORS: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
+          risk_factors: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: risk_factors
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'risk_factors') }} risk_factors
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'risk_factors') }} "risk_factors"
         name: WRK_risk_factors
         noLinkRefs: []
   name: WRK_risk_factors

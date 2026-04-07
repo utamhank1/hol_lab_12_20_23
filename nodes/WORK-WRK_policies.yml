@@ -272,14 +272,14 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          POLICIES: 261e2d36-344b-4e71-977f-add7e923d6b8
+          policies: 261e2d36-344b-4e71-977f-add7e923d6b8
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: policies
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'policies') }} policies
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'policies') }} "policies"
         name: WRK_policies
         noLinkRefs: []
   name: WRK_policies

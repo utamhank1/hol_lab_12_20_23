@@ -202,14 +202,14 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          CLAIM_PAYMENTS: 9577c0b1-0263-499b-bd71-cee5f2d945bd
+          claim_payments: 9577c0b1-0263-499b-bd71-cee5f2d945bd
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: claim_payments
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'claim_payments') }} claim_payments
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'claim_payments') }} "claim_payments"
         name: WRK_claim_payments
         noLinkRefs: []
   name: WRK_claim_payments

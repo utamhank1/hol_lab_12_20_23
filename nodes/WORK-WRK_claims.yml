@@ -300,14 +300,14 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          CLAIMS: 3622c0e2-9066-43e7-a439-6532b43d268f
+          claims: 3622c0e2-9066-43e7-a439-6532b43d268f
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: claims
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'claims') }} claims
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'claims') }} "claims"
         name: WRK_claims
         noLinkRefs: []
   name: WRK_claims
