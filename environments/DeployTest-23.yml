@@ -1,10 +1,22 @@
 fileVersion: 1
 id: "23"
 mappingDefinitions:
+  CLAIMS:
+    database: ""
+    schema: ""
+  COMMON:
+    database: ""
+    schema: ""
+  DASHBOARDS:
+    database: ""
+    schema: ""
   SRC:
-    database: SNOWFLAKE_SAMPLE_DATA
-    schema: TPCH_SF1
+    database: ""
+    schema: ""
   SRC_INSURANCE_SQL_SERVER:
+    database: ""
+    schema: ""
+  UNDERWRITING:
     database: ""
     schema: ""
   WORK:

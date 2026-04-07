@@ -1,6 +1,10 @@
 defaultStorageMapping: WORK
 fileVersion: 1
 locations:
+  - CLAIMS
+  - COMMON
+  - DASHBOARDS
   - SRC
   - SRC_INSURANCE_SQL_SERVER
+  - UNDERWRITING
   - WORK
