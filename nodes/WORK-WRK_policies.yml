@@ -1,0 +1,291 @@
+fileVersion: 1
+id: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+name: WRK_policies
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6683c588-b7c7-487e-bb79-fb71521439e8
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: policy_id
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e519ebdb-9b43-4284-8291-eaf2dc955489
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9faee2db-da56-48e3-b547-39659e30c80b
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: policy_number
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 138cd573-a624-47b4-9d89-ab664f574249
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e042816f-9840-4dec-8dbb-1af31b902ca4
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: customer_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de50c900-6114-4a4e-b451-35283ee4546c
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84a6d290-cc4a-47b8-a34a-6b3e46903650
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: product_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 671d0195-6cab-4a9c-9b73-1c4269391ebb
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c733e9e2-d02a-4875-827b-2b67c39350ae
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: NUMBER(14,2)
+        description: ""
+        name: coverage_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8c89e0f8-d071-4edc-a41d-3eec5c2419eb
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0518c3c2-dbbc-44c9-b760-4b96e9cfa700
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: premium_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3c60d30c-f215-4871-85dc-e7969be68511
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d512829c-59e8-4b56-8f75-e75c880955ef
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: deductible
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91d444ad-c6bc-47a0-9004-359773cd0e9d
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74d02894-4905-4ca3-b76a-588a0baf2a22
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: DATE
+        description: ""
+        name: effective_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0b2556f6-fcee-437f-ab04-a7dbd862fc27
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ddb5a97-09a2-4727-83a8-5f74cb49f23b
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: DATE
+        description: ""
+        name: expiration_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 60c51091-8cb5-43fa-a7bc-7d7601bd0f96
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e710a116-e0ab-464f-9d35-88d6fb9fb5e4
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: status
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f4b34fb7-0def-4241-8f00-58b9b41ac1e9
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2d0bc72-532b-424a-83ac-d92b3c62d125
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: underwriting_status
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9f74760e-7786-4439-a7a9-a4704a88802e
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 71bb7d65-9214-4c2a-86b4-b4d359111610
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: NUMBER(5,2)
+        description: ""
+        name: policy_risk_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ab46a68c-cda2-4e47-93f2-043aca8f54b0
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3fb39ffb-cdef-4084-b4ef-a4083d15d77b
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: created_at
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b28d2640-2c16-40ef-b3c2-264845578543
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5f384715-b0ce-468d-8bde-f6ddc417b0e2
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: updated_at
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2d6202f3-3772-4217-8489-ab0d6f09ac90
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fcac5c54-cfc0-4d7c-8f9a-f11f2a19379a
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_INSERTED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6ed03c84-8a74-4e4d-bcab-19fb9a8bafab
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e972c7c6-864e-4a94-9dd9-bf10bbd84ac0
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_UPDATED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 22632bda-c649-4822-8a09-d67327cc65c2
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c795a200-2f80-4dd8-8270-c2f0008a3e08
+          stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: _SNOWFLAKE_DELETED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3d3cfb47-3ddf-4c0b-ab53-e427bffeaf9f
+                stepCounter: 261e2d36-344b-4e71-977f-add7e923d6b8
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          POLICIES: 261e2d36-344b-4e71-977f-add7e923d6b8
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC_INSURANCE_SQL_SERVER
+            nodeName: policies
+        join:
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'policies') }} policies
+        name: WRK_policies
+        noLinkRefs: []
+  name: WRK_policies
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT-1-5-0:::204
+  type: sql
+  version: 1
+type: Node

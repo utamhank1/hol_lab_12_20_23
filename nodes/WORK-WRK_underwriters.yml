@@ -1,0 +1,238 @@
+fileVersion: 1
+id: b931fe77-3572-48e4-ab36-2d1c7015dba2
+name: WRK_underwriters
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c314f4b6-ae20-496e-9060-cafd11e33b57
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: underwriter_id
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7caa7a94-6325-405e-bdee-57a0f8a53a62
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c66bf938-c33f-4910-9f75-ff8a5adbce48
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: first_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d94d212b-fec5-404f-9de6-4bdb7acad695
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27ead683-9897-4202-9f2a-2048edca03b3
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: last_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 51e7edcd-e64d-478c-8b28-f49a8b010edd
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d6969-b99e-773b-8e63-93cc6b7f564e
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: underwriter_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d94d212b-fec5-404f-9de6-4bdb7acad695
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: "\"underwriters\".\"first_name\" || ' ' || \"underwriters\".\"last_name\""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eaeefe01-6f8c-48e5-842e-b338f5e18e3f
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: employee_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5da107e2-81ed-4ba1-b0fe-5cb50a0c373c
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5743decf-4a35-4e4b-9fe5-827a721a8fb2
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: specialization
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2db0190-ba7c-42c8-b99a-c33dd4a0358b
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b807c59-3587-4a43-9f4c-8e2dd7cfca4d
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: experience_years
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 377459d3-eb88-4a04-b034-7591889524fb
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 143c3a86-ce29-4ee1-aea1-0336c1b2db09
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: NUMBER(14,2)
+        description: ""
+        name: approval_limit
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7127656-13c4-4380-8a88-31380cc6fbae
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: dc36e5f8-27a2-4cfe-88ca-8f82384c2797
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: active
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d6bb88d7-bd9a-424d-a9c9-e29c35114933
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6171b663-08df-457b-931e-5b7f33b97736
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: created_at
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 45443685-799b-40b3-bf84-159556c21f74
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b0fade85-391a-4d11-9abc-ba7e90bb9447
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_INSERTED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fcf96d4e-0c71-4548-a522-81fb8cee4296
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 58980e06-d88e-46c6-b9fd-984bfecc10f9
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_UPDATED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a22b9103-1f23-4c34-9ea1-5b89eeef3147
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fa4514de-3211-4945-8b59-a11814dab53b
+          stepCounter: b931fe77-3572-48e4-ab36-2d1c7015dba2
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: _SNOWFLAKE_DELETED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cd777ed2-8d65-411f-938b-bf4d4c2827c7
+                stepCounter: 02484675-5cd5-4a58-ae1c-e4f354f99151
+            transform: ""
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          UNDERWRITERS: 02484675-5cd5-4a58-ae1c-e4f354f99151
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC_INSURANCE_SQL_SERVER
+            nodeName: underwriters
+        join:
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'underwriters') }} underwriters
+        name: WRK_underwriters
+        noLinkRefs: []
+  name: WRK_underwriters
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT-1-5-0:::204
+  type: sql
+  version: 1
+type: Node

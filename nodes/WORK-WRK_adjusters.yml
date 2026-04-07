@@ -1,0 +1,207 @@
+fileVersion: 1
+id: 71671318-a835-4ad7-9789-eb42763fefec
+name: WRK_adjusters
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: aa68837c-227c-4cb6-9863-fbf07e75ee78
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: adjuster_id
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b094d263-fd4a-488a-8f07-48d4ca9030d3
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61a76679-ee83-43e1-a8a1-6f3455b484ce
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: first_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32988f9e-5cfa-40aa-a25c-0622452952ec
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb387cb6-3071-49d2-a1ef-2c7a0faa2071
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: last_name
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ecb571a7-49e2-4f10-a097-08aaf9fb14e1
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b4db566-a7e2-4c3e-bf4e-e57e06ef876b
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: employee_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8ffdfdbb-c12f-4142-acbc-59cae439c758
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f03a9fa-4aa1-4be4-bd0d-bcc1bfc60fce
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: region
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f73d7c9d-41f1-4ab4-8ecf-3c821d0451f7
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb730e08-b724-43ee-b045-7328dfbcfc38
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: specialization
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b6a9efb0-98a4-4136-b2b6-9f730406ab11
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3aca127b-9384-412e-b4cf-1d39540c915c
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: active
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c4a3636e-6afc-44cb-9b64-b66030726725
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a747724d-169a-4629-a812-741587dedf22
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: created_at
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc3c21e2-7f52-4b29-a71a-ee68d417eef4
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c422b65-65a0-41fd-aeb0-643c02c56f95
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_INSERTED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19d240eb-b38a-479e-8cb2-2e5941714d25
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da919b44-9c1a-44f8-b8b2-693aae8c688a
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_UPDATED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5dcfcb99-4d06-46c1-982b-a0a3d4b2268b
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 52d01f42-bdfb-47ca-a562-5ee17f50e37d
+          stepCounter: 71671318-a835-4ad7-9789-eb42763fefec
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: _SNOWFLAKE_DELETED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f50efd53-ac01-4f70-8c31-29bb31a552a4
+                stepCounter: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          ADJUSTERS: 53bf489d-2c14-43d9-92a1-9becb5874c5c
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC_INSURANCE_SQL_SERVER
+            nodeName: adjusters
+        join:
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'adjusters') }} adjusters
+        name: WRK_adjusters
+        noLinkRefs: []
+  name: WRK_adjusters
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT-1-5-0:::204
+  type: sql
+  version: 1
+type: Node

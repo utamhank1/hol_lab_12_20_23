@@ -1,0 +1,263 @@
+fileVersion: 1
+id: 1039f369-091e-4852-8000-36fa53d8f421
+name: WRK_underwriting_decisions
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f8935554-eae8-4f2e-9a5d-220ce5e6d64e
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: decision_id
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4f178859-8519-46ef-a744-4af4c8f09000
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2741d831-b5cc-4775-92bf-a73272f561b9
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: policy_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 930e98b7-f541-4038-abf1-d1c409f0333a
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 10429463-cedb-4a82-a960-25d405286c96
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: underwriter_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5b4d2031-03e6-414e-ba78-88f70ddc75e3
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5dab2976-194b-43b6-9aa7-2cb084bea56b
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: decision
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3b1547d8-5144-4514-a383-175c5c9169ab
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17c59f2e-4391-4ae1-a1fa-2b65d03ccf30
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: risk_category
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a2ec2aee-7ddd-411c-a99a-5f33dec491b6
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a95b121d-f8f3-4331-a1d5-28d505d6d52b
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: NUMBER(5,2)
+        description: ""
+        name: decision_risk_score
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2b6c48d4-d046-4080-ad57-040acc47aabb
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19c42597-912b-418b-9069-f6a66f5ecf15
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: NUMBER(5,2)
+        description: ""
+        name: premium_adjustment_pct
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: abcea7c4-3406-450c-8c86-b955707aeb80
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb08158e-bc31-4df0-b83a-2e8aa88b7545
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: conditions
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e347c03a-d3a7-42ac-8dfe-9397f4941dbf
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5f291ce-64a4-4954-a7ca-79491f41a327
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: notes
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 99c505d5-456a-4e80-bb37-ed07a2eccdb7
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1456a445-b409-463f-8375-9aaaedf3edb5
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: decision_date
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 07c86959-36eb-4da0-9d89-3265e4367fb3
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b0b1057-6b4a-4947-ace1-813e16319344
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: review_flag
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2cbec8ca-c5ca-45f3-8946-8ae938473e87
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44dbcbb7-4bca-490e-b1a7-ea9f36288faf
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: TIMESTAMP_TZ(9)
+        description: ""
+        name: created_at
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1c1c977d-6efc-4923-abd3-1c5afb0c6fab
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6295e6aa-357c-4da0-950c-286998512816
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_INSERTED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 047c76cb-a81b-44a2-b290-5563ffdd5f09
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 565b18e6-9e39-4c4e-a953-8709b8f118ad
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        description: ""
+        name: _SNOWFLAKE_UPDATED_AT
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 553797a9-be53-4617-a231-45f7501f63c2
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cae7617f-bf2b-42ef-8337-cc051db0cc96
+          stepCounter: 1039f369-091e-4852-8000-36fa53d8f421
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: _SNOWFLAKE_DELETED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3e29a4b8-5254-49a6-89f9-141879df5224
+                stepCounter: 4e1441be-2a81-444e-b602-eee562113635
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          UNDERWRITING_DECISIONS: 4e1441be-2a81-444e-b602-eee562113635
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC_INSURANCE_SQL_SERVER
+            nodeName: underwriting_decisions
+        join:
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'underwriting_decisions') }} underwriting_decisions
+        name: WRK_underwriting_decisions
+        noLinkRefs: []
+  name: WRK_underwriting_decisions
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT-1-5-0:::204
+  type: sql
+  version: 1
+type: Node
