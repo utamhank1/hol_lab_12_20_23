@@ -115,7 +115,7 @@ operation:
           - columnReferences:
               - columnCounter: 019d7846-c511-7396-8df2-71142a9fafb9
                 stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
-            transform: ""
+            transform: COALESCE("STG_claims_agg"."TOTAL_CLAIMS", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 328f130d-43e2-4140-af79-e3c824a67c18
@@ -129,7 +129,7 @@ operation:
           - columnReferences:
               - columnCounter: 019d7846-c511-7396-8df2-774bc9b5ca7c
                 stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
-            transform: ""
+            transform: COALESCE("STG_claims_agg"."OPEN_CLAIMS", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 65dc7fca-e636-4b86-90c7-dd730b6b44a6
@@ -143,7 +143,7 @@ operation:
           - columnReferences:
               - columnCounter: 019d7846-c511-7396-8df2-7b6c73e31eaf
                 stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
-            transform: ""
+            transform: COALESCE("STG_claims_agg"."TOTAL_ESTIMATED", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: f2239b3a-664b-4325-b471-c4dc2ff7a5e0
@@ -157,7 +157,7 @@ operation:
           - columnReferences:
               - columnCounter: 5d72383a-58c2-4fff-aa96-1bcb11018dd9
                 stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
-            transform: ""
+            transform: COALESCE("STG_claims_agg"."TOTAL_APPROVED", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: b3b2e282-b6ca-4b57-b0f9-ed2f6bb83a0d
@@ -171,7 +171,7 @@ operation:
           - columnReferences:
               - columnCounter: 019d7834-e6d6-719a-8e65-eda2b9a06bf5
                 stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
-            transform: ""
+            transform: COALESCE("STG_policy_agg"."TOTAL_POLICIES", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 64a17373-6ebf-4e65-a6b7-3a219f775889
@@ -185,7 +185,7 @@ operation:
           - columnReferences:
               - columnCounter: 019d7834-e6d7-717f-92a8-584330bfa35d
                 stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
-            transform: ""
+            transform: COALESCE("STG_policy_agg"."ACTIVE_POLICIES", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: ed573e77-66f8-4840-8dd6-187d35e7d139
@@ -199,7 +199,7 @@ operation:
           - columnReferences:
               - columnCounter: 019d7834-e6d7-717f-92a8-5d9226257cfd
                 stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
-            transform: ""
+            transform: COALESCE("STG_policy_agg"."TOTAL_PREMIUM", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 67735cb5-3125-45f6-b098-2edca85ca354
@@ -213,7 +213,7 @@ operation:
           - columnReferences:
               - columnCounter: 019d7834-e6d7-717f-92a8-63c502887fc1
                 stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
-            transform: ""
+            transform: COALESCE("STG_policy_agg"."TOTAL_COVERAGE", 0)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 29a95597-48ff-48cd-953f-2fb4a11ef470
@@ -228,10 +228,7 @@ operation:
               - columnCounter: 019d7834-e6d7-717f-92a8-66556be9dd41
                 stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
           columnCounter: eefcb412-45de-42da-ba42-8f6c83ec6412
           stepCounter: 55557a54-8dd9-402e-bb02-a2662eb789b7
@@ -239,22 +236,29 @@ operation:
         dataType: NUMBER
         defaultValue: ""
         description: ""
-        keyColumnType: None
         name: LOSS_RATIO
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: "0"
-                stepCounter: "0"
+              - columnCounter: 019d7834-e6d7-717f-92a8-5d9226257cfd
+                stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
             transform: |-
-              ROUND(
-                  (COALESCE("STG_claims_agg"."TOTAL_APPROVED", 0)::FLOAT / 
-                   NULLIF("STG_policy_agg"."TOTAL_PREMIUM", 0)::FLOAT) * 100, 
-                  2
+              COALESCE(
+                  ROUND(
+                      CASE 
+                          WHEN "STG_policy_agg"."TOTAL_PREMIUM" <= 0 THEN NULL 
+                          ELSE (COALESCE("STG_claims_agg"."TOTAL_ESTIMATED", 0)::FLOAT / 
+                                "STG_policy_agg"."TOTAL_PREMIUM"::FLOAT) * 100 
+                      END, 
+                      2
+                  ), 
+                  0 
               )
-        systemColumnType: None
     cteString: ""
+    description: ""
+    destinationName: ""
     enabledColumnTestIDs: []
+    materializationOption: ""
     sourceMapping:
       - aliases:
           STG_claims_agg: 9f009414-5cd1-4081-913a-848f806af96b
