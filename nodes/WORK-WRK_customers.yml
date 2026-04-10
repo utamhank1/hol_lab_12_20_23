@@ -102,6 +102,20 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
+          columnCounter: 019d784e-ca4d-711b-b4a6-802d8cb07699
+          stepCounter: 1c80e333-a9a9-4e43-b05d-0e7cc2b2d975
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: customer_age
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 16a1294f-2669-4b0d-8f36-1923ac9d3c87
+                stepCounter: 6aa9ee87-b75c-4c66-a9ec-86c6de5be24c
+            transform: DATEDIFF(YEAR, "customers"."date_of_birth", CURRENT_DATE())
+      - appliedColumnTests: {}
+        columnReference:
           columnCounter: 1dcbc818-e182-47c4-a374-888d888b12ef
           stepCounter: 1c80e333-a9a9-4e43-b05d-0e7cc2b2d975
         config: {}
