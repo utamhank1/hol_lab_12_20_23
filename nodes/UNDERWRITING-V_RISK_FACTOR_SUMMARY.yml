@@ -1,6 +1,6 @@
 fileVersion: 1
 id: 156aa7f0-452e-4362-b862-2513031fd45a
-name: V_RISK_FACTORS
+name: V_RISK_FACTOR_SUMMARY
 operation:
   config:
     OverrideSQLCreate: false
@@ -66,9 +66,9 @@ operation:
           joinCondition: |-
             FROM {{ ref('WORK', 'WRK_risk_factors') }} "WRK_risk_factors"
             group by "WRK_risk_factors"."policy_id"
-        name: V_RISK_FACTORS
+        name: V_RISK_FACTOR_SUMMARY
         noLinkRefs: []
-  name: V_RISK_FACTORS
+  name: V_RISK_FACTOR_SUMMARY
   overrideSQL: false
   schema: ""
   sqlType: BNT-1-5-0:::188

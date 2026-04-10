@@ -1,0 +1,126 @@
+fileVersion: 1
+id: 9f009414-5cd1-4081-913a-848f806af96b
+name: STG_claims_agg
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88800745-b84f-402d-8097-28567f69f2c8
+          stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: customer_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: db95a36a-7706-4401-b946-e8f83b946d32
+                stepCounter: 5ac83733-dd69-472a-b1e1-32dc3ca2093b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7846-c511-7396-8df2-71142a9fafb9
+          stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOTAL_CLAIMS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: COUNT(*)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7846-c511-7396-8df2-774bc9b5ca7c
+          stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: OPEN_CLAIMS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6e902d57-af8f-4f18-ae17-4c4e76152c62
+                stepCounter: 5ac83733-dd69-472a-b1e1-32dc3ca2093b
+            transform: SUM(CASE WHEN "WRK_claims"."status" = 'OPEN' THEN 1 ELSE 0 END)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7846-c511-7396-8df2-7b6c73e31eaf
+          stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOTAL_ESTIMATED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 875a86bf-7318-4e7e-8b87-a0d9ee26791a
+                stepCounter: 5ac83733-dd69-472a-b1e1-32dc3ca2093b
+            transform: SUM("WRK_claims"."estimated_amount")
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5d72383a-58c2-4fff-aa96-1bcb11018dd9
+          stepCounter: 9f009414-5cd1-4081-913a-848f806af96b
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: TOTAL_APPROVED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a18f38a-9fcf-4a37-a192-b6f8d898fbc4
+                stepCounter: d34f4ada-8b98-485f-9ee1-18010388bfc0
+            transform: SUM(COALESCE("SUM_CLAIM_PAYMENTS"."total_amount", 0))
+        systemColumnType: None
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          SUM_CLAIM_PAYMENTS: d34f4ada-8b98-485f-9ee1-18010388bfc0
+          WRK_claims: 5ac83733-dd69-472a-b1e1-32dc3ca2093b
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: SUM_CLAIM_PAYMENTS
+          - locationName: WORK
+            nodeName: WRK_claims
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'WRK_claims') }} "WRK_claims"
+            left join {{ ref('WORK', 'SUM_CLAIM_PAYMENTS') }} "SUM_CLAIM_PAYMENTS"
+            ON "WRK_claims"."claim_id" = "SUM_CLAIM_PAYMENTS"."claim_id"
+            WHERE "WRK_claims"._SNOWFLAKE_DELETED <> TRUE
+
+            GROUP BY "WRK_claims"."customer_id"
+        name: STG_claims_agg
+        noLinkRefs: []
+  name: STG_claims_agg
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,129 @@
+fileVersion: 1
+id: b86fc2ab-b872-47d0-b78f-e276dedf452d
+name: STG_policy_agg
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: COMMON
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0def0da0-c03d-4b8b-9012-71db065a5d9a
+          stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: customer_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e042816f-9840-4dec-8dbb-1af31b902ca4
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7834-e6d6-719a-8e65-eda2b9a06bf5
+          stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOTAL_POLICIES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: COUNT(*)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7834-e6d7-717f-92a8-584330bfa35d
+          stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: ACTIVE_POLICIES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e710a116-e0ab-464f-9d35-88d6fb9fb5e4
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: SUM(CASE WHEN "WRK_policies"."status" = 'ACTIVE' THEN 1 ELSE 0 END)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7834-e6d7-717f-92a8-5d9226257cfd
+          stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOTAL_PREMIUM
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0518c3c2-dbbc-44c9-b760-4b96e9cfa700
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: SUM("WRK_policies"."premium_amount")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7834-e6d7-717f-92a8-63c502887fc1
+          stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOTAL_COVERAGE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c733e9e2-d02a-4875-827b-2b67c39350ae
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: SUM("WRK_policies"."coverage_amount")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d7834-e6d7-717f-92a8-66556be9dd41
+          stepCounter: b86fc2ab-b872-47d0-b78f-e276dedf452d
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: AVG_RISK_SCORE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 71bb7d65-9214-4c2a-86b4-b4d359111610
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: AVG("WRK_policies"."policy_risk_score")
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          WRK_policies: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: WRK_policies
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'WRK_policies') }} "WRK_policies"
+            WHERE _SNOWFLAKE_DELETED <> TRUE
+
+            GROUP BY "WRK_policies"."customer_id"
+        name: STG_policy_agg
+        noLinkRefs: []
+  name: STG_policy_agg
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
