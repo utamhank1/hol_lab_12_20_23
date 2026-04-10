@@ -219,14 +219,14 @@ operation:
     materializationOption: ""
     sourceMapping:
       - aliases:
-          UNDERWRITERS: 02484675-5cd5-4a58-ae1c-e4f354f99151
+          underwriters: 02484675-5cd5-4a58-ae1c-e4f354f99151
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: underwriters
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'underwriters') }} underwriters
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'underwriters') }} "underwriters"
         name: WRK_underwriters
         noLinkRefs: []
   name: WRK_underwriters

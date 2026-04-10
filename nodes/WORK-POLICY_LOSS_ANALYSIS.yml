@@ -1,0 +1,140 @@
+fileVersion: 1
+id: 0b7ce6e1-c648-4b0c-beef-80dd2b556d39
+name: POLICY_LOSS_ANALYSIS
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Policy-level loss ratio analysis with claims aggregation
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78ff-e9c4-7634-a700-7e69192e43c4
+          stepCounter: 0b7ce6e1-c648-4b0c-beef-80dd2b556d39
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: policy_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6683c588-b7c7-487e-bb79-fb71521439e8
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: P."policy_id"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78ff-e9c4-7634-a700-811fb300f6d6
+          stepCounter: 0b7ce6e1-c648-4b0c-beef-80dd2b556d39
+        config: {}
+        dataType: VARCHAR
+        description: ""
+        name: policy_type
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 84a6d290-cc4a-47b8-a34a-6b3e46903650
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: P."product_type"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78ff-e9c4-7634-a700-869c437533b8
+          stepCounter: 0b7ce6e1-c648-4b0c-beef-80dd2b556d39
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: premium_amount
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0518c3c2-dbbc-44c9-b760-4b96e9cfa700
+                stepCounter: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+            transform: P."premium_amount"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78ff-e9c4-7634-a700-8a2efc9997fd
+          stepCounter: 0b7ce6e1-c648-4b0c-beef-80dd2b556d39
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: total_losses
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: COALESCE(C."total_policy_losses", 0)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78ff-e9c4-7634-a700-8cebcef6722f
+          stepCounter: 0b7ce6e1-c648-4b0c-beef-80dd2b556d39
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: claim_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: COALESCE(C."claim_count", 0)
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78ff-e9c4-7634-a700-928de048364f
+          stepCounter: 0b7ce6e1-c648-4b0c-beef-80dd2b556d39
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: loss_ratio_pct
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ROUND((COALESCE(C."total_policy_losses", 0)::FLOAT / NULLIF(P."premium_amount", 0)::FLOAT) * 100, 2)
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases:
+          C: ae69fecc-6628-4016-a867-06a32fd163d5
+          P: ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: CLAIMS_SUMMARY
+          - locationName: WORK
+            nodeName: WRK_policies
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'WRK_policies') }} "P"
+            LEFT JOIN {{ ref('WORK', 'CLAIMS_SUMMARY') }} C ON P."policy_id" = C."policy_id"
+            WHERE P."_SNOWFLAKE_DELETED" <> TRUE
+        name: POLICY_LOSS_ANALYSIS
+        noLinkRefs: []
+  name: POLICY_LOSS_ANALYSIS
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT-1-5-0:::204
+  type: sql
+  version: 1
+type: Node

@@ -244,14 +244,14 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          UNDERWRITING_DECISIONS: 4e1441be-2a81-444e-b602-eee562113635
+          underwriting_decisions: 4e1441be-2a81-444e-b602-eee562113635
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: SRC_INSURANCE_SQL_SERVER
             nodeName: underwriting_decisions
         join:
-          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'underwriting_decisions') }} underwriting_decisions
+          joinCondition: FROM  {{ ref('SRC_INSURANCE_SQL_SERVER', 'underwriting_decisions') }} "underwriting_decisions"
         name: WRK_underwriting_decisions
         noLinkRefs: []
   name: WRK_underwriting_decisions

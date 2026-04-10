@@ -1,0 +1,94 @@
+fileVersion: 1
+id: ae69fecc-6628-4016-a867-06a32fd163d5
+name: CLAIMS_SUMMARY
+operation:
+  config:
+    asofColumn:
+      items:
+        - {}
+    asofJoin: true
+    asofJoinMain: false
+    asofJoinON: false
+    asofJoinUSING: false
+    groupByAll: false
+    insertStrategy: INSERT
+    orderby: false
+    orderbycolumn:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    selectDistinct: false
+    testsEnabled: false
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Policy-level claims aggregation with total losses and claim count
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78fe-c9c6-740c-83d1-ac50257ba824
+          stepCounter: ae69fecc-6628-4016-a867-06a32fd163d5
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: policy_id
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: WRK_CLAIMS."policy_id"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78fe-c9c6-740c-83d1-b26d8483dcf8
+          stepCounter: ae69fecc-6628-4016-a867-06a32fd163d5
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: total_policy_losses
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: SUM(WRK_CLAIMS."estimated_amount")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78fe-c9c6-740c-83d1-b4571e9cb660
+          stepCounter: ae69fecc-6628-4016-a867-06a32fd163d5
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: claim_count
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: COUNT(WRK_CLAIMS."claim_id")
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: WRK_claims
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'WRK_claims') }} WRK_CLAIMS
+            WHERE WRK_CLAIMS."_SNOWFLAKE_DELETED" <> TRUE
+            GROUP BY 1
+        name: CLAIMS_SUMMARY
+        noLinkRefs: []
+  name: CLAIMS_SUMMARY
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT-1-5-0:::204
+  type: sql
+  version: 1
+type: Node

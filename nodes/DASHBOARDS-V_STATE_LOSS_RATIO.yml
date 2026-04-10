@@ -1,0 +1,105 @@
+fileVersion: 1
+id: ef2a1157-1992-424c-93b0-8fb2f5c6b0b0
+name: V_STATE_LOSS_RATIO
+operation:
+  config:
+    groupByAll: false
+    insertStrategy: UNION
+    secureoption: false
+    selectDistinct: false
+    testsEnabled: false
+  database: ""
+  deployEnabled: true
+  description: State-level loss ratio analysis with customer count, revenue, and incurred losses
+  isMultisource: false
+  locationName: DASHBOARDS
+  materializationType: view
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78af-c4ff-742f-8ba3-4130909ab1a6
+          stepCounter: ef2a1157-1992-424c-93b0-8fb2f5c6b0b0
+        config: {}
+        dataType: VARCHAR(134217728)
+        description: ""
+        name: STATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: C360."state"
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78af-c4ff-742f-8ba3-46702e06e899
+          stepCounter: ef2a1157-1992-424c-93b0-8fb2f5c6b0b0
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: TOTAL_CUSTOMERS
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: COUNT(DISTINCT C360."customer_id")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78af-c4ff-742f-8ba3-49d147f4c441
+          stepCounter: ef2a1157-1992-424c-93b0-8fb2f5c6b0b0
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: STATE_REVENUE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: SUM(C360."TOTAL_PREMIUM")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78af-c4ff-742f-8ba3-4e342afc4eb0
+          stepCounter: ef2a1157-1992-424c-93b0-8fb2f5c6b0b0
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: INCURRED_LOSSES
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: SUM(C360."TOTAL_ESTIMATED")
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 019d78af-c4ff-742f-8ba3-510209376e62
+          stepCounter: ef2a1157-1992-424c-93b0-8fb2f5c6b0b0
+        config: {}
+        dataType: NUMBER
+        description: ""
+        name: STATE_LOSS_RATIO
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ROUND((SUM(C360."TOTAL_ESTIMATED") / NULLIF(SUM(C360."TOTAL_PREMIUM"), 0)) * 100, 2)
+    cteString: ""
+    description: ""
+    destinationName: ""
+    enabledColumnTestIDs: []
+    materializationOption: ""
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: COMMON
+            nodeName: V_customer_360
+        join:
+          joinCondition: |-
+            FROM {{ ref('COMMON', 'V_customer_360') }} C360
+            GROUP BY 1
+            ORDER BY "STATE_LOSS_RATIO" DESC
+        name: V_STATE_LOSS_RATIO
+        noLinkRefs: []
+  name: V_STATE_LOSS_RATIO
+  overrideSQL: false
+  schema: ""
+  sqlType: BNT-1-5-0:::188
+  type: sql
+  version: 1
+type: Node
