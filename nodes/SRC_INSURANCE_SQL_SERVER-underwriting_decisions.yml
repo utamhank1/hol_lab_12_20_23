@@ -3,7 +3,7 @@ id: 4e1441be-2a81-444e-b602-eee562113635
 name: underwriting_decisions
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   locationName: SRC_INSURANCE_SQL_SERVER
   metadata:

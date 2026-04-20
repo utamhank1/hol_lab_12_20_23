@@ -3,7 +3,7 @@ id: 6aa9ee87-b75c-4c66-a9ec-86c6de5be24c
 name: customers
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   locationName: SRC_INSURANCE_SQL_SERVER
   metadata:

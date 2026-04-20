@@ -3,7 +3,7 @@ id: 2633f2e1-b7ac-459e-9d72-082f9b87c1e4
 name: risk_factors
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   locationName: SRC_INSURANCE_SQL_SERVER
   metadata:

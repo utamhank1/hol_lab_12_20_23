@@ -3,7 +3,7 @@ id: 02484675-5cd5-4a58-ae1c-e4f354f99151
 name: underwriters
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   locationName: SRC_INSURANCE_SQL_SERVER
   metadata:

@@ -3,7 +3,7 @@ id: 53bf489d-2c14-43d9-92a1-9becb5874c5c
 name: adjusters
 operation:
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: ""
   locationName: SRC_INSURANCE_SQL_SERVER
   metadata:

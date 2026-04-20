@@ -9,7 +9,7 @@ operation:
     selectDistinct: false
     testsEnabled: false
   database: ""
-  deployEnabled: true
+  deployEnabled: false
   description: State-level loss ratio analysis with customer count, revenue, and incurred losses
   isMultisource: false
   locationName: DASHBOARDS
