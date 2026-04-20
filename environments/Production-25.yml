@@ -2,25 +2,25 @@ fileVersion: 1
 id: "25"
 mappingDefinitions:
   CLAIMS:
-    database: ""
-    schema: ""
+    database: INSURANCE_CURATED
+    schema: CLAIMS
   COMMON:
-    database: ""
-    schema: ""
+    database: INSURANCE_CURATED
+    schema: COMMON
   DASHBOARDS:
-    database: ""
-    schema: ""
+    database: INSURANCE_ANALYTICS
+    schema: DASHBOARDS
   SRC:
     database: ""
     schema: ""
   SRC_INSURANCE_SQL_SERVER:
-    database: ""
-    schema: ""
+    database: FINSERV_INSURANCE_UNDERWRITING
+    schema: insurance_db
   UNDERWRITING:
-    database: ""
-    schema: ""
+    database: INSURANCE_CURATED
+    schema: UNDERWRITING
   WORK:
-    database: TXM_DEMO_DW_DB_PROD
-    schema: TXM_DEMO_DW_SCHEMA_PROD
+    database: JJ_PROD
+    schema: JJ_PROD_SCHEMA
 name: Production
 type: Environment
