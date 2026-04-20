@@ -11,8 +11,8 @@ mappingDefinitions:
     database: INSURANCE_ANALYTICS
     schema: DASHBOARDS
   SRC:
-    database: ""
-    schema: ""
+    database: placeholder
+    schema: placeholder
   SRC_INSURANCE_SQL_SERVER:
     database: FINSERV_INSURANCE_UNDERWRITING
     schema: insurance_db
