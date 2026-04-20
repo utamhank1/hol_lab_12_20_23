@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "48"
+includeSelector: "{ subgraph: \"SG_Claims_Detail\" }"
+name: Job_Claims_Detail
+type: Job

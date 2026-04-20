@@ -1,0 +1,17 @@
+fileVersion: 1
+id: e6bc0047-050a-4fe6-a3b4-cdb854d1c524
+name: SG_Claims_Detail
+steps:
+  - 1c80e333-a9a9-4e43-b05d-0e7cc2b2d975
+  - 261e2d36-344b-4e71-977f-add7e923d6b8
+  - 2baaee64-c681-44c2-90d0-67c7bcac09da
+  - 3622c0e2-9066-43e7-a439-6532b43d268f
+  - 41dc8666-6bd0-48f4-bb39-ce7db8ba77af
+  - 53bf489d-2c14-43d9-92a1-9becb5874c5c
+  - 5ac83733-dd69-472a-b1e1-32dc3ca2093b
+  - 6aa9ee87-b75c-4c66-a9ec-86c6de5be24c
+  - 71671318-a835-4ad7-9789-eb42763fefec
+  - 9577c0b1-0263-499b-bd71-cee5f2d945bd
+  - ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+  - d34f4ada-8b98-485f-9ee1-18010388bfc0
+type: Subgraph
