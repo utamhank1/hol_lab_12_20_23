@@ -25,8 +25,8 @@ operation:
   deployEnabled: true
   description: Policy-level loss ratio analysis with claims aggregation
   isMultisource: false
-  locationName: WORK
-  materializationType: table
+  locationName: DASHBOARDS
+  materializationType: view
   metadata:
     appliedNodeTests: []
     columns:
