@@ -1,0 +1,18 @@
+fileVersion: 1
+id: cf738209-45d2-46bf-a1d2-1588fc6d374f
+name: SG_State_Loss_Ratio
+steps:
+  - 1c80e333-a9a9-4e43-b05d-0e7cc2b2d975
+  - 261e2d36-344b-4e71-977f-add7e923d6b8
+  - 2baaee64-c681-44c2-90d0-67c7bcac09da
+  - 3622c0e2-9066-43e7-a439-6532b43d268f
+  - 55557a54-8dd9-402e-bb02-a2662eb789b7
+  - 5ac83733-dd69-472a-b1e1-32dc3ca2093b
+  - 6aa9ee87-b75c-4c66-a9ec-86c6de5be24c
+  - 9577c0b1-0263-499b-bd71-cee5f2d945bd
+  - 9f009414-5cd1-4081-913a-848f806af96b
+  - ae4bab76-e1a9-4e73-9313-b474cc74f9ad
+  - b86fc2ab-b872-47d0-b78f-e276dedf452d
+  - d34f4ada-8b98-485f-9ee1-18010388bfc0
+  - ef2a1157-1992-424c-93b0-8fb2f5c6b0b0
+type: Subgraph

@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "49"
+includeSelector: "{ subgraph: \"SG_State_Loss_Ratio\" }"
+name: Job_State_Loss_Ratio
+type: Job
