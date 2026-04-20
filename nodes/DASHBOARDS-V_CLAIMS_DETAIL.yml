@@ -13,7 +13,7 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: CLAIMS
+  locationName: DASHBOARDS
   materializationType: view
   metadata:
     appliedNodeTests: []
