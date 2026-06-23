@@ -3,7 +3,7 @@ id: 9577c0b1-0263-499b-bd71-cee5f2d945bd
 name: claim_payments
 operation:
   database: ""
-  deployEnabled: false
+  deployEnabled: true
   description: ""
   locationName: SRC_INSURANCE_SQL_SERVER
   metadata:

@@ -22,7 +22,7 @@ operation:
     testsEnabled: false
     truncateBefore: true
   database: ""
-  deployEnabled: false
+  deployEnabled: true
   description: Policy-level claims aggregation with total losses and claim count
   isMultisource: false
   locationName: WORK

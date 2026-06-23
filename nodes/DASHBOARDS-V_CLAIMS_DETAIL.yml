@@ -10,7 +10,7 @@ operation:
     selectDistinct: false
     testsEnabled: true
   database: ""
-  deployEnabled: false
+  deployEnabled: true
   description: ""
   isMultisource: false
   locationName: DASHBOARDS

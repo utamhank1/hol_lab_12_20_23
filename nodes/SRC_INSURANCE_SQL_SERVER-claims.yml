@@ -3,7 +3,7 @@ id: 3622c0e2-9066-43e7-a439-6532b43d268f
 name: claims
 operation:
   database: ""
-  deployEnabled: false
+  deployEnabled: true
   description: ""
   locationName: SRC_INSURANCE_SQL_SERVER
   metadata:

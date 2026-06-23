@@ -10,7 +10,7 @@ operation:
     selectDistinct: false
     testsEnabled: false
   database: ""
-  deployEnabled: false
+  deployEnabled: true
   description: ""
   isMultisource: false
   locationName: COMMON
